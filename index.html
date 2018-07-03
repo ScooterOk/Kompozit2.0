@@ -1,0 +1,641 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/main.css">  
+</head>
+
+<body>
+  <header>
+    <div class="header__gray">
+      <div class="wrapper">
+        <div class="header__gray_body">
+          <div class="header__gray_info">
+            <ul>
+              <li>Бесплатная доставка от 2 000 грн</li>
+              <li>Выезд специалиста на объект</li>
+              <li>Собственное производство</li>
+            </ul>    
+          </div>
+          <div class="header__gray_nav">
+            <ul>
+              <li id="change-lng">
+                <span>укр</span>
+                <ul class="header__gray_nav-sub">
+                  <li>
+                    <a href="">рус</a>
+                  </li>
+                  <li>
+                    <a href="">eng</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="change-currency">
+                <span>грн</span>
+                <ul class="header__gray_nav-sub">
+                  <li>
+                    <a href="">usd</a>
+                  </li>
+                  <li>
+                    <a href="">eur</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <ul class="header__main">
+        <li class="header__main_logo">
+          <a href="">
+            <img src="./img/top-logo.svg" alt="">
+          </a>
+        </li>
+        <li class="header__main_ukr-nat">
+          <img src="./img/ukr-nat.png" alt="">
+          <span>Українська народна премія, 2017</span>
+        </li>
+        <li class="header__main_metro-strd">
+          <img src="./img/metro-strd.png" alt="">
+          <span>Столичний стандарт якості</span>
+        </li>
+        <li class="header__main_intern-nat">
+          <img src="./img/intern-nat.png" alt="">
+          <span>Міжнародний стандарт якості ISO 9001, 2015</span>
+        </li>
+        <li class="header__main_contacts">
+          <b>0 800 218 539</b>
+          <span>Звонки бесплатные с любого оператора</span>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="top-nav wrapper">
+    <div class="top-nav__left">
+      <div class="top-nav__left_search">
+        <input type="text" class="top-nav__left_search-input" name="search" autocomplete="off" placeholder="Что вы ищете?" />
+      </div>
+    </div>
+    <div class="top-nav__right">
+      <a href="">Адреса магазинов</a>
+      <a href="">Доставка и оплата</a>
+      <a href="">Вход / Регистрация</a>
+
+      <!-- Add class "empty" if the basket is empty -->
+      <a href="" class="top-nav__right_cart">Корзина 1</a>
+      <!-- / -->
+    </div>
+  </nav>
+
+  <main class="wrapper main">
+    <div class="main__navs">
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="paint sub">
+            <a href="">Краски и эмали</a>
+          </li>
+          <li class="surface sub active">
+            <a href="">Для подготовки поверхности</a>            
+          </li>
+          <li class="instruments">
+            <a href="">Малярные инструменты</a>
+          </li>
+          <li class="wood sub">
+            <a href="">Для работы с деревом</a>
+          </li>
+          <li class="stone">
+            <a href="">Для работы с камнем</a>
+          </li>
+          <li class="glue">
+            <a href="">Клеи и герметики</a>
+          </li>
+          <li class="art">
+            <a href="">Художественная продукция</a>
+          </li>
+          <li class="merch">
+            <a href="">Сувенирная продукция</a>
+          </li>
+          <li class="paint-service">
+            <a href="">Малярные услуги</a>
+          </li>
+          <li class="sales">
+            <a href="">Акции</a>
+          </li>
+          <li class="kompozit">
+            <a href="">О Композит</a>
+          </li>
+        </ul>
+        <div class="main-nav__all">
+          <a href="">Смотреть все категории</a>
+        </div>
+      </nav>
+
+      <!-- Slider start -->
+      <article class="main__navs_slider">
+        <section class="slider-body" id="main-navs-slider">
+          <div class="main__navs_slider-item">
+            <img src="./img/main-navs-slider-banner.jpg" alt="">
+          </div>
+          <div class="main__navs_slider-item">
+            <img src="./img/main-navs-slider-banner.jpg" alt="">
+          </div>
+          <div class="main__navs_slider-item">
+            <img src="./img/main-navs-slider-banner.jpg" alt="">
+          </div>
+          <div class="main__navs_slider-item">
+            <img src="./img/main-navs-slider-banner.jpg" alt="">
+          </div>
+        </section>
+      </article>      
+      <!-- / Slider end -->
+    </div>
+
+    <article class="main__hits">
+        <h2>Хиты</h2>
+        <section class="main__hits_list" id="main-hits-list">
+          <div class="main__hits_list-item">
+            <div class="item-wish" data-id=""></div>
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/products/1.png" alt="">
+              </a>              
+            </div>
+            <ul class="item-info">
+              <li class="item-info-title">
+                <a href="">Гипоаллергенная интерьерная краска PRIME 7</a>
+              </li>
+              <li class="item-info-prices">
+                <div class="item-info-old">244 грн</div>
+                <div class="item-info-price">207 грн</div>
+              </li>
+            </ul>
+            <ul class="item-buy">
+              <li>
+                <div class="item-buy-amount">
+                  <span>Объем 0,5л</span>
+                  <ul class="item-buy-amount-list">
+                    <li>0.9</li>
+                    <li>2.7</li>
+                    <li>4.5</li>
+                    <li>9</li>
+                  </ul>
+                </div>                
+              </li>
+              <li>
+                <div class="item-buy-button">
+                  <a href="javascript:void(0)">Купить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="main__hits_list-item">
+            <div class="item-wish selected" data-id=""></div>
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/products/1.png" alt="">
+              </a>              
+            </div>
+            <ul class="item-info">
+              <li class="item-info-title">
+                <a href="">Гипоаллергенная интерьерная краска PRIME 7</a>
+              </li>
+              <li class="item-info-prices">
+                <div class="item-info-old">244 грн</div>
+                <div class="item-info-price">207 грн</div>
+              </li>
+            </ul>
+            <ul class="item-buy">
+              <li>
+                <div class="item-buy-amount">
+                  <span>Объем 0,5л</span>
+                  <ul class="item-buy-amount-list">
+                    <li>0.9</li>
+                    <li>2.7</li>
+                    <li>4.5</li>
+                    <li>9</li>
+                  </ul>
+                </div>                
+              </li>
+              <li>
+                <div class="item-buy-button">
+                  <a href="javascript:void(0)">Купить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="main__hits_list-item">
+            <div class="item-wish" data-id=""></div>
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/products/1.png" alt="">
+              </a>              
+            </div>
+            <ul class="item-info">
+              <li class="item-info-title">
+                <a href="">Гипоаллергенная интерьерная краска PRIME 7</a>
+              </li>
+              <li class="item-info-prices">
+                <div class="item-info-old">244 грн</div>
+                <div class="item-info-price">207 грн</div>
+              </li>
+            </ul>
+            <ul class="item-buy">
+              <li>
+                <div class="item-buy-amount">
+                  <span>Объем 0,5л</span>
+                  <ul class="item-buy-amount-list">
+                    <li>0.9</li>
+                    <li>2.7</li>
+                    <li>4.5</li>
+                    <li>9</li>
+                  </ul>
+                </div>                
+              </li>
+              <li>
+                <div class="item-buy-button">
+                  <a href="javascript:void(0)">Купить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="main__hits_list-item">
+            <div class="item-wish" data-id=""></div>
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/products/1.png" alt="">
+              </a>              
+            </div>
+            <ul class="item-info">
+              <li class="item-info-title">
+                <a href="">Гипоаллергенная интерьерная краска PRIME 7</a>
+              </li>
+              <li class="item-info-prices">
+                <div class="item-info-old">244 грн</div>
+                <div class="item-info-price">207 грн</div>
+              </li>
+            </ul>
+            <ul class="item-buy">
+              <li>
+                <div class="item-buy-amount">
+                  <span>Объем 0,5л</span>
+                  <ul class="item-buy-amount-list">
+                    <li>0.9</li>
+                    <li>2.7</li>
+                    <li>4.5</li>
+                    <li>9</li>
+                  </ul>
+                </div>                
+              </li>
+              <li>
+                <div class="item-buy-button">
+                  <a href="javascript:void(0)">Купить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="main__hits_list-item">
+            <div class="item-wish selected" data-id=""></div>
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/products/1.png" alt="">
+              </a>              
+            </div>
+            <ul class="item-info">
+              <li class="item-info-title">
+                <a href="">Гипоаллергенная интерьерная краска PRIME 7</a>
+              </li>
+              <li class="item-info-prices">
+                <div class="item-info-old">244 грн</div>
+                <div class="item-info-price">207 грн</div>
+              </li>
+            </ul>
+            <ul class="item-buy">
+              <li>
+                <div class="item-buy-amount">
+                  <span>Объем 0,5л</span>
+                  <ul class="item-buy-amount-list">
+                    <li>0.9</li>
+                    <li>2.7</li>
+                    <li>4.5</li>
+                    <li>9</li>
+                  </ul>
+                </div>                
+              </li>
+              <li>
+                <div class="item-buy-button">
+                  <a href="javascript:void(0)">Купить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="main__hits_list-item">
+            <div class="item-wish" data-id=""></div>
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/products/1.png" alt="">
+              </a>              
+            </div>
+            <ul class="item-info">
+              <li class="item-info-title">
+                <a href="">Гипоаллергенная интерьерная краска PRIME 7</a>
+              </li>
+              <li class="item-info-prices">
+                <div class="item-info-old">244 грн</div>
+                <div class="item-info-price">207 грн</div>
+              </li>
+            </ul>
+            <ul class="item-buy">
+              <li>
+                <div class="item-buy-amount">
+                  <span>Объем 0,5л</span>
+                  <ul class="item-buy-amount-list">
+                    <li>0.9</li>
+                    <li>2.7</li>
+                    <li>4.5</li>
+                    <li>9</li>
+                  </ul>
+                </div>                
+              </li>
+              <li>
+                <div class="item-buy-button">
+                  <a href="javascript:void(0)">Купить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>      
+
+      <article class="main__for-you">
+        <h2>Композит для вас</h2>
+        <div class="main__for-you_list" id="main-for-you-list">
+          <div class="main__for-you_list-item">
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/foryou/1.jpg" alt="">
+              </a>              
+            </div>
+            <div class="item-title">
+              <a href="">Ukrainian Fashion Week</a>
+            </div>
+          </div>
+          <div class="main__for-you_list-item">
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/foryou/2.jpg" alt="">
+              </a>              
+            </div>
+            <div class="item-title">
+              <a href="">Kompozit продолжает подтверждать высокое качество своего производства</a>
+            </div>
+          </div>
+          <div class="main__for-you_list-item">
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/foryou/3.jpg" alt="">
+              </a>              
+            </div>
+            <div class="item-title">
+              <a href="">Перемога у номінації «Найкраща Лакофарбова Продукція 2017»</a>
+            </div>
+          </div>
+          <div class="main__for-you_list-item">
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/foryou/1.jpg" alt="">
+              </a>              
+            </div>
+            <div class="item-title">
+              <a href="">Ukrainian Fashion Week</a>
+            </div>
+          </div>
+          <div class="main__for-you_list-item">
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/foryou/2.jpg" alt="">
+              </a>              
+            </div>
+            <div class="item-title">
+              <a href="">Kompozit продолжает подтверждать высокое качество своего производства</a>
+            </div>
+          </div>
+          <div class="main__for-you_list-item">
+            <div class="item-photo">
+              <a href="">
+                <img src="./img/foryou/3.jpg" alt="">
+              </a>              
+            </div>
+            <div class="item-title">
+              <a href="">Перемога у номінації «Найкраща Лакофарбова Продукція 2017»</a>
+            </div>
+          </div>
+        </div>
+        <div class="main__for-you_all">
+          <a href="">
+            <span>Все новости</span>
+          </a>
+        </div>
+      </article>      
+
+      <article class="main__advantages">
+        <ul class="main__advantages_list">
+          <li class="main__advantages_list-item">
+            <div class="item-photo">
+              <img src="./img/advantages-1.png" alt="">
+            </div>
+            <div class="item-title">Возможна оплата наличными, безналичный расчет, на карту</div>
+          </li>
+          <li class="main__advantages_list-item">
+            <div class="item-photo">
+              <img src="./img/advantages-2.png" alt="">
+            </div>
+            <div class="item-title">
+              <div class="item-title-text">Колеровка краски в любой цвет из каталога</div>
+            </div>
+          </li>
+          <li class="main__advantages_list-item">
+            <div class="item-photo">
+              <img src="./img/advantages-3.png" alt="">
+            </div>
+            <div class="item-title">
+              <div class="item-title-text">
+                <b>5%</b> скидка всем членам клуба Композит
+              </div>
+            </div>
+          </li>
+          <li class="main__advantages_list-item">
+            <div class="item-photo">
+              <img src="./img/advantages-4.png" alt="">
+            </div>
+            <div class="item-title">
+              <div class="item-title-text">Бесплатная доставка<br>от 2 000 грн</div>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <article class="main__club">
+        <div class="main__club_left">
+          <h2>Программа лояльности <b>«Клуб Композит»</b></h2>
+          <div class="main__club_left-text">Зарегистрируйтесь на сайте и получите приглашение от участника клуба, что бы присоединиться к программе лояльности</div>
+          <div class="main__club_left-registration">
+            <a href="">
+              <span>Зарегистрироваться</span>
+            </a>
+          </div>
+        </div>
+        <ul class="main__club_right">
+          <li>
+            <div class="main__club_right-percent">5%</div>
+            <div class="main__club_right-text">скидки <b>за регистрацию</b><br> на сайте</div>
+          </li>
+          <li>
+            <div class="main__club_right-percent">10%</div>
+            <div class="main__club_right-text">скидки при накоплении заказов или<br>разовом заказе на сумму от <b>10 000</b> гривен</div>
+          </li>
+          <li>
+            <div class="main__club_right-percent">15%</div>
+            <div class="main__club_right-text">скидки при накоплении заказов или<br>разовом заказе на сумму от <b>20 000</b> гривен</div>
+          </li>
+        </ul>
+      </article>
+
+      <article class="main__kompozit-is">
+        <h2>
+          <span>Компания</span>
+          <img src="./img/big-logo.svg" alt="">
+          <span>это</span>
+          <i></i>
+        </h2>
+        <ul class="main__kompozit-is_list">
+          <li>
+            <div class="item-photo">
+              <img src="./img/kompozit-is-1.png" alt="">
+            </div>
+            <div class="item-title">Мощная дистрибюторская сеть в 22 городах Украины</div>
+          </li>
+          <li>
+            <div class="item-photo">
+              <img src="./img/kompozit-is-2.png" alt="">
+            </div>
+            <div class="item-title">Собственная лаборатория и производство</div>
+          </li>
+          <li>
+            <div class="item-photo">
+              <img src="./img/kompozit-is-3.png" alt="">
+            </div>
+            <div class="item-title">
+              <span>Социальная ответственность</span>
+              <a href="">Подробнее</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-photo">
+              <img src="./img/kompozit-is-4.png" alt="">
+            </div>
+            <div class="item-title year">На рынке с 1995 года</div>
+          </li>
+        </ul>
+        <div class="main__kompozit-is_button">
+          <a href="">
+            <span>Подробнее о компании</span>
+          </a>
+        </div>
+      </article>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <ul class="footer__list">
+        <li>
+          <h3>Каталог товаров</h3>
+            <p>
+              <a href="">Краски и эмали</a>
+            </p>
+            <p>
+              <a href="">Для подготовки поверхности</a>
+            </p>
+            <p>
+              <a href="">Малярные инструменты</a>
+            </p>
+            <p>
+              <a href="">Для работы с деревом</a>
+            </p>
+            <p>
+              <a href="">Для работы с камнем</a>
+            </p>
+        </li>
+        <li>          
+            <p>
+              <a href="">Клеи и герметики</a>
+            </p>
+            <p>
+              <a href="">Художественная продукция</a>
+            </p>
+            <p>
+              <a href="">Сувенирная продукция</a>
+            </p>
+            <p>
+              <a href="">Малярные услуги</a>
+            </p>
+            <p>
+              <a href="">Акции</a>
+            </p>
+        </li>
+        <li>
+          <h3>Композит</h3>
+            <p>
+              <a href="">Доставка и оплата</a>
+            </p>
+            <p>
+              <a href="">Адреса магазинов</a>
+            </p>
+            <p>
+              <a href="">Контакты</a>
+            </p>
+            <p>
+              <a href="">О компании</a>
+            </p>
+            <p>
+              <a href="">Документация и сертификаты</a>
+            </p>            
+        </li>
+        <li class="footer__list_social">
+          <h3>0 800 218 539</h3>
+          <div class="footer__list_social-list">
+            <a href="" class="fb"></a>
+            <a href="" class="ig"></a>
+            <a href="" class="yt"></a>
+            <a href="" class="gp"></a>
+          </div>
+        </li>
+      </ul>
+      <div class="footer__copyright">2018 © Kompozit</div>
+    </div>    
+  </footer>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/vendor/slick.min.js"></script>      
+  <script src="js/main.js"></script>
+</body>
+
+</html>

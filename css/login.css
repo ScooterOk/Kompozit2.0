@@ -1,0 +1,186 @@
+/* ==========================================================================
+  Registration page classes
+========================================================================== */
+main.login {
+
+}
+main.login h1 {
+  margin: 35px 0 0 0;
+  padding: 0;  
+  font-size: 48px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 95px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #13152b;
+  height: 111px;
+  background: url('../img/bg-login-title.png') no-repeat center center / auto 111px;
+}
+.login__clubmember-link {  
+  text-align: center;
+  margin: 24px auto 0 auto;
+}
+.login__clubmember-link a {  
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #0f77ff;
+  text-decoration: none;
+  display: inline-block;
+  padding-right: 25px;
+  background: url(../img/categories/all.svg) no-repeat right center;
+  transition: all 150ms ease;
+}
+.login__clubmember-link a:hover {
+  background: url(../img/categories/all-hover.svg) no-repeat right center;
+  color: #579fff;
+}
+.login__form {
+  margin-top: 32px;
+  width: 400px;
+  margin: 32px auto 0 auto;
+}
+.login__form_item {
+  margin-bottom: 27px;
+}
+.login__form_item > label {
+  display: block;
+  position: relative;
+}
+.login__form_item > label > input {
+  width: 100%;
+  height: 48px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: 1px solid #c8ced3;
+  padding: 16px;  
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #13152b;
+  outline: none;
+  transition: all 150ms ease;
+}
+ .login__form_item > label > input:not(:focus):hover {
+  border-color: #579fff;
+ }
+.login__form_item > label > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #768592;
+  transition: all 200ms ease;
+  opacity: 1;  
+}
+.login__form_item > label > input::-moz-placeholder { /* Firefox 19+ */
+  color: #768592;
+  transition: all 200ms ease;
+  opacity: 1;
+}
+.login__form_item > label > input:-ms-input-placeholder { /* IE 10+ */
+  color: #768592;
+  transition: all 200ms ease;
+  opacity: 1;
+}
+.login__form_item > label > input:-moz-placeholder { /* Firefox 18- */
+  color: #768592;
+  transition: all 200ms ease;
+  opacity: 1;
+} 
+.login__form_item > label > input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #768592;
+  transform: translateX(50px);
+  opacity: 0;
+}
+.login__form_item > label > input:focus::-moz-placeholder { /* Firefox 19+ */
+  color: #768592;
+  transform: translateX(50px);
+  opacity: 0;
+}
+.login__form_item > label > input:focus:-ms-input-placeholder { /* IE 10+ */
+  color: #768592;
+  transform: translateX(50px);
+  opacity: 0;
+}
+.login__form_item > label > input:focus:-moz-placeholder { /* Firefox 18- */
+  color: #768592;
+  transform: translateX(50px);
+  opacity: 0;
+}
+.login__form_item > label > span {
+  display: block;
+  position: absolute;
+  left: 8px;
+  top: 0;
+  background-color: #fff;
+  padding: 0 8px;  
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #768592;
+  transform: translate(-16px, -50%);
+  opacity: 0;
+  transition: all 200ms ease;  
+  white-space: nowrap;
+  overflow: hidden;
+}
+.login__form_item > label > input:focus + span {
+  transform: translate(0, -50%);  
+  opacity: 1;
+}
+
+.login__form_submit {
+  margin-top: 16px;
+  text-align: center;
+}
+.login__form_submit button {
+  width: 280px;
+  height: 56px;
+  box-shadow: 0 2px 8px 0 rgba(0, 51, 121, 0.1);
+  background-color: #0f77ff;
+  border: none;  
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.login__form_submit button span {
+  display: inline-block;
+  background: url(../img/all-white.svg) no-repeat right center;
+  padding-right: 25px;  
+}
+.login__form_submit button:hover {
+  box-shadow: 0 4px 16px 0 rgba(0, 51, 121, 0.15);
+}
+.login__repassword {
+  margin-top: 32px;
+  text-align: center;
+}
+.login__repassword a {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #0f77ff;
+  transition: all 200ms ease;
+  text-decoration: none;
+}
+.login__repassword a:hover {
+  color: #579fff;
+}
