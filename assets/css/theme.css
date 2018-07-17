@@ -1197,7 +1197,7 @@ footer {
 /* ==========================================================================
 Main Navs classes
 ========================================================================== */
-main.main {
+main.index {
   
 }
 .main__navs {
@@ -2059,7 +2059,7 @@ main.main {
 /* ==========================================================================
 Main Navs classes
 ========================================================================== */
-main.catalog {
+main.category {
    
 }
 .catalog__header {
@@ -2423,7 +2423,7 @@ main.catalog {
   position: relative;
   padding-right: 25px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
 }
 .catalog__main_products-list-item .item-buy > li .item-buy-amount span::after {
@@ -2474,7 +2474,7 @@ main.catalog {
   top: -12px;  
   overflow: hidden;
   display: none;
-  z-index: 1;
+  z-index: 2;
 }
 .catalog__main_products-list-item .item-buy > li .item-buy-amount-list li {
   height: 32px;  
@@ -2644,10 +2644,10 @@ main.catalog {
 /* ==========================================================================
   Registration page classes
 ========================================================================== */
-main.login {
+main.authentication {
 
 }
-main.login h1 {
+main.authentication h1.ligin__title {
   margin: 35px 0 0 0;
   padding: 0;  
   font-size: 48px;
@@ -2832,10 +2832,10 @@ main.login h1 {
 /* ==========================================================================
   Registration page classes
 ========================================================================== */
-main.repassword {
+main.password {
 
 }
-main.repassword h1 {
+main.password h1 {
   margin: 35px 0 0 0;
   padding: 0;  
   font-size: 48px;
@@ -2988,10 +2988,7 @@ main.repassword h1 {
 /* ==========================================================================
   Registration page classes
 ========================================================================== */
-main.registration {
-
-}
-main.registration h1 {
+main.authentication h1.registration__title {
   margin: 35px 0 0 0;
   padding: 0;  
   font-size: 48px;

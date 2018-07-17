@@ -36,7 +36,7 @@ $(document).ready(function() {
 	/* ==========================================================================
 			Main page
 	   ========================================================================== */
-	if($('main').hasClass('main')){
+	if($('main').hasClass('index')){
 		$('#main-hits-list .main__hits_list-item .item-buy-amount span').click(function(e) {
 			$('#main-hits-list .item-buy-amount-list').fadeOut(150);
 			if($(this).closest('.item-buy-amount').find('.item-buy-amount-list').is(':hidden')){
@@ -68,7 +68,7 @@ $(document).ready(function() {
 	/* ==========================================================================
 			Catalog page
 	   ========================================================================== */
-	if($('main').hasClass('catalog')){
+	if($('main').hasClass('category')){
 		$(document).click(function(e) {
 			if($(e.target).closest('#change-lng').length || $(e.target).closest('#change-currency').length || $(e.target).closest('.catalog__header_nav-filter-body').length || $(e.target).closest('.item-buy-amount').length) return;
 			$('#change-lng .header__gray_nav-sub, #change-currency .header__gray_nav-sub').fadeOut(150);
@@ -102,7 +102,7 @@ $(document).ready(function() {
 	/* ==========================================================================
 			Registration page
 	   ========================================================================== */
-	if($('main').hasClass('registration')){
+	if($('main').hasClass('authentication')){
 		$('.registration__form input[type="tel"]').mask('+38 (000) 000 00 00');
 		$('#email-field').blur(function(e){
 			function validateEmail(email) {
