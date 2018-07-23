@@ -163,10 +163,8 @@ $(document).ready(function() {
 				$(this).removeClass('show');
 			}			
 		});
-		$('#registration-form').submit(function(e) {
-			console.log($(this).find('.error').length);			
+		$('#registration-form').submit(function(e) {			
 			var email = $('#email-field').val();
-
 			if($.trim($('#name-field').val()).length == 0){
 				$('#name-field').addClass('error');
 				$('#name-field').closest('.form__item').find('.form__error_text').slideDown(150);
@@ -178,33 +176,32 @@ $(document).ready(function() {
 				$('#phone-field').addClass('error');
 				$('#phone-field').closest('.form__item').find('.form__error_text').slideDown(150);
 				$('#phone-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+				e.preventDefault();
 			}
 
 			if(!email.length || validateEmail(!email)){
 				$('#email-field').addClass('error');
 				$('#email-field').closest('.form__item').find('.form__error_text').slideDown(150);
 				$('#email-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+				e.preventDefault();
 			}
 
 			if($('#password-field').val().length < 6){
 				$('#password-field').addClass('error');
 				$('#password-field').closest('.form__item').find('.form__error_text').slideDown(150);
 				$('#password-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+				e.preventDefault();
 			}
 
 			if(!$('#terms-field').is(':checked')){
 				$('#terms-field').closest('.form__checkbox').find('.form__error_text').slideDown(150);
+				e.preventDefault();
 			}
-
-
-			
-
 
 			function validateEmail(email) {
 				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 				return re.test(email);
-			}
-			return false;
+			}			
 			
 		});
 		
