@@ -104,12 +104,121 @@ $(document).ready(function() {
 	   ========================================================================== */
 	if($('main').hasClass('authentication')){
 		$('.authentication input[type="tel"]').mask('+38 (000) 000 00 00');
+		$('#name-field').blur(function(e) {
+			if($.trim($(this).val()).length){
+				$(this).removeClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideUp(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeOut(150);
+			}else{
+				$(this).addClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideDown(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
+		});
+		$('#phone-field').blur(function(e) {
+			if($(this).val().length == 19){
+				$(this).removeClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideUp(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeOut(150);
+			}else{
+				$(this).addClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideDown(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
+		});
 		$('#email-field').blur(function(e){
+			var email = $(this).val();
+			if(validateEmail(email)){
+				$(this).removeClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideUp(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeOut(150);
+			}else{
+				$(this).addClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideDown(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
 			function validateEmail(email) {
 				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 				return re.test(email);
+			}
+		});
+		$('#password-field').blur(function(e){
+			if($(this).val().length > 6){
+				$(this).removeClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideUp(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeOut(150);
+			}else{
+				$(this).addClass('error');
+				$(this).closest('.form__item').find('.form__error_text').slideDown(150);
+				$(this).closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
+		});
+		$('.form__password_show').click(function(e) {
+			var type = $(this).closest('.form__item').find('input').attr('type');
+			if(type == 'password'){
+				$(this).closest('.form__item').find('input').attr('type', 'text');
+				$(this).addClass('show');
+			}else{
+				$(this).closest('.form__item').find('input').attr('type', 'password');
+				$(this).removeClass('show');
 			}			
 		});
+		$('#registration-form').submit(function(e) {
+			console.log($(this).find('.error').length);			
+			var email = $('#email-field').val();
+
+			if($.trim($('#name-field').val()).length == 0){
+				$('#name-field').addClass('error');
+				$('#name-field').closest('.form__item').find('.form__error_text').slideDown(150);
+				$('#name-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+				e.preventDefault();
+			}
+
+			if($.trim($('#phone-field').val()).length != 19){
+				$('#phone-field').addClass('error');
+				$('#phone-field').closest('.form__item').find('.form__error_text').slideDown(150);
+				$('#phone-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
+
+			if(!email.length || validateEmail(!email)){
+				$('#email-field').addClass('error');
+				$('#email-field').closest('.form__item').find('.form__error_text').slideDown(150);
+				$('#email-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
+
+			if($('#password-field').val().length < 6){
+				$('#password-field').addClass('error');
+				$('#password-field').closest('.form__item').find('.form__error_text').slideDown(150);
+				$('#password-field').closest('.form__item').find('.form__error_close').fadeIn(150);
+			}
+
+			if(!$('#terms-field').is(':checked')){
+				$('#terms-field').closest('.form__checkbox').find('.form__error_text').slideDown(150);
+			}
+
+
+			
+
+
+			function validateEmail(email) {
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(email);
+			}
+			return false;
+			
+		});
+		
+		$('#terms-field').change(function(e) {			
+			if($(this).is(':checked')){
+				$('#terms-field').closest('.form__checkbox').find('.form__error_text').slideUp(150);
+			}
+		});
+		
+		$('.form__error_close').click(function(e) {
+			$(this).closest('.form__item').find('input').removeClass('error');
+			$(this).closest('.form__item').find('.form__error_text').slideUp(150);
+			$(this).closest('.form__item').find('.form__error_close').fadeOut(150);
+		});		
 	}
 	
 

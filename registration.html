@@ -108,37 +108,48 @@
       <a href=""> Я член клуба “Композит”! Войти в личный кабинет</a>
     </div>
     <section class="form__wrapper">
-      <form action="">
+      <form action="" id="registration-form">
         <div class="form__item">
           <label>
             <input type="text" name="name" id="name-field" placeholder="Ваше имя" autocomplete="off">
             <span>Ваше имя</span>
           </label>
+          <div class="form__error_text">Заполните это поле, что бы зарегистрироваться</div>
+          <div class="form__error_close"></div>
         </div>
         <div class="form__item">
           <label>
             <input type="tel" name="phone" id="phone-field" placeholder="Номер телефона" autocomplete="off">
             <span>Номер телефона</span>
           </label>
+          <div class="form__error_text">Проверьте это поле. Возможно, вы ввели неправильный номер.<br>Формат +380 (XX) XXX XX XX</div>
+          <div class="form__error_close"></div>
         </div>
         <div class="form__item">
           <label>
             <input type="email" name="email" id="email-field" placeholder="Ваш email" autocomplete="off">
             <span>Ваш email</span>
           </label>
+          <div class="form__error_text">Проверьте это поле. Поле должно содержать знак @</div>
+          <div class="form__error_close"></div>
         </div>
         <div class="form__item">
           <label>
             <input type="password" name="password"  id="password-field" placeholder="Создайте пароль (не меньше 6 символов)" autocomplete="off">
-            <span>Пароль</span>
+            <span>Пароль</span>            
           </label>
+          <i class="form__password_show"></i>
+          <div class="form__error_text">Пароль слишком короткий. Создайте пароль не менее чем из 6 символов</div>
+          <div class="form__error_close"></div>
         </div>
         <div class="form__checkbox">
           <label class="custom-checkbox">
-            <input type="checkbox">
+            <input type="checkbox" id="terms-field">
             <i></i>
             <span>Я соглашаюсь с пользовательским соглашением</span>
           </label>
+          <div class="form__error_text">Подтвердите, что вы ознакомились с пользовательским<br>соглашением и принимаете эти условия</div>
+          <div class="form__error_close"></div>
         </div>
         <div class="form__checkbox">
           <label class="custom-checkbox">
