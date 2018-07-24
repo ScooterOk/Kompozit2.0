@@ -35,8 +35,32 @@
   <main class="wrapper checkout">
     <article class="checkout__ordering">
       <h2>Оформление заказа</h2>
-      <section class="checkout__login">
-        <a href="">Я член клуба «Композит»! Войти в личный кабинет</a>
+      <section>
+        <h3>1. Ваши данные</h3>
+        <div class="checkout__profile">
+          <div class="checkout__profile_item">Дмитрий Раговский</div>
+          <div class="checkout__profile_item">+38 063 82 85 614</div>
+          <div class="checkout__sublink">
+            <a href="">Редактировать</a>
+          </div>
+        </div>
+        <div class="checkout__profile_edit">
+          <div class="form__item">
+            <label>
+              <input type="text" name="name" id="name-checkout" placeholder="Ваше имя" autocomplete="off" value="Дмитрий Раговский">
+              <span>Ваше имя</span>
+            </label>
+          </div>
+          <div class="form__item">
+            <label>
+              <input type="tel" name="phone" id="phone-checkout" placeholder="Номер телефона" autocomplete="off" maxlength="19" value="+38 063 82 85 614">
+              <span>Номер телефона</span>
+            </label>
+          </div>
+          <div class="checkout__sublink">
+            <a href="">Сохранить</a>
+          </div>
+        </div>
       </section>
       <section>
         <h3>1. Выберите способ оплаты</h3>

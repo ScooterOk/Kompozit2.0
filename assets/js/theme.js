@@ -5,11 +5,14 @@
 
 $(document).ready(function() {
 	$(document).click(function(e) {
-		if($(e.target).closest('#change-lng').length || $(e.target).closest('#change-currency').length || $(e.target).closest('.catalog__header_nav-filter-body').length || $(e.target).closest('.item-buy-amount').length) return;
+		if($(e.target).closest('#change-lng').length || $(e.target).closest('#change-currency').length || $(e.target).closest('.catalog__header_nav-filter-body').length || $(e.target).closest('.item-buy-amount').length || $(e.target).closest('.form__dropdown').length) return;
 		$('#change-lng .header__gray_nav-sub, #change-currency .header__gray_nav-sub').fadeOut(150);
 		$('#main-hits-list .item-buy-amount-list').fadeOut(150);		
 		$('.catalog__header_nav-filter .catalog__header_nav-filter-list').fadeOut(150);
 		$('.catalog__main_products-list .item-buy-amount-list').fadeOut(150);
+		$('.form__dropdown').removeClass('active');
+		$('.form__dropdown .form__dropdown_list').fadeOut(150);
+
 	});
 
 
@@ -30,6 +33,26 @@ $(document).ready(function() {
 	});
 	
 	$('#login-field').mask('+38 (000) 000 00 00');
+
+	$('.form__dropdown span').click(function(e) {
+		if($(this).closest('.form__dropdown').hasClass('active')){
+			$(this).closest('.form__dropdown').removeClass('active');
+			$(this).closest('.form__dropdown').find('.form__dropdown_list').fadeOut(150);
+		}else{
+			$('.form__dropdown').removeClass('active');
+			$('.form__dropdown .form__dropdown_list').fadeOut(150);
+			$(this).closest('.form__dropdown').addClass('active');
+			$(this).closest('.form__dropdown').find('.form__dropdown_list').fadeIn(150);
+		}
+	});
+	$('.form__dropdown .form__dropdown_item').click(function(e) {
+		var val = $(this).attr('data-value');
+		$(this).closest('.form__dropdown').find('.selected').removeClass('selected');
+		$(this).addClass('selected');
+		$(this).closest('.form__dropdown').find('span').text(val);
+		$(this).closest('.form__dropdown').removeClass('active');
+		$(this).closest('.form__dropdown').find('.form__dropdown_list').fadeOut(150);
+	});
 
 
 
@@ -216,6 +239,46 @@ $(document).ready(function() {
 			$(this).closest('.form__item').find('.form__error_text').slideUp(150);
 			$(this).closest('.form__item').find('.form__error_close').fadeOut(150);
 		});		
+	}
+
+
+
+	/* ==========================================================================
+			Checkout ordering page
+	   ========================================================================== */
+	if($('main').hasClass('checkout')){
+		$('input[type="tel"]').mask('+38 (000) 000 00 00');
+		$('.checkout__ordering_register-checkbox input[type="checkbox"]').change(function(e) {
+			if($(this).is(':checked')){
+				$('.checkout__ordering_register-checkbox').hide();
+				$('.checkout__ordering_register').show();
+			}
+		});
+		$('.form__password_show').click(function(e) {
+			var type = $(this).closest('.form__item').find('input').attr('type');
+			if(type == 'password'){
+				$(this).closest('.form__item').find('input').attr('type', 'text');
+				$(this).addClass('show');
+			}else{
+				$(this).closest('.form__item').find('input').attr('type', 'password');
+				$(this).removeClass('show');
+			}			
+		});
+		$('.checkout__summ_promo a').click(function(e) {
+			$('.checkout__summ_promo-input').css('display', 'inline-flex');
+			e.preventDefault();
+		});
+		$('.checkout__profile a').click(function(e) {
+			$('.checkout__profile').hide();
+			$('.checkout__profile_edit').show();
+			e.preventDefault();
+		});
+		$('.checkout__profile_edit a').click(function(e) {
+			$('.checkout__profile_edit').hide();
+			$('.checkout__profile').show();
+			
+			e.preventDefault();
+		});
 	}
 	
 
