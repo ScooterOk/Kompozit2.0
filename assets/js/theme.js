@@ -368,4 +368,68 @@ $(document).ready(function() {
 	}
 
 
+	/* ==========================================================================
+			Product page
+	   ========================================================================== */
+	if($('main').hasClass('product')){
+		$(document).click(function(e) {
+			if($(e.target).closest('.item-buy-amount').length || $(e.target).closest('.product__dropdown').length) return;			
+			$('.item-buy-amount-list').fadeOut(150);
+			$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
+			$('.product__dropdown').removeClass('active');
+		});
+		$('.main__hits_list-item .item-buy-amount span').click(function(e) {
+			$('.item-buy-amount-list').fadeOut(150);
+			if($(this).closest('.item-buy-amount').find('.item-buy-amount-list').is(':hidden')){
+				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeIn(150);
+			}else{
+				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeOut(150);
+			}
+		});
+		$('.product__dropdown > span').click(function(e) {
+			$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
+			$('.product__dropdown').removeClass('active');
+			if($(this).closest('.product__dropdown').find('.product__dropdown-list').is(':hidden')){
+				$(this).closest('.product__dropdown').find('.product__dropdown-list').fadeIn(150);
+				$(this).closest('.product__dropdown').addClass('active');
+			}else{
+				$(this).closest('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
+				$(this).closest('.product__dropdown').removeClass('active');
+			}
+		});
+		$('.add__form_assessment .stars li').mouseenter(function(e) {
+			var rate = $(this).attr('data-rate');
+			$(this).closest('.stars').attr('class', 'stars');
+			$(this).closest('.stars').addClass('rate-'+rate);
+		});
+		$('.add__form_assessment .stars').mouseleave(function(e) {
+			$(this).closest('.stars').attr('class', 'stars');
+		});
+		$('.product__images').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  fade: true,
+		  asNavFor: '.product__images_nav',
+		  infinite: false
+		});
+		$('.product__images_nav').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+		  asNavFor: '.product__images',
+		  dots: false,
+		  centerMode: false,
+		  focusOnSelect: true,
+		  infinite: false
+		});
+		$('#product-might-need, #product-hits').slick({
+			arrows : true,          
+			slidesToShow: 4,
+			slidesToScroll: 1
+	    });	    
+
+	}
+
+
+
 });
