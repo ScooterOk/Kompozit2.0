@@ -112,12 +112,10 @@ $(document).ready(function() {
 			}
 		});
 
-		
-
-		$('.catalog__header_nav-filter-body').click(function(e) {		
-			if($(this).find('.catalog__header_nav-filter-list').is(':hidden')){
+		$(document).on('click', '.catalog__header_nav-filter-body', function(e) {
+			if ($(this).find('.catalog__header_nav-filter-list').is(':hidden')) {
 				$(this).find('.catalog__header_nav-filter-list').fadeIn(150);
-			}else{
+			} else {
 				$(this).find('.catalog__header_nav-filter-list').fadeOut(150);
 			}
 		});
