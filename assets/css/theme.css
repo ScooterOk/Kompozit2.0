@@ -5525,6 +5525,10 @@ main.product {
   background-color: #fff;
   text-align: center;
   cursor: pointer;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
 }
 .product__actions_amount-selector i.minus {
   line-height: 28px;

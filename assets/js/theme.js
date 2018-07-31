@@ -437,7 +437,15 @@ $(document).ready(function() {
 	    	var body = $("html, body");
 			body.stop().animate({scrollTop:y}, 500);
 	    	e.preventDefault();
-	    });	    
+	    });
+	    $('.product__actions_amount-selector .minus').click(function(e) {
+	    	var val = Number($(this).closest('.product__actions_amount-selector').find('input').val());
+	    	if(val > 1)$(this).closest('.product__actions_amount-selector').find('input').val(--val);	    	
+	    });
+	    $('.product__actions_amount-selector .plus').click(function(e) {
+	    	var val = Number($(this).closest('.product__actions_amount-selector').find('input').val());
+	    	$(this).closest('.product__actions_amount-selector').find('input').val(++val);	    	
+	    });
 
 	}
 
