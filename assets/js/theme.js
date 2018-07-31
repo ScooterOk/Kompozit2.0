@@ -424,6 +424,19 @@ $(document).ready(function() {
 			arrows : true,          
 			slidesToShow: 4,
 			slidesToScroll: 1
+	    });
+	    $('.product__actions_rating a').click(function(e) {
+	    	var y = $('.product__reviews').offset().top - 20;	    
+	    	var body = $("html, body");
+			body.stop().animate({scrollTop:y}, 700);
+	    	e.preventDefault();
+	    });
+	    $('.product__description-short_more a').click(function(e) {
+	    	var y = $('.product__description').offset().top - 20;
+	    	
+	    	var body = $("html, body");
+			body.stop().animate({scrollTop:y}, 500);
+	    	e.preventDefault();
 	    });	    
 
 	}
