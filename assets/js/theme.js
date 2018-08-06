@@ -403,7 +403,7 @@ $(document).ready(function() {
 		  focusOnSelect: true,
 		  infinite: false
 		});
-		$('#product-might-need, #product-hits').slick({
+		$('.main__hits_list').slick({
 			arrows : true,          
 			slidesToShow: 4,
 			slidesToScroll: 1
