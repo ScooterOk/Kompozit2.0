@@ -8,7 +8,7 @@ $(document).ready(function() {
 	$(document).click(function(e) {
 		if($(e.target).closest('#change-lng').length || $(e.target).closest('#change-currency').length || $(e.target).closest('.catalog__header_nav-filter-body').length || $(e.target).closest('.item-buy-amount').length || $(e.target).closest('.form__dropdown').length) return;
 		$('#change-lng .header__gray_nav-sub, #change-currency .header__gray_nav-sub').fadeOut(150);
-		$('#main-hits-list .item-buy-amount-list').fadeOut(150);		
+		$('.item-buy-amount-list').fadeOut(150);		
 		$('.catalog__header_nav-filter .catalog__header_nav-filter-list').fadeOut(150);
 		$('.catalog__main_products-list .item-buy-amount-list').fadeOut(150);
 		$('.form__dropdown').removeClass('active');
@@ -55,20 +55,21 @@ $(document).ready(function() {
 		$(this).closest('.form__dropdown').find('.form__dropdown_list').fadeOut(150);
 	});
 
+	$('.global__product-block .item-buy-amount span').click(function(e) {
+		$('.item-buy-amount-list').fadeOut(150);
+		if($(this).closest('.item-buy-amount').find('.item-buy-amount-list').is(':hidden')){
+			$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeIn(150);
+		}else{
+			$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeOut(150);
+		}
+	});		
+
 
 
 	/* ==========================================================================
 			Main page
 	   ========================================================================== */
-	if($('main').hasClass('index')){
-		$('#main-hits-list .main__hits_list-item .item-buy-amount span').click(function(e) {
-			$('#main-hits-list .item-buy-amount-list').fadeOut(150);
-			if($(this).closest('.item-buy-amount').find('.item-buy-amount-list').is(':hidden')){
-				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeIn(150);
-			}else{
-				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeOut(150);
-			}
-		});		
+	if($('main').hasClass('index')){		
 		$('#main-navs-slider').slick({
 			arrows : false,
 			dots : true,
@@ -99,18 +100,8 @@ $(document).ready(function() {
 			$('.catalog__header_nav-filter .catalog__header_nav-filter-list').fadeOut(150);
 			$('.catalog__main_products-list .item-buy-amount-list').fadeOut(150);
 		});
-		
 
 		
-
-		$('.catalog__main_products-list .item-buy-amount').click(function(e) {
-			$('.catalog__main_products-list .item-buy-amount-list').fadeOut(150);
-			if($(this).find('.item-buy-amount-list').is(':hidden')){
-				$(this).find('.item-buy-amount-list').fadeIn(150);
-			}else{
-				$(this).find('.item-buy-amount-list').fadeOut(150);
-			}
-		});
 
 		$(document).on('click', '.catalog__header_nav-filter-body', function(e) {
 			if ($(this).find('.catalog__header_nav-filter-list').is(':hidden')) {
@@ -371,19 +362,11 @@ $(document).ready(function() {
 	   ========================================================================== */
 	if($('main').hasClass('product')){
 		$(document).click(function(e) {
-			if($(e.target).closest('.item-buy-amount').length || $(e.target).closest('.product__dropdown').length) return;			
-			$('.item-buy-amount-list').fadeOut(150);
+			if($(e.target).closest('.product__dropdown').length) return;
 			$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
 			$('.product__dropdown').removeClass('active');
 		});
-		$('.main__hits_list-item .item-buy-amount span').click(function(e) {
-			$('.item-buy-amount-list').fadeOut(150);
-			if($(this).closest('.item-buy-amount').find('.item-buy-amount-list').is(':hidden')){
-				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeIn(150);
-			}else{
-				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeOut(150);
-			}
-		});
+		
 		$('.product__dropdown > span').click(function(e) {
 			$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
 			$('.product__dropdown').removeClass('active');

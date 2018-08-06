@@ -1538,6 +1538,202 @@ template {
 }
 
 
+/* ==========================================================================
+   Global classes
+   ========================================================================== */
+
+.global__product-block {
+  position: relative;
+  padding: 0 20px 26px 20px;  
+  background: #fff;    
+  transition: all 200ms ease;
+  width: 33.3333333333333333333333%;    
+  border-right: 1px solid #e8eaf2;
+  border-bottom: 1px solid #e8eaf2;
+  box-shadow: 0 0px 0px 0 rgba(0, 51, 121, 0);
+}
+.global__product-block:hover {
+  box-shadow: 0 2px 16px 0 rgba(0, 51, 121, 0.1);
+  z-index: 1;
+  border-color: #fff;
+}
+.global__product-block .item-wish {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: url('/img/theme/bg-wish.svg') no-repeat center;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.global__product-block .item-wish:hover {
+  background: url('/img/theme/bg-wish-hover.svg') no-repeat center;
+}
+.global__product-block .item-wish.selected {
+  background: url('/img/theme/bg-wish-selected.svg') no-repeat center;
+}
+.global__product-block .item-wish.selected:hover {
+  background: url('/img/theme/bg-wish-selected-hover.svg') no-repeat center;
+}
+.global__product-block .item-photo {
+  height: 200px;
+  text-align: center;
+  border-bottom: 1px solid #e8eaf2;
+}
+.global__product-block .item-photo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.global__product-block .item-info {
+  list-style: none;
+  margin: 16px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.global__product-block .item-info .item-info-title {  
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  width: 155px;
+  
+}
+.global__product-block .item-info .item-info-title a {
+  color: #13152b;
+  text-decoration: none;
+}
+.global__product-block .item-info .item-info-prices {
+  position: relative;  
+}
+.global__product-block .item-info .item-info-prices .item-info-old {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #768592;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  text-decoration: line-through;
+}
+.global__product-block .item-info .item-info-prices .item-info-price {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #00c14c;
+}
+.global__product-block .item-buy {
+  list-style: none;
+  margin: 23px 0 0 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.global__product-block .item-buy > li {
+  flex-grow: 1;
+  width: 50%;
+  text-align: center;
+}
+.global__product-block .item-buy > li .item-buy-amount {  
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #13152b;
+  position: relative;
+}
+.global__product-block .item-buy > li .item-buy-amount span {
+  display: inline-block;
+  position: relative;
+  padding-right: 25px;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.global__product-block .item-buy > li .item-buy-amount span::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 8px;  
+  background: url('/img/theme/arrow-down.svg') no-repeat center;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  transition: all 150ms ease;
+}
+.global__product-block .item-buy > li .item-buy-amount.active span::after {
+  transform: rotate(180deg);
+}
+.global__product-block .item-buy > li .item-buy-button a {
+  margin-left: auto;
+  display: block;
+  width: 120px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #fc6161;
+  box-shadow: 0 2px 8px 0 rgba(0, 51, 121, 0.1);  
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 40px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+.global__product-block .item-buy > li .item-buy-button a:hover {
+  background-color: #ec3636;
+}
+.global__product-block .item-buy > li .item-buy-amount-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 32px 0 0 0;
+  box-shadow: 0 2px 8px 0 rgba(0, 51, 121, 0.1);
+  background-color: #ffffff;
+  border: 1px solid #579fff;
+  width: 130px;
+  position: absolute;
+  top: -12px;  
+  overflow: hidden;
+  display: none;
+  z-index: 2;
+}
+.global__product-block .item-buy > li .item-buy-amount-list li {
+  height: 32px;  
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 32px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #13152b;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.global__product-block .item-buy > li .item-buy-amount-list li:hover {
+  background-color: #f7f8fb;
+}
+
+
+
+
 
 /* ==========================================================================
 Header classes
