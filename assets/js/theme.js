@@ -69,7 +69,19 @@ $(document).ready(function() {
 	/* ==========================================================================
 			Main page
 	   ========================================================================== */
-	if($('main').hasClass('index')){		
+	if($('main').hasClass('index')){
+		$('.main-nav__list li a').each(function(i, el){
+			var src = $(el).attr('data-src');			
+			$(el).css('backgroundImage', 'url("'+src+'")');
+		});
+		$('.main-nav__list li a').mouseenter(function(e) {
+			var hover = $(this).attr('data-hover');
+			$(this).css('backgroundImage', 'url("'+hover+'")');
+		});
+		$('.main-nav__list li a').mouseleave(function(e) {
+			var src = $(this).attr('data-src');			
+			$(this).css('backgroundImage', 'url("'+src+'")');
+		});
 		$('#main-navs-slider').slick({
 			arrows : false,
 			dots : true,

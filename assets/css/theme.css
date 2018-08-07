@@ -2233,12 +2233,14 @@ main.index {
   align-items: center;
   height: 100%;
   transition: all 150ms ease;
+  background-repeat: no-repeat;
+  background-position: 64px center;
 }
 .main-nav__list > li:not(.active) > a:hover {
   color: #579fff;
 }
-.main-nav__list > li.paint a {
-  background: url('/img/theme/categories/paint.svg') no-repeat 64px center;
+/*.main-nav__list > li.paint a {
+  background: url('/img/theme/categories/paint.svg') no-repeat 64px center;  
 }
 .main-nav__list > li:not(.active).paint:hover a {
   background: url('/img/theme/categories/paint-hover.svg') no-repeat 64px center;
@@ -2298,7 +2300,7 @@ main.index {
 }
 .main-nav__list > li.kompozit a {
   background: url('/img/theme/categories/kompozit.svg') no-repeat 64px center;
-}
+}*/
 .main-nav__all {
   margin-top: 15px;  
   font-size: 14px;
