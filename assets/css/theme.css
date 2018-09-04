@@ -6333,7 +6333,7 @@ main.product {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 .add__form_assessment .stars li {
@@ -6351,6 +6351,9 @@ main.product {
   margin-right: 18px;
   cursor: pointer;
   transition: all 200ms ease;
+}
+.add__form_assessment .stars li:last-child {
+  margin-right: 0;
 }
 .add__form_assessment .stars.rate-1 li:nth-child(1) {
   background-color: #0f77ff;

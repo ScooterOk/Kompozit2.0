@@ -390,17 +390,76 @@ $(document).ready(function() {
 				$(this).closest('.product__dropdown').removeClass('active');
 			}
 		});
-		$('body').on('mouseenter', '.add__form_assessment .stars:not(.lock) li', function(e){
-			var rate = $(this).attr('data-rate');
-			$(this).closest('.stars').attr('class', 'stars');
-			$(this).closest('.stars').addClass('rate-'+rate);
+		$('body').on('mouseenter', '.add__form_assessment .stars li', function(e){
+			var rate = Number($(this).attr('data-rate'));
+			$('.add__form_assessment .stars li').removeAttr('style');
+			switch (rate) {
+				case 1:
+					$('.add__form_assessment .stars li:nth-child(1)').css({
+						backgroundColor : '#0f77ff',
+  						borderColor: '#0f77ff',
+  						color: '#fff'
+					});
+					$('.add__form_assessment .stars li:nth-child(2), .add__form_assessment .stars li:nth-child(3), .add__form_assessment .stars li:nth-child(4), .add__form_assessment .stars li:nth-child(5)').css({
+						backgroundColor : '#fff',
+  						borderColor: '#909ca7',
+  						color: '#8f9ba6'
+					});
+					break;
+				case 2:
+					$('.add__form_assessment .stars li:nth-child(1), .add__form_assessment .stars li:nth-child(2)').css({
+						backgroundColor : '#0f77ff',
+  						borderColor: '#0f77ff',
+  						color: '#fff'
+					});
+					$('.add__form_assessment .stars li:nth-child(3), .add__form_assessment .stars li:nth-child(4), .add__form_assessment .stars li:nth-child(5)').css({
+						backgroundColor : '#fff',
+  						borderColor: '#909ca7',
+  						color: '#8f9ba6'
+					});
+					break;
+				case 3:
+					$('.add__form_assessment .stars li:nth-child(1), .add__form_assessment .stars li:nth-child(2), .add__form_assessment .stars li:nth-child(3)').css({
+						backgroundColor : '#0f77ff',
+  						borderColor: '#0f77ff',
+  						color: '#fff'
+					});
+					$('.add__form_assessment .stars li:nth-child(4), .add__form_assessment .stars li:nth-child(5)').css({
+						backgroundColor : '#fff',
+  						borderColor: '#909ca7',
+  						color: '#8f9ba6'
+					});
+					break;
+				case 4:
+					$('.add__form_assessment .stars li:nth-child(1), .add__form_assessment .stars li:nth-child(2), .add__form_assessment .stars li:nth-child(3),  .add__form_assessment .stars li:nth-child(4)').css({
+						backgroundColor : '#0f77ff',
+  						borderColor: '#0f77ff',
+  						color: '#fff'
+					});
+					$('.add__form_assessment .stars li:nth-child(5)').css({
+						backgroundColor : '#fff',
+  						borderColor: '#909ca7',
+  						color: '#8f9ba6'
+					});
+					break;
+				case 5:
+					$('.add__form_assessment .stars li:nth-child(1), .add__form_assessment .stars li').css({
+						backgroundColor : '#0f77ff',
+  						borderColor: '#0f77ff',
+  						color: '#fff'
+					});
+					break;
+				default:
+					// statements_def
+					break;
+			}			
 		});
-		$('body').on('mouseleave', '.add__form_assessment .stars:not(.lock)', function(e){
-			$(this).closest('.stars').attr('class', 'stars');
+		$('body').on('mouseleave', '.add__form_assessment .stars', function(e){
+			$('.add__form_assessment .stars li').removeAttr('style');
 		});		
-		$('body').on('click', '.add__form_assessment .stars:not(.lock) li', function(e){
+		$('body').on('click', '.add__form_assessment .stars li', function(e){
 			var rate = $(this).attr('data-rate');
-			$(this).closest('ul.stars').addClass('lock');
+			$(this).closest('.stars').attr('class', 'stars rate-'+rate);
 			$('#form-rate').val(rate);
 		});
 		$('.product__images').slick({
