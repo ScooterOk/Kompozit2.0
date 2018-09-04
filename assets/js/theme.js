@@ -390,13 +390,18 @@ $(document).ready(function() {
 				$(this).closest('.product__dropdown').removeClass('active');
 			}
 		});
-		$('.add__form_assessment .stars li').mouseenter(function(e) {
+		$('body').on('mouseenter', '.add__form_assessment .stars:not(.lock) li', function(e){
 			var rate = $(this).attr('data-rate');
 			$(this).closest('.stars').attr('class', 'stars');
 			$(this).closest('.stars').addClass('rate-'+rate);
 		});
-		$('.add__form_assessment .stars').mouseleave(function(e) {
+		$('body').on('mouseleave', '.add__form_assessment .stars:not(.lock)', function(e){
 			$(this).closest('.stars').attr('class', 'stars');
+		});		
+		$('body').on('click', '.add__form_assessment .stars:not(.lock) li', function(e){
+			var rate = $(this).attr('data-rate');
+			$(this).closest('ul.stars').addClass('lock');
+			$('#form-rate').val(rate);
 		});
 		$('.product__images').slick({
 		  slidesToShow: 1,
