@@ -459,8 +459,9 @@ $(document).ready(function() {
 		});		
 		$('body').on('click', '.add__form_assessment .stars li', function(e){
 			var rate = $(this).attr('data-rate');
+			var name = $(this).attr('data-name');
 			$(this).closest('.stars').attr('class', 'stars rate-'+rate);
-			$('#form-rate').val(rate);
+			$('#form-rate').val(rate).attr('name', name);
 		});
 		$('.product__images').slick({
 		  slidesToShow: 1,
