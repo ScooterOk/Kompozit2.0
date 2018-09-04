@@ -6266,6 +6266,20 @@ main.product {
 .product__reviews_add {
   width: 550px;
 }
+.product__reviews_add .error-text {
+  list-style: none;
+  margin: 0 0 8px 0;
+  padding: 0px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ff0000;
+  display: none;
+}
 .product__reviews_add h3 {
   margin: 0 0 8px 0;
   padding: 0;  

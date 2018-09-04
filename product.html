@@ -841,12 +841,16 @@
             <a href="">Войти в личный кабинет</a>
             <span>(для членов клуба композит)</span>
           </section>
+          <ul class="error-text" style="display: block;">
+            <li>Title is incorrect</li>
+            <li>Comment is incorrect</li>
+          </ul>
           <section class="add__form">
             <form action="">
               <input type="hidden" name="rate" id="form-rate" value="">
               <div class="form__item name">
                 <label>
-                  <input type="text" re placeholder="Введите ваше имя" autocomplete="off">
+                  <input type="text" re placeholder="Введите ваше имя" class="error" autocomplete="off">
                   <span>Введите ваше имя</span>
                 </label>
               </div>
