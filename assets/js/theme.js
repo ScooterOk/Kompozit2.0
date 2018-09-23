@@ -374,22 +374,31 @@ $(document).ready(function() {
 	   ========================================================================== */
 	if($('main').hasClass('product')){
 		$(document).click(function(e) {
-			if($(e.target).closest('.product__dropdown').length) return;
-			$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
-			$('.product__dropdown').removeClass('active');
+			if($(e.target).closest('.product__dropdown').length) return;			
+			$('.product__dropdown-list').removeClass('active');
 		});
 		
-		$('.product__dropdown > span').click(function(e) {
-			$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
-			$('.product__dropdown').removeClass('active');
-			if($(this).closest('.product__dropdown').find('.product__dropdown-list').is(':hidden')){
-				$(this).closest('.product__dropdown').find('.product__dropdown-list').fadeIn(150);
-				$(this).closest('.product__dropdown').addClass('active');
-			}else{
-				$(this).closest('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
-				$(this).closest('.product__dropdown').removeClass('active');
+		$('body').on('click', '.product__dropdown-list li input', function(e){
+			if(!$(this).closest('ul').hasClass('active')){
+				$(this).closest('ul').addClass('active');
+			}else{								
+				$(this).closest('ul').prepend($(this).closest('li'));
+				$(this).closest('ul').removeClass('active');				
 			}
-		});
+		});		
+
+		// $('.product__dropdown > span').click(function(e) {
+		// 	console.log('aaaa');
+		// 	$('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
+		// 	$('.product__dropdown').removeClass('active');
+		// 	if($(this).closest('.product__dropdown').find('.product__dropdown-list').is(':hidden')){
+		// 		$(this).closest('.product__dropdown').find('.product__dropdown-list').fadeIn(150);
+		// 		$(this).closest('.product__dropdown').addClass('active');
+		// 	}else{
+		// 		$(this).closest('.product__dropdown').find('.product__dropdown-list').fadeOut(150);
+		// 		$(this).closest('.product__dropdown').removeClass('active');
+		// 	}
+		// });
 		$('body').on('mouseenter', '.add__form_assessment .stars li', function(e){
 			var rate = Number($(this).attr('data-rate'));
 			$('.add__form_assessment .stars li').removeAttr('style');
