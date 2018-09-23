@@ -5699,8 +5699,7 @@ main.product {
 .product__actions_color .product__dropdown {
   margin-left: 16px;  
   flex-grow: 1;
-  height: 48px;
-  z-index: 3;
+  height: 48px;  
 }
 .product__actions_color .product__dropdown > i {
   display: inline-block;
@@ -5763,8 +5762,7 @@ main.product {
 }
 .product__actions_vol .product__dropdown {  
   flex-grow: 1;
-  height: 32px;
-  z-index: 2;
+  height: 32px;  
 }
 .product__actions_amount {
   margin-bottom: 32px;
@@ -5888,6 +5886,55 @@ main.product {
 .product__actions_calc a:hover {
   background: url('/img/theme/bg-calculator-link-hover.svg') no-repeat left center;
   color: #579fff;
+}
+
+.product__actions section {
+  position: relative;
+}
+.product__actions section:nth-child(1) {
+  z-index: 15;
+}
+.product__actions section:nth-child(2) {
+  z-index: 14;
+}
+.product__actions section:nth-child(3) {
+  z-index: 13;
+}
+.product__actions section:nth-child(4) {
+  z-index: 12;
+}
+.product__actions section:nth-child(5) {
+  z-index: 11;
+}
+.product__actions section:nth-child(6) {
+  z-index: 10;
+}
+.product__actions section:nth-child(7) {
+  z-index: 9;
+}
+.product__actions section:nth-child(8) {
+  z-index: 8;
+}
+.product__actions section:nth-child(9) {
+  z-index: 7;
+}
+.product__actions section:nth-child(10) {
+  z-index: 6;
+}
+.product__actions section:nth-child(11) {
+  z-index: 5;
+}
+.product__actions section:nth-child(12) {
+  z-index: 4;
+}
+.product__actions section:nth-child(13) {
+  z-index: 3;
+}
+.product__actions section:nth-child(14) {
+  z-index: 2;
+}
+.product__actions section:nth-child(15) {
+  z-index: 1;
 }
     
 
