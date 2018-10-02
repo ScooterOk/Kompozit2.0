@@ -4200,7 +4200,7 @@ main.authentication .clubmember__link a:hover {
   margin-top: 16px;
   text-align: center;
 }
-.form__submit button {
+.form__submit button, .btn--blue {
   width: 280px;
   height: 56px;
   box-shadow: 0 2px 8px 0 rgba(0, 51, 121, 0.1);
@@ -4217,12 +4217,13 @@ main.authentication .clubmember__link a:hover {
   transition: all 200ms ease;
   cursor: pointer;
 }
-.form__submit button span {
+.form__submit button span, .btn--blue span {
   display: inline-block;
   background: url(/img/theme/all-white.svg) no-repeat right center;
   padding-right: 25px;  
 }
-.form__submit button:hover {
+.form__submit button:hover,
+.btn--blue:hover {
   box-shadow: 0 4px 16px 0 rgba(0, 51, 121, 0.15);
 }
 .form__bottom-link {
@@ -4243,7 +4244,12 @@ main.authentication .clubmember__link a:hover {
 .form__bottom-link a:hover {
   color: #579fff;
 }
-
+.btn--blue  {
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+}
 /* ==========================================================================
   Success page classes
 ========================================================================== */
@@ -4809,10 +4815,10 @@ input[type="number"]::-webkit-outer-spin-button {
 /* ==========================================================================
     Settings page classes
 ========================================================================== */
-main.settings {
+main.my-account {
   
 }
-main.settings h1 {
+main.my-account h1 {
   padding: 0;
   margin: 56px 56px 0 56px;
   font-size: 24px;
@@ -4823,16 +4829,16 @@ main.settings h1 {
   letter-spacing: normal;  
   color: #13152b;  
 }
-.settings__wrapper {
+.my-account__wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
   padding: 0 56px ;
 }
-.settings__wrapper_left {
+.my-account__wrapper_left {
   width: 600px;
 }
-.settings__wrapper_left h2 {
+.my-account__wrapper_left h2 {
   margin: 0;
   padding: 0;  
   font-size: 22px;
@@ -4849,10 +4855,10 @@ main.settings h1 {
 .discounts-and-bonuses h2 {
   margin-bottom: 28px;
 }
-.settings__status {
+.my-account__status {
   
 }
-.settings__status b {  
+.my-account__status b {  
   display: block;
   font-size: 18px;
   font-weight: 600;
@@ -4863,7 +4869,7 @@ main.settings h1 {
   color: #000000;
   margin-bottom: 4px;
 }
-.settings__status span {
+.my-account__status span {
   display: block;  
   font-size: 12px;
   font-weight: normal;
@@ -4873,7 +4879,7 @@ main.settings h1 {
   letter-spacing: normal;
   color: #13152b;  
 } 
-.settings__summ {  
+.my-account__summ {  
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -4883,25 +4889,33 @@ main.settings h1 {
   color: #000000;
   margin-top: 25px;
 }
-.settings__status-visual {
+.my-account__status-visual {
+  position: relative;
   margin: 56px 0 0 0;
   padding: 0;
   list-style: none;
   width: 460px;
   height: 14px;  
   display: flex;
-}
-.settings__status-visual li {  
   background-color: #c8ced3;
+}
+.my-account__progress {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+  background-color: #0f77ff;
+  }
+.my-account__status-visual li {  
   flex-grow: 1;
   position: relative;
   width: 25%;
   position: relative;
+  z-index: 1;
 }
-.settings__status-visual li:nth-child(1) {
-  background-color: #0f77ff;
-}
-.settings__status-visual li:nth-child(1)::before {
+.my-account__status-visual li:nth-child(1)::before {
   content: "";
   display: block;
   width: 24px;
@@ -4912,7 +4926,7 @@ main.settings h1 {
   top: -5px;
   left: -2px;
 }
-.settings__status-visual li::after {
+.my-account__status-visual li::after {
   content: "";
   display: block;
   width: 24px;
@@ -4924,24 +4938,17 @@ main.settings h1 {
   right: -2px;
   z-index: 1;
 }
-.settings__status-visual li:nth-child(1)::after {
-  background: #0f77ff url('/img/theme/bg-status-visual.svg') no-repeat center;
+.my-account__status-visual.min li:nth-child(1)::after {
+  background: url('/img/theme/bg-status-visual.svg') no-repeat center;
 }
-.settings__status-visual.mid li:nth-child(2) {
-  background: #0f77ff;
+.my-account__status-visual.mid li:nth-child(2)::after {
+  background: url('/img/theme/bg-status-visual.svg') no-repeat center;
 }
-.settings__status-visual.mid li:nth-child(2)::after {
-  background: #0f77ff url('/img/theme/bg-status-visual.svg') no-repeat center;
+.my-account__status-visual.max li:nth-child(2)::after,
+.my-account__status-visual.max li:nth-child(3)::after {
+  background:  url('/img/theme/bg-status-visual.svg') no-repeat center;
 }
-.settings__status-visual.max li:nth-child(2),
-.settings__status-visual.max li:nth-child(3) {
-  background: #0f77ff;
-}
-.settings__status-visual.max li:nth-child(2)::after,
-.settings__status-visual.max li:nth-child(3)::after {
-  background: #0f77ff url('/img/theme/bg-status-visual.svg') no-repeat center;
-}
-.settings__status-visual li .discount {  
+.my-account__status-visual li .discount {  
   font-size: 12px;
   font-weight: normal;
   font-style: normal;
@@ -4955,7 +4962,7 @@ main.settings h1 {
   right: 12px;
   transform: translate(50%, 0);
 }
-.settings__status-visual li .step {   
+.my-account__status-visual li .step {   
   font-size: 12px;
   font-weight: normal;
   font-style: normal;
@@ -4970,10 +4977,10 @@ main.settings h1 {
   transform: translate(50%, 0);
 }
 
-.settings__loyalty {
+.my-account__loyalty {
   margin-top: 55px;
 }
-.settings__loyalty a {
+.my-account__loyalty a {
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -4983,16 +4990,16 @@ main.settings h1 {
   color: #003379;
   transition: all 150ms ease;
 }
-.settings__loyalty a:hover {
+.my-account__loyalty a:hover {
   color: #579fff;
 }
-main.settings h2 {
+main.my-account h2 {
   margin-bottom: 28px;
 }
-.settings__invite {
+.my-account__invite {
 
 }
-.settings__invite_text {  
+.my-account__invite_text {  
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -5001,13 +5008,13 @@ main.settings h2 {
   letter-spacing: normal;
   color: #13152b;
 }
-.settings__invite_link {
+.my-account__invite_link {
   margin-top: 16px;
   display: inline-flex;
   align-items: center;
   position: relative;
 }
-.settings__invite_link i {
+.my-account__invite_link i {
   display: block;
   width: 24px;
   height: 24px;
@@ -5017,7 +5024,7 @@ main.settings h2 {
   left: 420px;
   display: none;
 }
-.settings__invite_link input {
+.my-account__invite_link input {
   width: 460px;
   height: 48px;
   border-radius: 2px;
@@ -5034,10 +5041,10 @@ main.settings h2 {
   outline: none;
   transition: all 150ms ease;
 }
-.settings__invite_link input:hover {
+.my-account__invite_link input:hover {
   border-color: #579fff;
 }
-.settings__invite_link a {
+.my-account__invite_link a {
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -5049,15 +5056,15 @@ main.settings h2 {
   display: inline-block;
   margin-left: 24px;
 }
-.settings__invite_link a:hover {
+.my-account__invite_link a:hover {
   color: #579fff;
 }
-.settings__bonus_list {
+.my-account__bonus_list {
   list-style: none;
   margin: 32px 0 40px 0;
   padding: 0;
 }
-.settings__bonus_list li {
+.my-account__bonus_list li {
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -5067,10 +5074,10 @@ main.settings h2 {
   color: #000000;
   margin-bottom: 12px;
 }
-.settings__bonus_list li.available {
+.my-account__bonus_list li.available {
   margin-bottom: 0;
 }
-.settings__bonus_list li.available b {
+.my-account__bonus_list li.available b {
   display: block;  
   font-size: 18px;
   font-weight: 600;
@@ -5081,7 +5088,7 @@ main.settings h2 {
   color: #000000;
   margin-bottom: 5px;
 }
-.settings__bonus_list li.available span {
+.my-account__bonus_list li.available span {
   display: block;  
   font-size: 12px;
   font-weight: normal;
@@ -5102,19 +5109,19 @@ main.settings h2 {
   letter-spacing: normal;
   color: #000000;
 }
-.settings__friends_list {
+.my-account__friends_list {
   width: 460px;    
 }
-.settings__friends_list .scroll-wrapper {
+.my-account__friends_list .scroll-wrapper {
   max-height: 245px;
 }
-.settings__friends_list ul {
+.my-account__friends_list ul {
   list-style: none;
   margin: 0;
   padding: 20px 36px 15px 19px;
   background-color: #f7f8fb;
 }
-.settings__friends_list ul li {
+.my-account__friends_list ul li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 12px;  
@@ -5126,7 +5133,7 @@ main.settings h2 {
   letter-spacing: normal;
   color: #13152b;  
 }
-.settings__friends_list ul li:last-child {
+.my-account__friends_list ul li:last-child {
   margin-bottom: 0;
 }
 .my-information {
@@ -5138,7 +5145,7 @@ main.settings h2 {
 .my-information p {
   margin-top: 0;
 }
-.my-information .settings__name {  
+.my-information .my-account__name {  
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -5148,7 +5155,7 @@ main.settings h2 {
   color: #13152b;
   margin-bottom: 16px;
 }
-.my-information .settings__phone {  
+.my-information .my-account__phone {  
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -5158,7 +5165,7 @@ main.settings h2 {
   color: #13152b;
   margin-bottom: 13px;
 }
-.my-information .settings__email {  
+.my-information .my-account__email {  
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -5168,10 +5175,10 @@ main.settings h2 {
   color: #13152b;
   margin-bottom: 24px;
 }
-.my-information .settings__edit-info {
+.my-information .my-account__edit-info {
   margin-bottom: 16px;
 }
-.my-information .settings__edit-info a {
+.my-information .my-account__edit-info a {
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -5181,13 +5188,13 @@ main.settings h2 {
   color: #003379;
   transition: all 150ms ease;
 }
-.my-information .settings__edit-info a:hover {
+.my-information .my-account__edit-info a:hover {
   color: #579fff;
 }
-.my-information .settings__edit-adress {
+.my-information .my-account__edit-adress {
   margin-bottom: 0;
 }
-.my-information .settings__edit-adress a {
+.my-information .my-account__edit-adress a {
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -5197,14 +5204,14 @@ main.settings h2 {
   color: #003379;
   transition: all 150ms ease;
 }
-.my-information .settings__edit-adress a:hover {
+.my-information .my-account__edit-adress a:hover {
   color: #579fff; 
 }
 
-.settings__wrapper_right {
+.my-account__wrapper_right {
   width: 505px;
 }
-.settings__wrapper_right h2 {
+.my-account__wrapper_right h2 {
   margin: 0 0 34px 0;
   padding: 0;
   font-size: 22px;
@@ -5215,10 +5222,10 @@ main.settings h2 {
   letter-spacing: normal;
   color: #13152b;
 }
-.settings__history_list {
+.my-account__history_list {
   background-color: #f7f8fb;
 }
-.settings__history_list .scroll-wrapper {
+.my-account__history_list .scroll-wrapper {
   max-height: 433px;
   overflow: auto;
 }
@@ -5293,12 +5300,12 @@ main.settings h2 {
 .history__item_total a:hover {
   color: #579fff;
 }
-.settings .main__hits {
+.my-account .main__hits {
   margin-top: 72px;
   margin-bottom: -70px;
   padding-top: 0;  
 }
-.settings .main__hits h2 {
+.my-account .main__hits h2 {
   margin-bottom: 59px;
   background: url(/img/theme/bg-foryou-title.png.png) no-repeat center / auto 100%;
 }
@@ -6547,6 +6554,65 @@ main.product {
   background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
 }
 
+/* ==========================================================================
+    Cart-thanks page 
+========================================================================== */
+.cart-thanks__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  font-size: 20px;
+}
+.cart-thanks__pic {
+  width: 100%;
+  max-width: 563px;
+  margin: 20px auto;
+}
+.cart-thanks__goback {
+  margin-top: 30px;
+}
+/* ==========================================================================
+    Loyalty program
+========================================================================== */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-center {
+align-items: center;
+}
+.contr {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.loyalty-program h1 {
+  margin-top: 57px;
+  font-size: 24px;
+  text-align: center;
+}
+.loyalty__list-programs {
+margin: 70px 0 30px;
+}
+.loyalty__item {
+  min-width: 310px;
+  max-width: 345px;
+  display: flex;
+  margin: 20px 0;
+}
+.loyalty__pic {
+  margin-right: 16px;
+}
+.loyalty__register {
+  max-width: 690px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #13152b;
+}
 /* ==========================================================================
     Categorys page classes
 ========================================================================== */

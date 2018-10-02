@@ -287,13 +287,13 @@ $(document).ready(function() {
 	/* ==========================================================================
 			Settings page
 	   ========================================================================== */
-	if($('main').hasClass('settings')){
+	if($('main').hasClass('my-account')){
 		$(document).click(function(e) {
 			if($(e.target).closest('.item-buy-amount').length) return;			
-			$('#settings-hits-list .item-buy-amount-list').fadeOut(150);
+			$('#my-account-hits-list .item-buy-amount-list').fadeOut(150);
 		});
 		$('.scrollbar-inner').scrollbar();
-		$('.settings__invite_link a').click(function(e) {
+		$('.my-account__invite_link a').click(function(e) {
 			e.preventDefault();
 			var elem = $('#invite-link')[0];
 			copyToClipboard(elem);
@@ -344,22 +344,22 @@ $(document).ready(function() {
 			        // clear temporary content
 			        target.textContent = "";
 			    }
-			    $('.settings__invite_link i').show(0, function(){
+			    $('.my-account__invite_link i').show(0, function(){
 			    	setTimeout(function(){
-			    		$('.settings__invite_link i').fadeOut(800);
+			    		$('.my-account__invite_link i').fadeOut(800);
 			    	}, 500);
 			    });			    
 			    return succeed;
 			}
 		});
 
-		$('#settings-hits-list').slick({
+		$('#my-account-hits-list').slick({
 			arrows : true,          
 			slidesToShow: 4,
 			slidesToScroll: 1
 	    });
-	    $('#settings-hits-list .main__hits_list-item .item-buy-amount span').click(function(e) {
-			$('#settings-hits-list .item-buy-amount-list').fadeOut(150);
+	    $('#my-account-hits-list .main__hits_list-item .item-buy-amount span').click(function(e) {
+			$('#my-account-hits-list .item-buy-amount-list').fadeOut(150);
 			if($(this).closest('.item-buy-amount').find('.item-buy-amount-list').is(':hidden')){
 				$(this).closest('.item-buy-amount').find('.item-buy-amount-list').fadeIn(150);
 			}else{
@@ -518,6 +518,19 @@ $(document).ready(function() {
 
 	}
 
-
+// Progress bar
+	$( ".my-account__status-visual" ).each(function( index ) {
+		var progressWidth = $(this).data("progress");
+		var progressWidthPercent = progressWidth + "%";
+		$(this).find(".my-account__progress").css("width", progressWidthPercent);
+		if(progressWidth >= 100) {
+			$(this).addClass("max mid min");
+		} else if(progressWidth >= 66.66) {
+			$(this).addClass("mid min");
+		} else if(progressWidth >= 33.33) {
+			$(this).addClass("min");
+		}
+	});
+// end Progress bar
 
 });
