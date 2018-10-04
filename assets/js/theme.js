@@ -93,19 +93,49 @@ $(document).ready(function() {
 			arrows : false,
 			dots : true,
 			autoplay : true,
-			autoplaySpeed : 5000
+			autoplaySpeed : 5000,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						variableWidth: true,
+						centerMode: true,
+						arrows:false
+					}
+				}
+			]
 	    });
 		
 	    $('#main-hits-list').slick({
 			arrows : true,          
-			slidesToShow: 4,
-			slidesToScroll: 1
+			slidesToShow: 1,
+			variableWidth: true,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						centerMode: true,
+						arrows:false
+					}
+				}
+			]
 	    });
 
 	    $('#main-for-you-list').slick({
 			arrows : true,          
 			slidesToShow: 3,
-			slidesToScroll: 1
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						variableWidth: true,
+						centerMode: true,
+						arrows:false
+					}
+				}
+			]
 	    });
 	}
 
@@ -496,11 +526,11 @@ $(document).ready(function() {
 		  focusOnSelect: true,
 		  infinite: false
 		});
-		$('.main__hits_list').slick({
-			arrows : true,          
-			slidesToShow: 4,
-			slidesToScroll: 1
-	    });
+		// $('.main__hits_list').slick({
+		// 	arrows : true,          
+		// 	slidesToShow: 4,
+		// 	slidesToScroll: 1
+	  //   });
 	    $('.product__actions_rating a').click(function(e) {
 	    	var y = $('.product__reviews').offset().top - 20;	    
 	    	var body = $("html, body");
@@ -543,11 +573,23 @@ if($('main').hasClass('article')) {
 	$('.article__slider').slick({
 		arrows : true,
 		nextArrow: '<button type="button" class="slick-next"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.25 10l-7.141-7.42c-0.268-0.27-0.268-0.707 0-0.979 0.268-0.27 0.701-0.27 0.969 0l7.83 7.908c0.268 0.271 0.268 0.709 0 0.979l-7.83 7.908c-0.268 0.271-0.701 0.27-0.969 0s-0.268-0.707 0-0.979l7.141-7.417z"></path></svg></button>',
-		prevArrow: '<button type="button" class="slick-prev"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.891 17.418c0.268 0.272 0.268 0.709 0 0.979s-0.701 0.271-0.969 0l-7.83-7.908c-0.268-0.27-0.268-0.707 0-0.979l7.83-7.908c0.268-0.27 0.701-0.27 0.969 0s0.268 0.709 0 0.979l-7.141 7.419 7.141 7.418z"></path></svg></button>',          
+		prevArrow: '<button type="button" class="slick-prev"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.891 17.418c0.268 0.272 0.268 0.709 0 0.979s-0.701 0.271-0.969 0l-7.83-7.908c-0.268-0.27-0.268-0.707 0-0.979l7.83-7.908c0.268-0.27 0.701-0.27 0.969 0s0.268 0.709 0 0.979l-7.141 7.419 7.141 7.418z"></path></svg></button>',      
 		dots: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 		});
 }
+
+
+// Begin mobile menu
+var touch = $('#touchMobileHamburger');
+touch.click(function() {
+  $('body').toggleClass('nav-mobile-showing');
+});
+
+$(touch).on('click', function(e) {
+  e.preventDefault();
+});
+// End of mobile menu
 
 });
