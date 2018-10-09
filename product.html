@@ -20,6 +20,116 @@
 </head>
 
 <body>
+  <div class="header--mobile">
+    <a href="#" id="touchMobileHamburger">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+    <a href="tel:+380800218539" class="header--mobile__phone">0 800 218 539</a>
+    <div class="header--mobile__buttons">
+      <a href="#" class="log-in-out"></a>
+      <a href="#" class="top-nav__right_cart"></a>
+    </div>
+  </div>
+  <nav class="main-nav only-tablet" id="navMobileWrap">
+    <div class="only-tablet">
+      <div class="header__gray_nav">
+        <div class="header__gray_nav-dropdown" id="change-lng">
+          <span>укр</span>
+          <ul class="header__gray_nav-sub">
+            <li>
+              <a href="">рус</a>
+            </li>
+            <li>
+              <a href="">eng</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__gray_nav-dropdown" id="change-lng">
+          <span>грн</span>
+          <ul class="header__gray_nav-sub">
+            <li>
+              <a href="">usd</a>
+            </li>
+            <li>
+              <a href="">eur</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul class="main-nav__list">
+      <li class="paint sub">
+        <a href="" data-src="./img/theme/categories/paint.svg" data-hover="./img/theme/categories/paint-hover.svg">Краски
+          и эмали</a>
+      </li>
+      <li class="surface sub active">
+        <a href="" data-src="./img/theme/categories/surface.svg" data-hover="./img/theme/categories/surface-hover.svg">Для
+          подготовки поверхности</a>
+      </li>
+      <li class="instruments">
+        <a href="" data-src="./img/theme/categories/instruments.svg" data-hover="./img/theme/categories/instruments-hover.svg">Малярные
+          инструменты</a>
+      </li>
+      <li class="wood sub">
+        <a href="" data-src="./img/theme/categories/wood.svg" data-hover="./img/theme/categories/wood-hover.svg">Для
+          работы с деревом</a>
+      </li>
+      <li class="stone">
+        <a href="" data-src="./img/theme/categories/stone.svg" data-hover="./img/theme/categories/stone-hover.svg">Для
+          работы с камнем</a>
+      </li>
+      <li class="glue">
+        <a href="" data-src="./img/theme/categories/glue.svg" data-hover="./img/theme/categories/glue-hover.svg">Клеи
+          и герметики</a>
+      </li>
+      <li class="art">
+        <a href="" data-src="./img/theme/categories/art.svg" data-hover="./img/theme/categories/art-hover.svg">Художественная
+          продукция</a>
+      </li>
+      <li class="merch">
+        <a href="" data-src="./img/theme/categories/merch.svg" data-hover="./img/theme/categories/merch-hover.svg">Сувенирная
+          продукция</a>
+      </li>
+      <li class="paint-service">
+        <a href="" data-src="./img/theme/categories/paint-service.svg" data-hover="./img/theme/categories/paint-service-hover.svg">Малярные
+          услуги</a>
+      </li>
+      <li class="sales">
+        <a href="" data-src="./img/theme/categories/sales.svg" data-hover="./img/theme/categories/sales-hover.svg">Акции</a>
+      </li>
+      <li class="kompozit">
+        <a href="" data-src="./img/theme/categories/kompozit.svg" data-hover="./img/theme/categories/kompozit.svg">О
+          Композит</a>
+      </li>
+    </ul>
+    <div class="main-nav__all">
+      <a href="" data-src="" data-hover="">Смотреть все категории</a>
+    </div>
+    <div class="only-tablet">
+      <div class="main-nav__additional">
+        <ul class="main-nav__list">
+          <li class="">
+            <a href="#">Доставка и оплата</a>
+          </li>
+          <li class="">
+            <a href="#">Адреса магазинов</a>
+          </li>
+          <li class="">
+            <a href="#">Контакты</a>
+          </li>
+          <li class="">
+            <a href="#">О компании</a>
+          </li>
+          <li class="">
+            <a href="#">Документация и сертификаты</a>
+          </li>
+      </div>
+    </div>
+  </nav>
   <header>
     <div class="header__gray">
       <div class="wrapper">
@@ -303,84 +413,132 @@
       </div>
       <!-- /.product__main_right -->
     </div>
+    <div class="product__main_bottom only-mobile"></div>
     <!-- /.product__main -->
-    <div class="product__description">
+    <div class="product__description accordion">
       <div class="product__description_left">
         <article class="info">
-          <h3>Описание:</h3>
-          <p>Гипоаллергенная латексная акриловая краска с легким шелковистым блеском для окраски обоев, стен и
-            потолков. Особенно рекомендуется для помещений с повышенными требованиями к гигиеничности покрытия (детские
-            комнаты, медицинские учреждения и пр.). Отличается высокой стойкостью к мытью </p>
-          <a href="">Подробнее</a>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Описание:</h3>
+            </div>
+            <div class="accordion__body">
+              <p>Гипоаллергенная латексная акриловая краска с легким шелковистым блеском для окраски обоев, стен и
+                потолков. Особенно рекомендуется для помещений с повышенными требованиями к гигиеничности покрытия
+                (детские
+                комнаты, медицинские учреждения и пр.). Отличается высокой стойкостью к мытью </p>
+              <a href="">Подробнее</a>
+            </div>
+          </div>
         </article>
         <article class="purpose">
-          <h3>Назначение:</h3>
-          <p>Предназначена для окраски оштукатуренных, бетонных, кирпичных, зашпатлеванных поверхностей,
-            гипсокартонных, древесностружечных и древесноволокнистых плит внутри здания. Отлично подходит для окраски
-            обоев и других фактурных поверхностей. Можно применять для ремонтной окраски поверхностей, окрашенных ранее
-            алкидными эмалями</p>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Назначение:</h3>
+            </div>
+            <div class="accordion__body">
+              <p>Предназначена для окраски оштукатуренных, бетонных, кирпичных, зашпатлеванных поверхностей,
+                гипсокартонных, древесностружечных и древесноволокнистых плит внутри здания. Отлично подходит для
+                окраски
+                обоев и других фактурных поверхностей. Можно применять для ремонтной окраски поверхностей, окрашенных
+                ранее
+                алкидными эмалями</p>
+            </div>
+          </div>
         </article>
         <article class="application">
-          <h3>Сфера применения:</h3>
-          <p>Применяют для окраски стен и потолков в сухих и влажных помещениях, в том числе с весьма интенсивной
-            эксплуатационной нагрузкой. Особенно рекомендуется для помещений с повышенными требованиями к гигиеничности
-            покрытия (детские комнаты, медицинские учреждения и пр.)</p>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Сфера применения:</h3>
+            </div>
+            <div class="accordion__body">
+              <p>Применяют для окраски стен и потолков в сухих и влажных помещениях, в том числе с весьма интенсивной
+                эксплуатационной нагрузкой. Особенно рекомендуется для помещений с повышенными требованиями к
+                гигиеничности
+                покрытия (детские комнаты, медицинские учреждения и пр.)</p>
+            </div>
+          </div>
         </article>
         <article class="how-to-work">
-          <h3>Как работать с данной краской:</h3>
-          <p>
-            <a href="">Советы по на несению</a>
-          </p>
-          <p>
-            <a href="">Советы по смывке старой краски</a>
-          </p>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Как работать с данной краской:</h3>
+            </div>
+            <div class="accordion__body">
+              <p>
+                <a href="">Советы по на несению</a>
+              </p>
+              <p>
+                <a href="">Советы по смывке старой краски</a>
+              </p>
+            </div>
+          </div>
         </article>
         <article class="documents">
-          <h3>Документы и заключения</h3>
-          <p>
-            <a href="" class="pdf">Техническая спецификация</a>
-          </p>
-          <p>
-            <a href="" class="pdf">Заключение МОЗ</a>
-          </p>
-          <p>
-            <a href="" class="pdf">Заключение МОЗ для садиков</a>
-          </p>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Документы и заключения</h3>
+            </div>
+            <div class="accordion__body">
+              <p>
+                <a href="" class="pdf">Техническая спецификация</a>
+              </p>
+              <p>
+                <a href="" class="pdf">Заключение МОЗ</a>
+              </p>
+              <p>
+                <a href="" class="pdf">Заключение МОЗ для садиков</a>
+              </p>
+            </div>
+          </div>
         </article>
       </div>
       <!-- /.product__description_left -->
       <div class="product__description_right">
         <article class="characteristics">
-          <h3>Характеристики:</h3>
-          <p>
-            Стойкость к мытью: <span>максимальная</span>
-          </p>
-          <p>
-            Степень блеска: <span>шелковисто-матовый</span>
-          </p>
-          <p>
-            Укрывистость (количество краски на м²): <span>первый слой, второй слой</span>
-          </p>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Характеристики:</h3>
+            </div>
+            <div class="accordion__body">
+              <p>
+                Стойкость к мытью: <span>максимальная</span>
+              </p>
+              <p>
+                Степень блеска: <span>шелковисто-матовый</span>
+              </p>
+              <p>
+                Укрывистость (количество краски на м²): <span>первый слой, второй слой</span>
+              </p>
+            </div>
+          </div>
         </article>
         <article class="benefits">
-          <h3>Преимущества:</h3>
-          <ul>
-            <li>Гипоаллергенная акриловая краска (Подтверждено Ассоциацией аллергологов Украины)</li>
-            <li>Образует тонкослойное и эластичное покрытие, подчёркивает фактуру обоев и прочих поверхностей со
-              сложным рельефом</li>
-            <li>Отличная укрывистость позволяет значительно снизить расход</li>
-            <li>С «эффектом лотоса» (водо- и грязеотталкивающее, антистатическое покрытие)</li>
-            <li>Особо стойкая к мытью. Выдерживает частую очистку с использованием моющих и дезинфицирующих средств,
-              периодическое воздействие горячей воды (до 100°С), а также таких растворителей как спирт, уайт-спирит</li>
-            <li>Безукоризненна в нанесении, легко наносится и раскатывается, без разбрызгивания и потеков</li>
-            <li>Рекомендована для применения в помещениях лечебнопрофилактических, детских дошкольных, школьных и
-              других учебных учреждениях. Заключение Государственной СЭС № 602-123-20-1/23437 от 20.07.2017г.</li>
-            <li>Абсолютно безопасна, соответствует требованиям МОЗ Украины и Директиве 2004/42/ Европейского Союза</li>
-            <li>Тонируется по каталогам Kompozit®,NCS, RAL, Pantone</li>
-            <li>Без запаха</li>
-          </ul>
-          <div class="benefits__presentation">
-            <a href="">Посмотреть полностью презентацию продукта</a>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3>Преимущества:</h3>
+            </div>
+            <div class="accordion__body">
+              <ul>
+                <li>Гипоаллергенная акриловая краска (Подтверждено Ассоциацией аллергологов Украины)</li>
+                <li>Образует тонкослойное и эластичное покрытие, подчёркивает фактуру обоев и прочих поверхностей со
+                  сложным рельефом</li>
+                <li>Отличная укрывистость позволяет значительно снизить расход</li>
+                <li>С «эффектом лотоса» (водо- и грязеотталкивающее, антистатическое покрытие)</li>
+                <li>Особо стойкая к мытью. Выдерживает частую очистку с использованием моющих и дезинфицирующих
+                  средств,
+                  периодическое воздействие горячей воды (до 100°С), а также таких растворителей как спирт, уайт-спирит</li>
+                <li>Безукоризненна в нанесении, легко наносится и раскатывается, без разбрызгивания и потеков</li>
+                <li>Рекомендована для применения в помещениях лечебнопрофилактических, детских дошкольных, школьных и
+                  других учебных учреждениях. Заключение Государственной СЭС № 602-123-20-1/23437 от 20.07.2017г.</li>
+                <li>Абсолютно безопасна, соответствует требованиям МОЗ Украины и Директиве 2004/42/ Европейского Союза</li>
+                <li>Тонируется по каталогам Kompozit®,NCS, RAL, Pantone</li>
+                <li>Без запаха</li>
+              </ul>
+              <div class="benefits__presentation">
+                <a href="">Посмотреть полностью презентацию продукта</a>
+              </div>
+            </div>
           </div>
         </article>
       </div>

@@ -13,14 +13,125 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="assets/css/theme.css">
 
-  
+
 </head>
 
 <body>
   <header>
+    <div class="header--mobile">
+      <a href="#" id="touchMobileHamburger">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+      <a href="tel:+380800218539" class="header--mobile__phone">0 800 218 539</a>
+      <div class="header--mobile__buttons">
+        <a href="#" class="log-in-out"></a>
+        <a href="#" class="top-nav__right_cart"></a>
+      </div>
+    </div>
+    <nav class="main-nav only-tablet" id="navMobileWrap">
+      <div class="only-tablet">
+        <div class="header__gray_nav">
+          <div class="header__gray_nav-dropdown" id="change-lng">
+            <span>укр</span>
+            <ul class="header__gray_nav-sub">
+              <li>
+                <a href="">рус</a>
+              </li>
+              <li>
+                <a href="">eng</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header__gray_nav-dropdown" id="change-lng">
+            <span>грн</span>
+            <ul class="header__gray_nav-sub">
+              <li>
+                <a href="">usd</a>
+              </li>
+              <li>
+                <a href="">eur</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="main-nav__list">
+        <li class="paint sub">
+          <a href="" data-src="./img/theme/categories/paint.svg" data-hover="./img/theme/categories/paint-hover.svg">Краски
+            и эмали</a>
+        </li>
+        <li class="surface sub active">
+          <a href="" data-src="./img/theme/categories/surface.svg" data-hover="./img/theme/categories/surface-hover.svg">Для
+            подготовки поверхности</a>
+        </li>
+        <li class="instruments">
+          <a href="" data-src="./img/theme/categories/instruments.svg" data-hover="./img/theme/categories/instruments-hover.svg">Малярные
+            инструменты</a>
+        </li>
+        <li class="wood sub">
+          <a href="" data-src="./img/theme/categories/wood.svg" data-hover="./img/theme/categories/wood-hover.svg">Для
+            работы с деревом</a>
+        </li>
+        <li class="stone">
+          <a href="" data-src="./img/theme/categories/stone.svg" data-hover="./img/theme/categories/stone-hover.svg">Для
+            работы с камнем</a>
+        </li>
+        <li class="glue">
+          <a href="" data-src="./img/theme/categories/glue.svg" data-hover="./img/theme/categories/glue-hover.svg">Клеи
+            и герметики</a>
+        </li>
+        <li class="art">
+          <a href="" data-src="./img/theme/categories/art.svg" data-hover="./img/theme/categories/art-hover.svg">Художественная
+            продукция</a>
+        </li>
+        <li class="merch">
+          <a href="" data-src="./img/theme/categories/merch.svg" data-hover="./img/theme/categories/merch-hover.svg">Сувенирная
+            продукция</a>
+        </li>
+        <li class="paint-service">
+          <a href="" data-src="./img/theme/categories/paint-service.svg" data-hover="./img/theme/categories/paint-service-hover.svg">Малярные
+            услуги</a>
+        </li>
+        <li class="sales">
+          <a href="" data-src="./img/theme/categories/sales.svg" data-hover="./img/theme/categories/sales-hover.svg">Акции</a>
+        </li>
+        <li class="kompozit">
+          <a href="" data-src="./img/theme/categories/kompozit.svg" data-hover="./img/theme/categories/kompozit.svg">О
+            Композит</a>
+        </li>
+      </ul>
+      <div class="main-nav__all">
+        <a href="" data-src="" data-hover="">Смотреть все категории</a>
+      </div>
+      <div class="only-tablet">
+        <div class="main-nav__additional">
+          <ul class="main-nav__list">
+            <li class="">
+              <a href="#">Доставка и оплата</a>
+            </li>
+            <li class="">
+              <a href="#">Адреса магазинов</a>
+            </li>
+            <li class="">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="">
+              <a href="#">О компании</a>
+            </li>
+            <li class="">
+              <a href="#">Документация и сертификаты</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+
     <div class="header__gray">
       <div class="wrapper">
         <div class="header__gray_body">
@@ -29,7 +140,7 @@
               <li>Бесплатная доставка от 2 000 грн</li>
               <li>Выезд специалиста на объект</li>
               <li>Собственное производство</li>
-            </ul>    
+            </ul>
           </div>
           <div class="header__gray_nav">
             <div class="header__gray_nav-dropdown" id="change-lng">
@@ -53,7 +164,7 @@
                   <a href="">eur</a>
                 </li>
               </ul>
-            </div>           
+            </div>
           </div>
         </div>
       </div>
@@ -104,12 +215,18 @@
 
   <main class="wrapper category">
     <article class="catalog__header">
+      <div class="catalog__header_nav-back only-tablet">
+        <a href="#">Вернуться к каталогу товаров</a>
+      </div>
       <h2>
         <span>Краски и эмали</span>
       </h2>
       <ul class="catalog__header_nav">
         <li class="catalog__header_nav-back">
-          <a href="">Вернуться к каталогу товаров</a>
+          <a href="#">Вернуться к каталогу товаров</a>
+        </li>
+        <li class="only-tablet">
+          <button class="btn--blue btn--small toggleMobileFilter">Фильтры</button>
         </li>
         <li class="catalog__header_nav-filter">
           <div class="catalog__header_nav-filter-title">Сортировать</div>
@@ -134,8 +251,29 @@
     <div class="catalog__main">
       <aside class="catalog__main_filter">
         <section class="catalog__main_filter-section">
-          <h3>Предназначение</h3>
-          <ul>
+          <div class="only-tablet">
+            <div class="catalog__header_nav-back">
+              <a href="#">Вернуться к каталогу товаров</a>
+            </div>
+            <ul class="catalog__main_products-filters-selected">
+              <li>
+                <span class="filter">колеровка</span>
+                <i class="close"></i>
+              </li>
+              <li>
+                <span class="filter">краска</span>
+                <i class="close"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="row justify-content-between align-items-center">
+            <h3>Предназначение</h3>
+            <div class="only-tablet">
+              <button class="btn--blue btn--small toggleMobileFilter">Применить</button>
+            </div>
+          </div>
+
+          <ul class="main_filter-list">
             <li>
               <label class="custom-checkbox">
                 <input type="checkbox" />
@@ -189,7 +327,7 @@
         </section>
         <section class="catalog__main_filter-section">
           <h3>Вид</h3>
-          <ul>
+          <ul class="main_filter-list">
             <li>
               <label class="custom-checkbox">
                 <input type="checkbox" />
@@ -208,7 +346,7 @@
         </section>
         <section class="catalog__main_filter-section">
           <h3>Объем, вес</h3>
-          <ul>
+          <ul class="main_filter-list">
             <li>
               <label class="custom-checkbox">
                 <input type="checkbox" />
@@ -248,7 +386,7 @@
         </section>
         <section class="catalog__main_filter-section">
           <h3>Цвет</h3>
-          <ul>
+          <ul class="main_filter-list">
             <li>
               <label class="custom-checkbox">
                 <input type="checkbox" />
@@ -288,7 +426,7 @@
         </section>
         <section class="catalog__main_filter-section">
           <h3>Устойчивость к мытью</h3>
-          <ul>
+          <ul class="main_filter-list">
             <li>
               <label class="custom-checkbox">
                 <input type="checkbox" />
@@ -324,7 +462,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -345,7 +483,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -359,7 +497,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -380,7 +518,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -394,7 +532,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -415,7 +553,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -429,7 +567,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -450,7 +588,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -464,7 +602,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -485,7 +623,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -499,7 +637,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -520,7 +658,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -534,7 +672,7 @@
             <div class="item-photo">
               <a href="">
                 <img src="./img/theme/products/1.png" alt="">
-              </a>              
+              </a>
             </div>
             <ul class="item-info">
               <li class="item-info-title">
@@ -555,7 +693,7 @@
                     <li>4.5</li>
                     <li>9</li>
                   </ul>
-                </div>                
+                </div>
               </li>
               <li>
                 <div class="item-buy-button">
@@ -563,73 +701,76 @@
                 </div>
               </li>
             </ul>
-          </div>          
+          </div>
         </div>
       </article>
     </div>
 
     <article class="main__advantages">
-        <ul class="main__advantages_list">
-          <li class="main__advantages_list-item">
-            <div class="item-photo">
-              <img src="./img/theme/advantages-1.png" alt="">
-            </div>
-            <div class="item-title">Возможна оплата наличными, безналичный расчет, на карту</div>
-          </li>
-          <li class="main__advantages_list-item">
-            <div class="item-photo">
-              <img src="./img/theme/advantages-2.png" alt="">
-            </div>
-            <div class="item-title">
-              <div class="item-title-text">Колеровка краски в любой цвет из каталога</div>
-            </div>
-          </li>
-          <li class="main__advantages_list-item">
-            <div class="item-photo">
-              <img src="./img/theme/advantages-3.png" alt="">
-            </div>
-            <div class="item-title">
-              <div class="item-title-text">
-                <b>5%</b> скидка всем членам клуба Композит
-              </div>
-            </div>
-          </li>
-          <li class="main__advantages_list-item">
-            <div class="item-photo">
-              <img src="./img/theme/advantages-4.png" alt="">
-            </div>
-            <div class="item-title">
-              <div class="item-title-text">Бесплатная доставка<br>от 2 000 грн</div>
-            </div>
-          </li>
-        </ul>
-      </article>
-
-      <article class="main__club">
-        <div class="main__club_left">
-          <h2>Программа лояльности <b>«Клуб Композит»</b></h2>
-          <div class="main__club_left-text">Зарегистрируйтесь на сайте и получите приглашение от участника клуба, что бы присоединиться к программе лояльности</div>
-          <div class="main__club_left-registration">
-            <a href="">
-              <span>Зарегистрироваться</span>
-            </a>
+      <ul class="main__advantages_list">
+        <li class="main__advantages_list-item">
+          <div class="item-photo">
+            <img src="./img/theme/advantages-1.png" alt="">
           </div>
+          <div class="item-title">Возможна оплата наличными, безналичный расчет, на карту</div>
+        </li>
+        <li class="main__advantages_list-item">
+          <div class="item-photo">
+            <img src="./img/theme/advantages-2.png" alt="">
+          </div>
+          <div class="item-title">
+            <div class="item-title-text">Колеровка краски в любой цвет из каталога</div>
+          </div>
+        </li>
+        <li class="main__advantages_list-item">
+          <div class="item-photo">
+            <img src="./img/theme/advantages-3.png" alt="">
+          </div>
+          <div class="item-title">
+            <div class="item-title-text">
+              <b>5%</b> скидка всем членам клуба Композит
+            </div>
+          </div>
+        </li>
+        <li class="main__advantages_list-item">
+          <div class="item-photo">
+            <img src="./img/theme/advantages-4.png" alt="">
+          </div>
+          <div class="item-title">
+            <div class="item-title-text">Бесплатная доставка<br>от 2 000 грн</div>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+    <article class="main__club">
+      <div class="main__club_left">
+        <h2>Программа лояльности <b>«Клуб Композит»</b></h2>
+        <div class="main__club_left-text">Зарегистрируйтесь на сайте и получите приглашение от участника клуба, что бы
+          присоединиться к программе лояльности</div>
+        <div class="main__club_left-registration">
+          <a href="">
+            <span>Зарегистрироваться</span>
+          </a>
         </div>
-        <ul class="main__club_right">
-          <li>
-            <div class="main__club_right-percent">5%</div>
-            <div class="main__club_right-text">скидки <b>за регистрацию</b><br> на сайте</div>
-          </li>
-          <li>
-            <div class="main__club_right-percent">10%</div>
-            <div class="main__club_right-text">скидки при накоплении заказов или<br>разовом заказе на сумму от <b>10 000</b> гривен</div>
-          </li>
-          <li>
-            <div class="main__club_right-percent">15%</div>
-            <div class="main__club_right-text">скидки при накоплении заказов или<br>разовом заказе на сумму от <b>20 000</b> гривен</div>
-          </li>
-        </ul>
-      </article>
+      </div>
+      <ul class="main__club_right">
+        <li>
+          <div class="main__club_right-percent">5%</div>
+          <div class="main__club_right-text">скидки <b>за регистрацию</b><br> на сайте</div>
+        </li>
+        <li>
+          <div class="main__club_right-percent">10%</div>
+          <div class="main__club_right-text">скидки при накоплении заказов или<br>разовом заказе на сумму от <b>10 000</b>
+            гривен</div>
+        </li>
+        <li>
+          <div class="main__club_right-percent">15%</div>
+          <div class="main__club_right-text">скидки при накоплении заказов или<br>разовом заказе на сумму от <b>20 000</b>
+            гривен</div>
+        </li>
+      </ul>
+    </article>
   </main>
 
   <footer>
@@ -637,56 +778,56 @@
       <ul class="footer__list">
         <li>
           <h3>Каталог товаров</h3>
-            <p>
-              <a href="">Краски и эмали</a>
-            </p>
-            <p>
-              <a href="">Для подготовки поверхности</a>
-            </p>
-            <p>
-              <a href="">Малярные инструменты</a>
-            </p>
-            <p>
-              <a href="">Для работы с деревом</a>
-            </p>
-            <p>
-              <a href="">Для работы с камнем</a>
-            </p>
+          <p>
+            <a href="">Краски и эмали</a>
+          </p>
+          <p>
+            <a href="">Для подготовки поверхности</a>
+          </p>
+          <p>
+            <a href="">Малярные инструменты</a>
+          </p>
+          <p>
+            <a href="">Для работы с деревом</a>
+          </p>
+          <p>
+            <a href="">Для работы с камнем</a>
+          </p>
         </li>
-        <li>          
-            <p>
-              <a href="">Клеи и герметики</a>
-            </p>
-            <p>
-              <a href="">Художественная продукция</a>
-            </p>
-            <p>
-              <a href="">Сувенирная продукция</a>
-            </p>
-            <p>
-              <a href="">Малярные услуги</a>
-            </p>
-            <p>
-              <a href="">Акции</a>
-            </p>
+        <li>
+          <p>
+            <a href="">Клеи и герметики</a>
+          </p>
+          <p>
+            <a href="">Художественная продукция</a>
+          </p>
+          <p>
+            <a href="">Сувенирная продукция</a>
+          </p>
+          <p>
+            <a href="">Малярные услуги</a>
+          </p>
+          <p>
+            <a href="">Акции</a>
+          </p>
         </li>
         <li>
           <h3>Композит</h3>
-            <p>
-              <a href="">Доставка и оплата</a>
-            </p>
-            <p>
-              <a href="">Адреса магазинов</a>
-            </p>
-            <p>
-              <a href="">Контакты</a>
-            </p>
-            <p>
-              <a href="">О компании</a>
-            </p>
-            <p>
-              <a href="">Документация и сертификаты</a>
-            </p>            
+          <p>
+            <a href="">Доставка и оплата</a>
+          </p>
+          <p>
+            <a href="">Адреса магазинов</a>
+          </p>
+          <p>
+            <a href="">Контакты</a>
+          </p>
+          <p>
+            <a href="">О компании</a>
+          </p>
+          <p>
+            <a href="">Документация и сертификаты</a>
+          </p>
         </li>
         <li class="footer__list_social">
           <h3>0 800 218 539</h3>
@@ -699,9 +840,9 @@
         </li>
       </ul>
       <div class="footer__copyright">2018 © Kompozit</div>
-    </div>    
+    </div>
   </footer>
-  
+
   <script src="assets/js/theme.js"></script>
 </body>
 
