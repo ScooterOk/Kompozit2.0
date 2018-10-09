@@ -386,7 +386,20 @@
               <a href="" class="favorites"></a>
             </section>
             <section class="product__actions_calc">
-              <a href="">Рассчитать необходимое количество</a>
+              <button class="product__calc-btn btnToggleCalc">Рассчитать необходимое количество</button>
+              <div class="product__calc-quatity">
+                <h6 class="white product__calc-btn">Рассчитать необходимое количество</h6>
+                <form action="#">
+                  <div class="form__row">
+                    <label for="calcProductQuantity">Введите площадь поверхности (м)<sup>2</sup></label>
+                    <input type="text" id="calcProductQuantity">
+                  </div>
+                  <div class="form__submit">
+                    <button type="submit">Рассчитать</button>
+                  </div>
+                </form>
+                <button class="product__calc-btn-close btnToggleCalc"></button>
+              </div>
             </section>
 
           </article>
@@ -1188,12 +1201,15 @@
               <b>199 грн</b>
             </div>
             <div class="row align-items-baseline">
-              <div class="vol">Обьем: 0,9 л</div>
+              <div class="vol">
+                <span class="checkout__item-label">Обьем:</span> 0,9 л</div>
               <div class="color">
-                Цвет: <span style="background-color: #fff"></span>
+                <span class="checkout__item-label">Цвет: </span>
+                <span class="color-value" style="background-color: #fff"></span>
               </div>
             </div>
-            <div class="quantaty">1 шт</div>
+            <div class="quantaty">
+              <span class="checkout__item-label">Количество:</span> 1 шт</div>
           </div>
         </div>
       </div>

@@ -658,4 +658,9 @@ $( window ).resize(function() {
 }
 );
 
+
+$('.btnToggleCalc').click(function() {
+  $(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
+});
+
 });
