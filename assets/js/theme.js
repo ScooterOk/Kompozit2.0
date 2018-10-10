@@ -645,22 +645,74 @@ function accordionInit() {
 	});
 }
 // end Accordion
+function tabsInit() {
+	$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+
+	$('.tab_content').find('.tabs_item:eq("0")').css("display", "block");
+	$('.tab ul.tabs li a').click(function (g) { 
+		var tab = $(this).closest('.tab'), 
+		index = $(this).closest('li').index(),
+		currentLiIndex = tab.find('ul.tabs > li:eq(' + index + ')');
+		
+		tab.find('ul.tabs > li').removeClass('current');
+		$(this).closest('li').addClass('current');
+		currentLiIndex.prevAll().css({
+			"background-color": "#0f77ff",
+			"color": "#fff" 
+		});
+		currentLiIndex.nextAll().css({
+			"background-color": "#c8ced3",
+			"color": "#000" 
+		});
+		
+		tab.find('.tab_content').find('.tabs_item').not('.tabs_item:eq(' + index + ')').slideUp();
+		tab.find('.tab_content').find('.tabs_item:eq(' + index + ')').slideDown();
+		
+		g.preventDefault();
+	} );
+
+	$('.tab .tabs_next-step').click(function (g) { 
+		var tab = $(this).closest('.tab'), 
+		index = $(this).closest('.tabs_item').index(),
+		currentLiIndex = tab.find('ul.tabs > li:eq(' + index + ')');
+		if($(this).closest('.tabs_item').next().index() === -1) return;
+		
+		tab.find('ul.tabs > li').removeClass('current');
+		tab.find('ul.tabs > li:eq(' + index + ')').addClass('current');
+		
+		currentLiIndex.prevAll().css({
+			"background-color": "#0f77ff",
+			"color": "#fff" 
+		});
+		currentLiIndex.nextAll().css({
+			"background-color": "#c8ced3",
+			"color": "#000" 
+		});
+
+		tab.find('.tab_content').find('.tabs_item').not('.tabs_item:eq(' + index + ')').slideUp();
+		tab.find('.tab_content').find('.tabs_item:eq(' + index + ')').slideDown();
+		
+		g.preventDefault();
+	} );
+}
 if($(window).width() < 481) {
-cutAndPaste();
-accordionInit();
+	cutAndPaste();
+	accordionInit();
+	tabsInit();
 }
 
 $( window ).resize(function() {
 	if($(window).width() < 481) {
 		cutAndPaste();
 		accordionInit();
-		}
+		tabsInit();
+	}
 }
 );
 
 
 $('.btnToggleCalc').click(function() {
-  $(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
+	$(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
 });
 
 });
