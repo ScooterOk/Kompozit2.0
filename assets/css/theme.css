@@ -1799,7 +1799,58 @@ textarea {
   letter-spacing: normal;
   color: #13152b;
 }
-
+.custom-radio-btn {
+  overflow: hidden;
+}
+.custom-radio-btn.checked {
+  overflow: visible;
+}
+.custom-radio-btn label {
+  position: relative;
+  padding-left: 30px;
+  display: block;
+}
+.custom-radio-btn input {
+  position: absolute;
+  visibility: hidden;
+}
+.custom-radio-btn label:before,
+.custom-radio-btn label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #1cb743;
+  transition: all 0.3s ease;
+}
+.custom-radio-btn label:before {
+  left: 0;
+  width: 17.5px;
+  height: 17.5px;
+  background-color: #fff;
+  border: 2px solid #1cb743;
+}
+.custom-radio-btn input:checked +  label:after {
+  width: 12px;
+  height: 12px;
+  left: 5px;
+  background-color: #1cb743;
+}
+.custom-radio-btn .checkout__selected_content {
+  display: none;
+}
+.custom-radio-btn.checked .checkout__selected_content {
+  display: block;
+}
+.checkout__order .checkout__ordering_register {
+  display: block;
+}
+.toggle-inputs {
+  display: none;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -4741,7 +4792,8 @@ main.checkout {
   border-color: #ffe377;
   background-color: #ffe377;
 }
-.checkout__sublink {
+.checkout__sublink, .checkout__sublink button {
+  padding: 0;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -4749,12 +4801,16 @@ main.checkout {
   line-height: 1.43;
   letter-spacing: normal;
   color: #768592;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  text-decoration: underline;
 }
-.checkout__sublink a {
+.checkout__sublink a, .checkout__sublink button  {
   color: #003379;
   transition: all 150ms ease;
 }
-.checkout__sublink a:hover {
+.checkout__sublink a:hover, .checkout__sublink button:hover {
   color: #579fff;
 }
 .checkout__ordering .form__item {

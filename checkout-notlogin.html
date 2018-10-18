@@ -42,9 +42,9 @@
       <article class="checkout__ordering">
         <h2>Оформление заказа</h2>
         <section class="tabs_item">
-          <div class="checkout__login">
-            <a href="#">Войти в личный кабинет<span> (для членов клуба «Композит»)</span></a>
-          </div>
+            <div class="checkout__login">
+                <a href="#">Войти в личный кабинет<span> (для членов клуба «Композит»)</span></a>
+              </div>
           <h3>1. Ваши данные</h3>
           <div class="checkout__profile">
             <div class="checkout__profile_item">Дмитрий Раговский</div>
@@ -73,65 +73,42 @@
           </div>
           <button class="btn--blue tabs_next-step">Далее</button>
         </section>
-        <section class="tabs_item">
-          <div class="checkout__login">
-            <a href="#">Войти в личный кабинет<span> (для членов клуба «Композит»)</span></a>
-          </div>
+        <section class="tabs_item tabs_item--radio">
           <h3>1. Выберите способ оплаты</h3>
           <ul>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox">
-                <i></i>
-                <span>Оплата наличными</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="paymentMethod1" name="input-payment-method">
+              <label for="paymentMethod1">Оплата наличными</label>
             </li>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox">
-                <i></i>
-                <span>Картой</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="paymentMethod2" name="input-payment-method">
+              <label for="paymentMethod2">Картой</label>
             </li>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox">
-                <i></i>
-                <span>Безналичный расчет (для юридических лиц)</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="paymentMethod3" name="input-payment-method">
+              <label for="paymentMethod3">Безналичный расчет (для юридических лиц)</label>
             </li>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox" disabled>
-                <i></i>
-                <span>Бонусами для членов клуба «Композит»</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="paymentMethod4" name="input-payment-method">
+              <label for="paymentMethod4">Бонусами для членов клуба «Композит»</label>
             </li>
           </ul>
-          <div class="checkout__sublink">
-            <a href="">Изменить</a>
+          <div class="checkout__sublink toggle-inputs">
+            <button>Изменить</button>
           </div>
           <button class="btn--blue tabs_next-step">Далее</button>
         </section>
-        <section class="tabs_item">
-          <div class="checkout__login">
-            <a href="#">Войти в личный кабинет<span> (для членов клуба «Композит»)</span></a>
-          </div>
+
+        <section class="tabs_item tabs_item--radio">
           <h3>2. Выберите способ доставки <span>От 2000 грн доставка бесплатная</span></h3>
           <ul>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox">
-                <i></i>
-                <span>Самовывоз</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="shippingMethod1" name="input-shipping-method">
+              <label for="shippingMethod1">Самовывоз</label>
             </li>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox">
-                <i></i>
-                <span>Доставка на отделение «Новой почты»</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="shippingMethod2" name="input-shipping-method">
+              <label for="shippingMethod2">Доставка на отделение «Новой почты»</label>
               <div class="checkout__selected_content">
                 <div class="form__dropdown">
                   <span>Выберите город</span>
@@ -151,23 +128,17 @@
                 </div>
               </div>
             </li>
-            <li>
-              <label class="custom-checkbox">
-                <input type="checkbox">
-                <i></i>
-                <span>Курьерская доставка по вашему адресу</span>
-              </label>
+            <li class="custom-radio-btn">
+              <input type="radio" id="shippingMethod3" name="input-shipping-method">
+              <label for="shippingMethod3">Курьерская доставка по вашему адресу</label>
             </li>
           </ul>
-          <div class="checkout__sublink">
-            <a href="">Другие способы доставки</a>
+          <div class="checkout__sublink toggle-inputs">
+            <button>Другие способы доставки</button>
           </div>
           <button class="btn--blue tabs_next-step">Далее</button>
         </section>
         <section class="tabs_item">
-          <div class="checkout__login">
-            <a href="#">Войти в личный кабинет<span> (для членов клуба «Композит»)</span></a>
-          </div>
           <h3>3. Введите свой номер телефона и имя</h3>
           <div class="form__item">
             <label>
@@ -219,22 +190,21 @@
         </div>
       </article>
       <article class="checkout__order tabs_item">
-        <div class="checkout__login">
-          <a href="#">Войти в личный кабинет<span> (для членов клуба «Композит»)</span></a>
-        </div>
         <h2>Ваш заказ</h2>
         <section class="checkout__summ">
           <h3>Сумма заказа: <span><b>651</b> грн</span></h3>
-          <div class="form__checkbox">
-            <label class="custom-checkbox">
-              <input type="checkbox">
-              <i></i>
-              <span>Ввести E-mail</span>
-            </label>
-          </div>
-          <div class="form__checkbox_description">
-            <span>Введите дополнительно e-mail и получите 5% скидку уже на эту покупку.</span>
-            Вы экономите 31,05 грн
+          <div class="checkout__ordering_register">
+            <div class="form__checkbox">
+              <label class="custom-checkbox">
+                <input type="checkbox">
+                <i></i>
+                <span>Ввести E-mail</span>
+              </label>
+            </div>
+            <div class="form__checkbox_description">
+              <span>Введите дополнительно e-mail и получите 5% скидку уже на эту покупку.</span>
+              Вы экономите 31,05 грн
+            </div>
           </div>
           <div class="checkout__summ_promo">
             <div class="checkout__sublink">

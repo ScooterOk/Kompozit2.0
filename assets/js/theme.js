@@ -290,7 +290,7 @@ $(document).ready(function() {
 		$('.checkout__ordering_register-checkbox input[type="checkbox"]').change(function(e) {
 			if($(this).is(':checked')){
 				$('.checkout__ordering_register-checkbox').hide();
-				$('.checkout__ordering_register').show();
+				$('.checkout__ordering_register').slideToggle();
 			}
 		});
 		$('.form__password_show').click(function(e) {
@@ -716,5 +716,16 @@ $( window ).resize(function() {
 $('.btnToggleCalc').click(function() {
 	$(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
 });
+// hide/show checkout radio inputs after select
+$('.custom-radio-btn').click(function(e) {
+	$(this).closest('.custom-radio-btn').addClass('checked');
+	$(this).closest('.tabs_item--radio').find('.custom-radio-btn:not(.checked)').animate({height:0, margin:0, opacity:0},200);
+	$(this).closest('.tabs_item--radio').find('.toggle-inputs').show();
+});
+$('.toggle-inputs').click(function(e) {
+	$(this).closest('.tabs_item--radio').find('.custom-radio-btn').removeClass('checked').animate({height:"100%", marginBottom:"20px", opacity:1},200);
+	$(this).hide();
+});
+
 
 });
