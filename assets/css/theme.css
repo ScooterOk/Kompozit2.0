@@ -6204,6 +6204,7 @@ main.product {
 .product__calc-quatity {
   position: relative;
   display: none;
+  max-width: 480px;
   margin-top: 16px;
   padding: 16px;
   color: #fff;
@@ -6246,6 +6247,8 @@ main.product {
   background: url('./img/theme/bg-calculator-link--white.svg') no-repeat
     left center;
   color: #fff;
+  font-size: 14px;
+  font-weight: 600;
 }
 .product__calc-btn-close {
   position: absolute;
@@ -6256,6 +6259,14 @@ main.product {
   border: none;
   outline: none;
   background: url('./img/theme/close--white.svg') no-repeat center;
+}
+.product__calc-result {
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.product__calc-result span {
+  font-size: 17px;
 }
 .product__actions section {
   position: relative;
@@ -7642,7 +7653,20 @@ main.sales h1 {
   align-items: center;
   border-top: 1px solid #e8eaf2;
 }
-
+.modal--highlight {
+max-width: 700px;
+}
+.highlight__text {
+  margin: 30px 0 50px;
+  font-size: 18px;
+}
+.highlight__text p {
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+.modal--highlight .success__start-link {
+  margin-bottom: 35px;
+}
 /*begin hamburger*/
 .hamburger-icon {
   width: 24px;
