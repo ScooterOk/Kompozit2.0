@@ -619,6 +619,21 @@ $('.toggleMobileFilter').on('click', function(e) {
   e.preventDefault();
 });
 
+// Create mobile menu
+function createMobileMenu() {
+	$($(".main-nav").detach()).appendTo("#navMobileWrap .main-nav__mobile");
+
+	$(".footer__list li:nth-child(3) p > *").clone().appendTo("#navMobileWrap .main-nav__additional .main-nav__list").wrap( "<li></li>" );
+
+	$($(".top-nav__right > a:nth-child(3)").detach()).addClass("log-in-out").appendTo(" .header--mobile__buttons");
+
+	$($("#_desktop_cart").detach()).appendTo(".header--mobile__buttons");
+
+	$( ".header--mobile__phone" ).html($(".header__main_contacts b").html());
+
+}
+// Create mobile menu
+
 // Cut and paste product description under its images
 function cutAndPaste() {
 		$($(".product__actions > section:nth-child(n+3)").detach()).appendTo(".product__main_bottom");
@@ -697,14 +712,19 @@ function tabsInit() {
 		g.preventDefault();
 	} );
 }
-if($(window).width() < 481) {
+var $windowWidth = $(window).width();
+if($windowWidth < 992) {
+	createMobileMenu();
+}
+
+if($windowWidth < 481) {
 	cutAndPaste();
 	accordionInit();
 	tabsInit();
 }
 
 $( window ).resize(function() {
-	if($(window).width() < 481) {
+	if($windowWidth < 481) {
 		cutAndPaste();
 		accordionInit();
 		tabsInit();

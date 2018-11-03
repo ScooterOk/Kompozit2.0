@@ -7729,6 +7729,7 @@ max-width: 700px;
     overflow-y: scroll;
     opacity: 0.4;
     transition: all 0.3s ease-in-out;
+    background-color: #fff;
   }
   #navMobileWrap::-webkit-scrollbar,
   .catalog__main_filter::-webkit-scrollbar {
@@ -7779,6 +7780,9 @@ max-width: 700px;
   padding: 0;
   background: transparent url(/img/theme/cart-full.svg) center;
 }
+.header--mobile .top-nav__right_cart span {
+display: none;
+}
 .log-in-out {
   display: flex;
   width: 24px;
@@ -7788,6 +7792,7 @@ max-width: 700px;
 }
 .header--mobile__buttons {
   display: flex;
+  font-size: 0;
 }
 .header--mobile__buttons > *:not(:last-child) {
   margin-right: 20px;
@@ -7861,6 +7866,8 @@ max-width: 700px;
   }
   .main-nav {
     padding: 80px 0 0;
+    box-shadow: none;
+    border-radius: 0;
   }
   .main-nav__list {
     width: 100%;
