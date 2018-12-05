@@ -215,33 +215,21 @@
   <main class="wrapper stores">
     <div class="stores__filter">
       <ul>
-        <li>
-          <label class="custom-checkbox">
-            <input type="checkbox">
-            <i></i>
-            <span>Все магазины</span>
-          </label>
+        <li class="custom-radio-btn">
+            <input type="radio" id="filterStore1" name="filterStore" data-category="1">
+            <label for="filterStore1">Все магазины</label>
         </li>
-        <li>
-          <label class="custom-checkbox">
-            <input type="checkbox">
-            <i></i>
-            <span>Фирменные магазины</span>
-          </label>
+        <li class="custom-radio-btn">
+            <input type="radio" id="filterStore2" name="filterStore" data-category="2">
+            <label for="filterStore2">Фирменные магазины</label>
         </li>
-        <li>
-          <label class="custom-checkbox">
-            <input type="checkbox">
-            <i></i>
-            <span>Авторизованные магазины</span>
-          </label>
+        <li class="custom-radio-btn">
+            <input type="radio" id="filterStore3" name="filterStore" data-category="3">
+            <label for="filterStore3">Авторизованные магазины</label>
         </li>
-        <li>
-          <label class="custom-checkbox">
-            <input type="checkbox">
-            <i></i>
-            <span>Другие</span>
-          </label>
+        <li class="custom-radio-btn">
+            <input type="radio" id="filterStore4" name="filterStore" data-category="4">
+            <label for="filterStore4">Другие</label>
         </li>
       </ul>
     </div>
@@ -249,43 +237,43 @@
       <div class="stores__map-wrap"><img src="./img/theme/map.jpg" class="store__map" alt=""></div>
       <section class="stores__search">
         <div class="top-nav__left_search">
-          <input type="text" class="top-nav__left_search-input" name="stores-search" autocomplete="off" placeholder="Что вы ищете?" />
+          <input type="text" class="top-nav__left_search-input" id="filterStoresSearchInput" name="stores-search" autocomplete="off" placeholder="Что вы ищете?" />
         </div>
         <div class="stores__search-list scrollbar-inner">
             <ul>
-              <li>
+              <li data-category="2">
                 <span>ЗАТ «Инициатива»</span>
                 <address>Київ, пр-кт Оболоньский, 52</address>
                 <a href="tel:+380444222454">тел. : 422-24-54</a>
                 <a href="#" class="stores__gotoshop">Перейти на сайт</a>
               </li>
-              <li>
+              <li data-category="3">
                 <span>«Новая линия»</span>
                 <address>Київ, Оноре де бальзака, 15А</address>
                 <a href="tel:+380442063213">тел. (044) 206-32-13</a>
                 <a href="tel:+380442065415">факс: (044) 206-54-15</a>
                 <a href="#" class="stores__gotoshop">Перейти на сайт</a>
               </li>
-              <li>
+              <li data-category="4">
                   <span>ЗАТ «Инициатива»</span>
                   <address>Київ, пр-кт Оболоньский, 52</address>
                   <a href="tel:+380444222454">тел. : 422-24-54</a>
                   <a href="#" class="stores__gotoshop">Перейти на сайт</a>
                 </li>
-                <li>
+                <li data-category="2">
                   <span>«Новая линия»</span>
                   <address>Київ, Оноре де бальзака, 15А</address>
                   <a href="tel:+380442063213">тел. (044) 206-32-13</a>
                   <a href="tel:+380442065415">факс: (044) 206-54-15</a>
                   <a href="#" class="stores__gotoshop">Перейти на сайт</a>
                 </li>
-                <li>
+                <li data-category="3">
                     <span>ЗАТ «Инициатива»</span>
                     <address>Київ, пр-кт Оболоньский, 52</address>
                     <a href="tel:+380444222454">тел. : 422-24-54</a>
                     <a href="#" class="stores__gotoshop">Перейти на сайт</a>
                   </li>
-                  <li>
+                  <li data-category="4">
                     <span>«Новая линия»</span>
                     <address>Київ, Оноре де бальзака, 15А</address>
                     <a href="tel:+380442063213">тел. (044) 206-32-13</a>

@@ -747,5 +747,39 @@ $('.toggle-inputs').click(function(e) {
 	$(this).hide();
 });
 
+// Shop filter
+if(document.querySelector('.stores__filter')) {
+	$('.stores__filter .custom-radio-btn').click(function(e) {
+		var $storeId = $(this).find('input').data('category');
+		console.log($storeId);
+		if($storeId === 1) {
+			$('.stores__search-list li').show();
+		} else {
+			$('.stores__search-list li:not([data-category=' + $storeId + '])').hide();
+			$('.stores__search-list li[data-category=' + $storeId + ']').show();
+		}
+	});
 
+			
+	$('#filterStoresSearchInput').on('keyup', function() {
+		var searchVal = $(this).val();
+		var filterItems = $('.stores__search-list li');
+		if ( searchVal != '' ) {
+			filterItems.closest('li').hide();
+			$( filterItems ).each(function() {
+				var filterItemText = $( this ).text().toLocaleLowerCase();
+				console.log(	filterItemText);
+				if(~filterItemText.indexOf(searchVal)) {
+				$(this).closest('li').show();
+				}
+			
+			});
+			
+			// $("filterItems:contains('John')")(searchVal.toLowerCase()).show();
+		} else {
+			filterItems.show();
+		}
+	});
+}	
+// end Shop filter
 });

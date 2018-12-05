@@ -669,6 +669,7 @@ template {
   border: none !important;
   box-sizing: content-box !important;
   height: auto;
+  min-height: 101%;
   left: 0;
   margin: 0;
   max-height: none;
