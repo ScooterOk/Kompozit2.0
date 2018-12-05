@@ -751,31 +751,33 @@ $('.toggle-inputs').click(function(e) {
 if(document.querySelector('.stores__filter')) {
 	$('.stores__filter .custom-radio-btn').click(function(e) {
 		var $storeId = $(this).find('input').data('category');
-		console.log($storeId);
+
 		if($storeId === 1) {
-			$('.stores__search-list li').show();
+			$('.stores__search-list li').removeClass('choosed').show();
 		} else {
-			$('.stores__search-list li:not([data-category=' + $storeId + '])').hide();
-			$('.stores__search-list li[data-category=' + $storeId + ']').show();
+			$('.stores__search-list li:not([data-category=' + $storeId + '])').removeClass('choosed').hide();
+			$('.stores__search-list li[data-category=' + $storeId + ']').addClass('choosed').show();
 		}
 	});
 
-			
 	$('#filterStoresSearchInput').on('keyup', function() {
-		var searchVal = $(this).val();
-		var filterItems = $('.stores__search-list li');
+		var searchVal = $(this).val().toLowerCase();
+		var filterItems;
+		if($('.stores__search-list li').hasClass('choosed')) {
+		 filterItems = $('.stores__search-list li.choosed');
+		} else {
+			filterItems = $('.stores__search-list li');
+		}
 		if ( searchVal != '' ) {
 			filterItems.closest('li').hide();
 			$( filterItems ).each(function() {
-				var filterItemText = $( this ).text().toLocaleLowerCase();
+				var filterItemText = $( this ).text().toLowerCase();
 				console.log(	filterItemText);
 				if(~filterItemText.indexOf(searchVal)) {
 				$(this).closest('li').show();
 				}
 			
 			});
-			
-			// $("filterItems:contains('John')")(searchVal.toLowerCase()).show();
 		} else {
 			filterItems.show();
 		}
