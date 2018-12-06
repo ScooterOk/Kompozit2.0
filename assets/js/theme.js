@@ -808,15 +808,31 @@ if(document.querySelector('.stores__filter')) {
 	},500));
 }	
 // end Shop filter
-if(document.querySelector('#pagination-container')) {
-	var dataContainer = $('#data-container');
-	var template = function(data) {
-		var html = '<ul>';
 
-		if (data[0].published || data[0].title) {
+// Fetch reviews and create pagination 
+if(document.querySelector('#pagination-container')) {
+	var dataContainer = $('#reviews-data-container');
+	var template = function(data, pagination) {
+		var maxRangeValue = pagination.pageNumber * pagination.pageSize;
+		var minRangeValue = pagination.pageNumber * pagination.pageSize - pagination.pageSize;
+		var html;
+
+		if (data) {
 			// data from flickr
 			$.each(data, function(index, item) {
-				html += '<li><a href="'+ item.link +'">'+ (item.title || item.link) +'<\/a><\/li>';
+				if(index < maxRangeValue && index >= minRangeValue) {
+					html += `<section class="assessments__comments_item">
+					<h3>
+						<div class="name">${item.name}, ${item.id}</div>
+						<div class="stars rate-5">
+							<i></i><i></i><i></i><i></i><i></i>
+						</div>
+					</h3>
+					<div class="comment">${item.body}</div>
+				</section>`;
+				} else {
+					return
+				}
 			});
 		} else {
 			$.each(data, function(index, item) {
@@ -824,27 +840,23 @@ if(document.querySelector('#pagination-container')) {
 			});
 		}
 
-		html += '</ul>';
-
 		return html;
 	}
 	$('#pagination-container').pagination({
-    dataSource: 'https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?',
-    locator: 'items',
-    totalNumber: 120,
-    pageSize: 4,
-    ajax: {
-        beforeSend: function() {
-            dataContainer.html('Loading data from flickr.com ...');
-        }
-    },
+    dataSource: 'https://jsonplaceholder.typicode.com/comments',
+    totalNumberLocator: function(response) {
+			return response.length / this.pageSize
+	},
+		pageSize: 4,
+		locator: 'items',
     callback: function(data, pagination) {
-        // template method of yourself
-        var html = template(data);
+				// template method of yourself
+        var html = template(data, pagination);
         dataContainer.html(html);
     }
 })
 }
+// end Fetch reviews and create pagination 
 
 });
 if(document.querySelector('.map-canvas')) {
