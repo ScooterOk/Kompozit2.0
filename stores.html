@@ -216,64 +216,71 @@
     <div class="stores__filter">
       <ul>
         <li class="custom-radio-btn">
-            <input type="radio" id="filterStore1" name="filterStore" data-category="1">
+            <input type="radio" checked id="filterStore1" name="filterStore" data-category="1" data-storeid="0001">
             <label for="filterStore1">Все магазины</label>
         </li>
         <li class="custom-radio-btn">
-            <input type="radio" id="filterStore2" name="filterStore" data-category="2">
+            <input type="radio" id="filterStore2" name="filterStore" data-category="2" data-storeid="0001" data-storeid="0001">
             <label for="filterStore2">Фирменные магазины</label>
         </li>
         <li class="custom-radio-btn">
-            <input type="radio" id="filterStore3" name="filterStore" data-category="3">
+            <input type="radio" id="filterStore3" name="filterStore" data-category="3" data-storeid="0001">
             <label for="filterStore3">Авторизованные магазины</label>
         </li>
         <li class="custom-radio-btn">
-            <input type="radio" id="filterStore4" name="filterStore" data-category="4">
+            <input type="radio" id="filterStore4" name="filterStore" data-category="4" data-storeid="0001">
             <label for="filterStore4">Другие</label>
         </li>
       </ul>
     </div>
     <div class="stores__search-row">
-      <div class="stores__map-wrap"><img src="./img/theme/map.jpg" class="store__map" alt=""></div>
+      <div class="stores__map-wrap">
+          <div
+          class="map-canvas store__map" id="mapStoresCanvas"
+          data-latitude="-33.890542"
+          data-longitude="151.274856"
+          data-markers='[{"id_category":"2", "id_store":"0001", "lat":"19.1759668", "lng":"72.79504659999998"},{"id_category":"3", "id_store":"0002", "lat":"19.0883595", "lng":"72.82652380000002"},{"id_category":"4", "id_store":"0003", "lat":"18.9542149", "lng":"72.81203529999993"},{"id_category":"2", "id_store":"0004", "lat":"18.979006", "lng":"72.83388300000001"},{"id_category":"3", "id_store":"0005", "lat":"19.2147067", "lng":"72.91062020000004"},{"id_category":"4", "id_store":"0006", "lat":"19.1147067", "lng":"72.81062020000004"}]'
+        ></div>
+        </div>
       <section class="stores__search">
         <div class="top-nav__left_search">
           <input type="text" class="top-nav__left_search-input" id="filterStoresSearchInput" name="stores-search" autocomplete="off" placeholder="Что вы ищете?" />
         </div>
         <div class="stores__search-list scrollbar-inner">
             <ul>
-              <li data-category="2">
+              <li data-category="2" data-storeid="0001">
                 <span>ЗАТ «Инициатива»</span>
                 <address>Київ, пр-кт Оболоньский, 52</address>
                 <a href="tel:+380444222454">тел. : 422-24-54</a>
                 <a href="#" class="stores__gotoshop">Перейти на сайт</a>
               </li>
-              <li data-category="3">
+              <li data-category="3" data-storeid="0002">
                 <span>«Новая линия»</span>
                 <address>Київ, Оноре де бальзака, 15А</address>
                 <a href="tel:+380442063213">тел. (044) 206-32-13</a>
                 <a href="tel:+380442065415">факс: (044) 206-54-15</a>
                 <a href="#" class="stores__gotoshop">Перейти на сайт</a>
               </li>
-              <li data-category="4">
+              <li data-category="4" data-storeid="0003">
                   <span>ЗАТ «Инициатива»</span>
                   <address>Київ, пр-кт Оболоньский, 52</address>
                   <a href="tel:+380444222454">тел. : 422-24-54</a>
                   <a href="#" class="stores__gotoshop">Перейти на сайт</a>
                 </li>
-                <li data-category="2">
+                <li data-category="2" data-storeid="0004">
                   <span>«Новая линия»</span>
                   <address>Київ, Оноре де бальзака, 15А</address>
                   <a href="tel:+380442063213">тел. (044) 206-32-13</a>
                   <a href="tel:+380442065415">факс: (044) 206-54-15</a>
                   <a href="#" class="stores__gotoshop">Перейти на сайт</a>
                 </li>
-                <li data-category="3">
+                <li data-category="3" data-storeid="0005">
                     <span>ЗАТ «Инициатива»</span>
                     <address>Київ, пр-кт Оболоньский, 52</address>
                     <a href="tel:+380444222454">тел. : 422-24-54</a>
                     <a href="#" class="stores__gotoshop">Перейти на сайт</a>
                   </li>
-                  <li data-category="4">
+                  <li data-category="4" data-storeid="0006">
                     <span>«Новая линия»</span>
                     <address>Київ, Оноре де бальзака, 15А</address>
                     <a href="tel:+380442063213">тел. (044) 206-32-13</a>
@@ -356,7 +363,9 @@
     </div>
   </footer>
 
-
+  <script 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUZUaQA2VgfQ7tsSMdwTDbNRwLt-GT8ok">
+  </script>
   <script src="assets/js/theme.js"></script>
 </body>
 

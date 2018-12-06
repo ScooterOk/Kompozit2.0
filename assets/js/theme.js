@@ -752,6 +752,7 @@ if(document.querySelector('.stores__filter')) {
 	$('.stores__filter .custom-radio-btn').click(function(e) {
 		var $storeId = $(this).find('input').data('category');
 
+		updateMarkers($storeId, "id_category");
 		if($storeId === 1) {
 			$('.stores__search-list li').removeClass('choosed').show();
 		} else {
@@ -759,8 +760,18 @@ if(document.querySelector('.stores__filter')) {
 			$('.stores__search-list li[data-category=' + $storeId + ']').addClass('choosed').show();
 		}
 	});
+	function delay(callback, ms) {
+		var timer = 0;
+		return function() {
+			var context = this, args = arguments;
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				callback.apply(context, args);
+			}, ms || 0);
+		};
+	}
 
-	$('#filterStoresSearchInput').on('keyup', function() {
+	$('#filterStoresSearchInput').on('keyup', delay(function() {
 		var searchVal = $(this).val().toLowerCase();
 		var filterItems;
 		if($('.stores__search-list li').hasClass('choosed')) {
@@ -768,20 +779,107 @@ if(document.querySelector('.stores__filter')) {
 		} else {
 			filterItems = $('.stores__search-list li');
 		}
-		if ( searchVal != '' ) {
+		if ( searchVal != true ) {
 			filterItems.closest('li').hide();
+			var searchfilterValues = [];
 			$( filterItems ).each(function() {
 				var filterItemText = $( this ).text().toLowerCase();
-				console.log(	filterItemText);
 				if(~filterItemText.indexOf(searchVal)) {
-				$(this).closest('li').show();
+						searchfilterValues.push($(this).closest('li').data('storeid'));
+					$(this).closest('li').show();
 				}
-			
+				
 			});
 		} else {
 			filterItems.show();
 		}
-	});
+		updateMarkersBySearch(searchfilterValues, "id_store");
+	},500));
 }	
 // end Shop filter
+
 });
+
+// Google Map
+// Preparation for clearing all markers
+google.maps.Map.prototype.markers = new Array();
+google.maps.Map.prototype.getMarkers = function() {
+		return this.markers
+};
+google.maps.Map.prototype.clearMarkers = function() {
+		for(var i=0; i<this.markers.length; i++){
+				this.markers[i].setMap(null);
+		}
+		this.markers = new Array();
+};
+google.maps.Marker.prototype._setMap = google.maps.Marker.prototype.setMap;
+google.maps.Marker.prototype.setMap = function(map) {
+		if (map) {
+				map.markers[map.markers.length] = this;
+		}
+		this._setMap(map);
+}
+// end Preparation for clearing all markers
+var markers = $('#mapStoresCanvas').data('markers');
+	window.onload = function () {
+			LoadMap();
+	};
+
+	var map;
+	var marker;
+	function LoadMap() {
+			var mapOptions = {
+					center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+					zoom: 10,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			map = new google.maps.Map(document.getElementById("mapStoresCanvas"), mapOptions);
+			SetMarker(markers);
+	};
+	function SetMarker(position) {
+			//Remove previous Markers.
+			if (marker != null) {
+					map.clearMarkers()					
+			}
+
+			//Set Marker on Map.
+		for (i = 0; i < position.length; i++) {
+
+			var data = position[i];
+			var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+			marker = new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+					title: data.title
+			});
+		}
+	};
+
+
+function updateMarkers(id, filterKey) {
+	if(id === 1) {
+	SetMarker(markers);
+	} else {
+		var markersFiltered = [];
+		for (var i = 0; i < markers.length ; i++) {
+			if (markers[i][filterKey] == id) {
+				markersFiltered.push(markers[i]);
+			}
+	}
+		SetMarker(markersFiltered);
+	}
+}
+function updateMarkersBySearch(id, filterKey) {
+	if(id === 1) {
+	SetMarker(markers);
+	} else {
+		var markersFiltered = [];
+		for (var i = 0; i < markers.length ; i++) {
+			if (id.indexOf(markers[i][filterKey]) !== -1) {
+				markersFiltered.push(markers[i]);
+			}
+	}
+		SetMarker(markersFiltered);
+	}
+}
+// end Google Map
