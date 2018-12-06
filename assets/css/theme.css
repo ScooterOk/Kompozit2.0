@@ -1788,8 +1788,7 @@ textarea {
   border: 1px solid #c8ced3;
 }
 .custom-checkbox input[type='checkbox']:disabled:checked + i::after {
-  background: url('/img/theme/checkbox-checked-disabled.svg') no-repeat
-    center;
+  background: url('/img/theme/checkbox-checked-disabled.svg') no-repeat center;
 }
 .custom-checkbox span {
   font-size: 14px;
@@ -1817,7 +1816,7 @@ textarea {
 }
 .custom-radio-btn label:before,
 .custom-radio-btn label:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1834,7 +1833,7 @@ textarea {
   background-color: #fff;
   border: 2px solid #1cb743;
 }
-.custom-radio-btn input:checked +  label:after {
+.custom-radio-btn input:checked + label:after {
   width: 12px;
   height: 12px;
   left: 5px;
@@ -1851,6 +1850,60 @@ textarea {
 }
 .toggle-inputs {
   display: none;
+}
+/* Custom radio */
+.custom-radio-buttons {
+  display: flex;
+  overflow: hidden;
+}
+.custom-radio-button {
+  margin-right: 1.1rem;
+}
+.custom-radio-button:last-child {
+  margin-right: 0;
+}
+.custom-radio-button input {
+  visibility: hidden;
+  position: absolute;
+}
+.custom-radio-button label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border: solid 2px #909ca7;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-align: center;
+  color: #8f9ba6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.custom-radio-button input:checked + label {
+  color: #fff;
+  font-weight: 700;
+  background-color: #0f77ff
+
+  ;
+  border-color: #0f77ff;
+}
+.custom-radio-button input:checked + label,
+.custom-radio-button input:disabled + label {
+  cursor: auto;
+}
+@media (max-width: 480px) {
+  .custom-radio-button {
+    margin-right: 0.5rem;
+  }
+  .custom-radio-button label {
+    width: 40px;
+    height: 40px;
+  }
+}
+.invalid .custom-radio-button {
+  border-color: #ff0000;
 }
 /* ==========================================================================
    Helper classes
@@ -2692,8 +2745,7 @@ main.index {
   text-decoration: none;
   display: inline-block;
   padding-right: 25px;
-  background: url('/img/theme/categories/all-hover.svg') no-repeat right
-    center;
+  background: url('/img/theme/categories/all-hover.svg') no-repeat right center;
 }
 .main__navs_slider {
   flex-grow: 1;
@@ -2747,8 +2799,7 @@ main.index {
   font-weight: bold;
   color: #13152b;
   text-align: center;
-  background: url('/img/theme/bg-hits-title.png') no-repeat center / auto
-    100%;
+  background: url('/img/theme/bg-hits-title.png') no-repeat center / auto 100%;
 }
 .main__hits_list {
   margin-top: 16px;
@@ -2995,13 +3046,11 @@ main.index {
 }
 .main__hits_list .slick-prev.slick-disabled {
   left: -15px;
-  background: #fff url('/img/theme/arrow-left-disabled.svg') no-repeat
-    center;
+  background: #fff url('/img/theme/arrow-left-disabled.svg') no-repeat center;
 }
 .main__hits_list .slick-next.slick-disabled {
   right: -15px;
-  background: #fff url('/img/theme/arrow-right-disabled.svg') no-repeat
-    center;
+  background: #fff url('/img/theme/arrow-right-disabled.svg') no-repeat center;
 }
 .slick-slider * {
   outline: none;
@@ -3018,8 +3067,8 @@ main.index {
   font-weight: bold;
   color: #13152b;
   text-align: center;
-  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center /
-    auto 100%;
+  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center / auto
+    100%;
 }
 .main__for-you_list {
   padding-bottom: 31px;
@@ -3087,13 +3136,11 @@ main.index {
 }
 .main__for-you_list .slick-prev.slick-disabled {
   left: -15px;
-  background: #fff url('/img/theme/arrow-left-disabled.svg') no-repeat
-    center;
+  background: #fff url('/img/theme/arrow-left-disabled.svg') no-repeat center;
 }
 .main__for-you_list .slick-next.slick-disabled {
   right: -15px;
-  background: #fff url('/img/theme/arrow-right-disabled.svg') no-repeat
-    center;
+  background: #fff url('/img/theme/arrow-right-disabled.svg') no-repeat center;
 }
 .main__for-you_list .slick-list {
   transform: translateY(-20px);
@@ -3132,8 +3179,7 @@ main.index {
   transition: all 100ms ease;
 }
 .main__for-you_all a:hover span {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
 }
 
 .main__advantages {
@@ -3247,8 +3293,7 @@ main.index {
   transition: all 100ms ease;
 }
 .main__club_left-registration a:hover span {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
 }
 .main__club_right {
   list-style: none;
@@ -3382,8 +3427,7 @@ main.index {
   color: #579fff;
 }
 .main__kompozit-is_button a:hover span {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
 }
 
 /* ==========================================================================
@@ -3936,8 +3980,7 @@ main.category {
   transition: all 100ms ease;
 }
 .main__club_left-registration a:hover span {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
 }
 .main__club_right {
   list-style: none;
@@ -4010,8 +4053,7 @@ main.authentication h1.login__title {
   transition: all 150ms ease;
 }
 .login__clubmember-link a:hover {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
   color: #579fff;
 }
 .login__form {
@@ -4180,8 +4222,8 @@ main.password h1 {
   text-align: center;
   color: #13152b;
   height: 111px;
-  background: url('/img/theme/bg-repassword-title.png') no-repeat center
-    center / auto 111px;
+  background: url('/img/theme/bg-repassword-title.png') no-repeat center center /
+    auto 111px;
 }
 .password__text {
   margin-top: 24px;
@@ -4360,8 +4402,7 @@ main.authentication .clubmember__link a {
   transition: all 150ms ease;
 }
 main.authentication .clubmember__link a:hover {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
   color: #579fff;
 }
 .form__wrapper {
@@ -4756,8 +4797,7 @@ main.checkout {
   transition: all 150ms ease;
 }
 .checkout__login a:hover {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
   color: #579fff;
 }
 .checkout__ordering h3 {
@@ -4793,7 +4833,8 @@ main.checkout {
   border-color: #ffe377;
   background-color: #ffe377;
 }
-.checkout__sublink, .checkout__sublink button {
+.checkout__sublink,
+.checkout__sublink button {
   padding: 0;
   font-size: 14px;
   font-weight: normal;
@@ -4807,11 +4848,13 @@ main.checkout {
   outline: none;
   text-decoration: underline;
 }
-.checkout__sublink a, .checkout__sublink button  {
+.checkout__sublink a,
+.checkout__sublink button {
   color: #003379;
   transition: all 150ms ease;
 }
-.checkout__sublink a:hover, .checkout__sublink button:hover {
+.checkout__sublink a:hover,
+.checkout__sublink button:hover {
   color: #579fff;
 }
 .checkout__ordering .form__item {
@@ -5257,8 +5300,7 @@ main.my-account h1 {
   display: block;
   width: 24px;
   height: 24px;
-  background: #0f77ff url('/img/theme/bg-status-visual.svg') no-repeat
-    center;
+  background: #0f77ff url('/img/theme/bg-status-visual.svg') no-repeat center;
   border-radius: 50%;
   position: absolute;
   top: -5px;
@@ -5639,8 +5681,8 @@ main.my-account h2 {
 }
 .my-account .main__hits h2 {
   margin-bottom: 59px;
-  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center /
-    auto 100%;
+  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center / auto
+    100%;
 }
 
 /* ==========================================================================
@@ -5661,8 +5703,7 @@ i.black {
   background-color: #000;
 }
 i.metallic {
-  background: url('/img/theme/colors/metalic.png') no-repeat center / 100%
-    100%;
+  background: url('/img/theme/colors/metalic.png') no-repeat center / 100% 100%;
 }
 i.green {
   background-color: #00c14c;
@@ -5781,13 +5822,11 @@ main.product {
 }
 .product__images_nav .slick-prev.slick-disabled {
   left: -24px;
-  background: #fff url('/img/theme/arrow-left-disabled.svg') no-repeat
-    center;
+  background: #fff url('/img/theme/arrow-left-disabled.svg') no-repeat center;
 }
 .product__images_nav .slick-next.slick-disabled {
   right: -24px;
-  background: #fff url('/img/theme/arrow-right-disabled.svg') no-repeat
-    center;
+  background: #fff url('/img/theme/arrow-right-disabled.svg') no-repeat center;
 }
 
 .product__main_right {
@@ -6191,8 +6230,7 @@ main.product {
   transition: all 200ms ease;
   display: inline-block;
   height: 21px;
-  background: url('/img/theme/bg-calculator-link.svg') no-repeat left
-    center;
+  background: url('/img/theme/bg-calculator-link.svg') no-repeat left center;
   padding-left: 24px;
   border: none;
   outline: none;
@@ -6245,8 +6283,8 @@ main.product {
 }
 .product__calc-quatity .white {
   margin: 0;
-  background: url('/img/theme/bg-calculator-link--white.svg') no-repeat
-    left center;
+  background: url('/img/theme/bg-calculator-link--white.svg') no-repeat left
+    center;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -6508,8 +6546,7 @@ main.product {
   background: url('/img/theme/pdf.svg') no-repeat left center / auto 25px;
 }
 .product .pdf:hover {
-  background: url('/img/theme/pdf-hover.svg') no-repeat left center / auto
-    25px;
+  background: url('/img/theme/pdf-hover.svg') no-repeat left center / auto 25px;
 }
 .product__description article.benefits ul {
   list-style: none;
@@ -6573,8 +6610,7 @@ main.product {
   font-weight: bold;
   color: #13152b;
   text-align: center;
-  background: url(/img/theme/bg-hits-title.png) no-repeat center / auto
-    100%;
+  background: url(/img/theme/bg-hits-title.png) no-repeat center / auto 100%;
 }
 .product__hits {
   padding: 0px 56px 100px 56px;
@@ -6590,8 +6626,8 @@ main.product {
   font-weight: bold;
   color: #13152b;
   text-align: center;
-  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center /
-    auto 100%;
+  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center / auto
+    100%;
 }
 .product__reviews {
   display: flex;
@@ -6609,8 +6645,8 @@ main.product {
   font-weight: bold;
   color: #13152b;
   text-align: center;
-  background: url(/img/theme/bg-registration-title.png) no-repeat center /
-    auto 100%;
+  background: url(/img/theme/bg-registration-title.png) no-repeat center / auto
+    100%;
 }
 .product__reviews_assessments {
   width: 50%;
@@ -6917,8 +6953,7 @@ main.product {
   transition: all 100ms ease;
 }
 .add__form_submit a:hover span {
-  background: url(/img/theme/categories/all-hover.svg) no-repeat right
-    center;
+  background: url(/img/theme/categories/all-hover.svg) no-repeat right center;
 }
 
 /* ==========================================================================
@@ -6976,7 +7011,7 @@ main.product {
 }
 .contr--inner {
   max-width: 816px;
-  padding: 0;
+  /* padding: 0; */
 }
 .article__single {
   padding: 30px 0 0 0;
@@ -7045,6 +7080,9 @@ main.product {
 }
 .article__media {
   margin: 40px auto 48px;
+}
+.article__media .map-canvas {
+  height: 483px;
 }
 .article__single .article__list {
   margin: 25px auto;
@@ -7170,7 +7208,8 @@ address {
   width: 100%;
   object-fit: cover;
 }
-.stores, .shipment {
+.stores,
+.shipment {
   max-width: 1200px;
   padding: 0 16px;
 }
@@ -7264,7 +7303,7 @@ address {
   line-height: 1.71;
 }
 .shipment__section p {
-margin: 10px 0;
+  margin: 10px 0;
 }
 /* ==========================================================================
     Color page 
@@ -7426,8 +7465,8 @@ main.sales h1 {
   font-weight: bold;
   color: #13152b;
   text-align: center;
-  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center /
-    auto 100%;
+  background: url(/img/theme/bg-foryou-title.png.png) no-repeat center / auto
+    100%;
 }
 .publications__nav {
   display: flex;
@@ -7658,7 +7697,7 @@ main.sales h1 {
   border-top: 1px solid #e8eaf2;
 }
 .modal--highlight {
-max-width: 700px;
+  max-width: 700px;
 }
 .highlight__text {
   margin: 30px 0 50px;
@@ -7785,7 +7824,7 @@ max-width: 700px;
   background: transparent url(/img/theme/cart-full.svg) center;
 }
 .header--mobile .top-nav__right_cart span {
-display: none;
+  display: none;
 }
 .log-in-out {
   display: flex;
@@ -7938,8 +7977,7 @@ display: none;
   }
   .main__hits h2 {
     padding: 15px 0 0 0;
-    background: url('/img/theme/bg-hits-title.png') no-repeat center / auto
-      89px;
+    background: url('/img/theme/bg-hits-title.png') no-repeat center / auto 89px;
   }
   .main__hits_list {
     margin-top: 32px;
@@ -7976,8 +8014,8 @@ display: none;
     font-weight: bold;
     color: #13152b;
     text-align: center;
-    background: url(/img/theme/bg-foryou-title.png.png) no-repeat center /
-      auto 100%;
+    background: url(/img/theme/bg-foryou-title.png.png) no-repeat center / auto
+      100%;
   }
   .footer__list {
     flex-wrap: wrap;
@@ -8886,7 +8924,7 @@ display: none;
   }
   .shipment__section .title-middle {
     margin: 8px 0 8px;
-}
+  }
   .shipment__item {
     margin-top: 32px;
     width: 100%;

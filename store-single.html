@@ -228,7 +228,14 @@
             <img src="./img/theme/clock.svg" alt="" class="store__details-icon">
             <span>(0800) 543-43-13</span></a>
         </div>
-        <div class="article__media"><img src="./img/theme/map.jpg" class="store__map" alt=""></div>
+        <div class="article__media">
+            <div
+            class="map-canvas store__map" id="mapStoresCanvas"
+            data-latitude="-33.890542"
+            data-longitude="151.274856"
+            data-markers='[{"id_category":"2", "id_store":"0001", "lat":"19.1759668", "lng":"72.79504659999998"}]'
+          ></div>
+        </div>
         <p>Наше производство в Крапевницком успешно прошло очередной аудит по серии междунарожных стандатров,
           описывающих требования к системе менеджмента качества - ISO 9001, в последней редакции 2015. Приятно
           поделиться тем, что подтверждение прошло без единого замечания со стороны Международного Центра Сертификации
@@ -341,13 +348,28 @@
             </div>
             <div class="add__form_assessment">
               <h4>Поставьте товару оценку</h4>
-              <ul class="stars">
-                <li data-rate="1" data-name="criterion-1">1</li>
-                <li data-rate="2" data-name="criterion-2">2</li>
-                <li data-rate="3" data-name="criterion-3">3</li>
-                <li data-rate="4" data-name="criterion-4">4</li>
-                <li data-rate="5" data-name="criterion-5">5</li>
-              </ul>
+              <div class="custom-radio-buttons">
+                <div class="custom-radio-button">
+                  <input type="radio" id="radioMarkValue1" name="radioMark" value="1">
+                  <label for="radioMarkValue1">1</label>
+                </div>
+                <div class="custom-radio-button">
+                  <input type="radio" id="radioMarkValue2" name="radioMark" value="2">
+                  <label for="radioMarkValue2">2</label>
+                </div>
+                <div class="custom-radio-button">
+                  <input type="radio" id="radioMarkValue3" name="radioMark" value="3">
+                  <label for="radioMarkValue3">3</label>
+                </div>
+                <div class="custom-radio-button">
+                  <input type="radio" id="radioMarkValue4" name="radioMark" value="4" checked>
+                  <label for="radioMarkValue4">4</label>
+                </div>
+                <div class="custom-radio-button">
+                  <input type="radio" id="radioMarkValue5" name="radioMark" value="5">
+                  <label for="radioMarkValue5">5</label>
+                </div>
+              </div>
             </div>
             <div class="add__form_submit">
               <a href="">
@@ -469,7 +491,8 @@
       <a href="#" class="btn--red">Оформить заказ</a>
     </div>
   </div>
-
+  <script 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUZUaQA2VgfQ7tsSMdwTDbNRwLt-GT8ok"></script>
   <script src="assets/js/theme.js"></script>
 </body>
 
