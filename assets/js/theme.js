@@ -764,7 +764,7 @@ if(document.querySelector('.stores__filter')) {
 		var $storeId = $(this).find('input').data('category');
 
 		updateMarkers($storeId, "id_category");
-		if($storeId === 1) {
+		if($storeId === 0) {
 			$('.stores__search-list li').removeClass('choosed').show();
 		} else {
 			$('.stores__search-list li:not([data-category=' + $storeId + '])').removeClass('choosed').hide();
