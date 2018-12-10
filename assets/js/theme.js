@@ -940,7 +940,7 @@ var markers = $('#mapStoresCanvas').data('markers');
 }
 
 function updateMarkers(id, filterKey) {
-	if(id === 1) {
+	if(id === 0) {
 	SetMarker(markers);
 	} else {
 		var markersFiltered = [];
@@ -953,7 +953,7 @@ function updateMarkers(id, filterKey) {
 	}
 }
 function updateMarkersBySearch(id, filterKey) {
-	if(id === 1) {
+	if(id === 0) {
 	SetMarker(markers);
 	} else {
 		var markersFiltered = [];
