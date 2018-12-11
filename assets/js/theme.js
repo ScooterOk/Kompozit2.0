@@ -924,7 +924,7 @@ var markers = $('#mapStoresCanvas').data('markers');
 			if (marker != null) {
 					map.clearMarkers()					
 			}
-
+			var infowindow = new google.maps.InfoWindow();
 			//Set Marker on Map.
 		for (i = 0; i < position.length; i++) {
 
@@ -935,6 +935,17 @@ var markers = $('#mapStoresCanvas').data('markers');
 					map: map,
 					title: data.title
 			});
+var infoWindowContent = '<a href="' + data.link + '" class="stores__map-infowidow">' + data.infowindow + '</a>';
+			google.maps.event.addListener(
+				marker,
+				'click',
+				(function(marker, i) {
+					return function() {
+						infowindow.setContent(infoWindowContent);
+						infowindow.open(map, marker);
+					};
+				})(marker, i),
+			);
 		}
 	};
 }

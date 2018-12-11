@@ -7300,6 +7300,10 @@ address {
   color: #003379;
   text-decoration: underline;
 }
+.stores__map-infowidow {
+  color: #003379;
+  text-decoration: underline;
+}
 .shipment__section {
   margin-bottom: 58px;
   font-size: 14px;
