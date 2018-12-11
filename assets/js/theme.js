@@ -935,17 +935,19 @@ var markers = $('#mapStoresCanvas').data('markers');
 					map: map,
 					title: data.title
 			});
-var infoWindowContent = '<a href="' + data.link + '" class="stores__map-infowidow">' + data.infowindow + '</a>';
-			google.maps.event.addListener(
-				marker,
-				'click',
-				(function(marker, i) {
-					return function() {
-						infowindow.setContent(infoWindowContent);
-						infowindow.open(map, marker);
-					};
-				})(marker, i),
-			);
+			if(data.infowindow) {
+				var infoWindowContent = '<a href="' + data.link + '" class="stores__map-infowidow">' + data.infowindow + '</a>';
+				google.maps.event.addListener(
+					marker,
+					'click',
+					(function(marker, i) {
+						return function() {
+							infowindow.setContent(infoWindowContent);
+							infowindow.open(map, marker);
+						};
+					})(marker, i),
+				);
+			}
 		}
 	};
 }
