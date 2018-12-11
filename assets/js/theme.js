@@ -764,7 +764,7 @@ if(document.querySelector('.stores__filter')) {
 		var $storeId = $(this).find('input').data('category');
 
 		updateMarkers($storeId, "id_category");
-		if($storeId === 1) {
+		if($storeId === 0) {
 			$('.stores__search-list li').removeClass('choosed').show();
 		} else {
 			$('.stores__search-list li:not([data-category=' + $storeId + '])').removeClass('choosed').hide();
@@ -940,7 +940,7 @@ var markers = $('#mapStoresCanvas').data('markers');
 }
 
 function updateMarkers(id, filterKey) {
-	if(id === 1) {
+	if(id === 0) {
 	SetMarker(markers);
 	} else {
 		var markersFiltered = [];
@@ -953,7 +953,7 @@ function updateMarkers(id, filterKey) {
 	}
 }
 function updateMarkersBySearch(id, filterKey) {
-	if(id === 1) {
+	if(id === 0) {
 	SetMarker(markers);
 	} else {
 		var markersFiltered = [];
