@@ -724,6 +724,24 @@ function tabsInit() {
 	} );
 }
 var $windowWidth = $(window).width();
+$( window ).resize(function() {
+$windowWidth = $(window).width();
+	console.log($windowWidth)
+	if($windowWidth < 481) {
+		
+		if(!$("body").hasClass('mobile-viewport')) {
+			console.log('init1')
+			cutAndPaste();
+			accordionInit();
+			tabsInit();
+			$("body").addClass('mobile-viewport');
+		}
+	} else {
+
+		$("body").removeClass('mobile-viewport');
+	}
+});
+
 if($windowWidth < 992) {
 	createMobileMenu();
 }
@@ -732,16 +750,12 @@ if($windowWidth < 481) {
 	cutAndPaste();
 	accordionInit();
 	tabsInit();
+
+	console.log('init default')
+
 }
 
-$( window ).resize(function() {
-	if($windowWidth < 481) {
-		cutAndPaste();
-		accordionInit();
-		tabsInit();
-	}
-}
-);
+
 
 
 $('.btnToggleCalc').click(function() {
