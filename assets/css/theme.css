@@ -2640,6 +2640,14 @@ main.index {
   font-weight: normal;
   transition: all 150ms ease;
 }
+.main-nav__list > li:nth-child(n+11) {
+display: none;
+transition: none;
+}
+.main-nav__all-btn {
+  border: none;
+  outline: none;
+}
 .main-nav__list > li.sub {
   background: url('/img/theme/right-line.svg') no-repeat center right 32px;
 }

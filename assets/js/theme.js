@@ -645,6 +645,18 @@ function createMobileMenu() {
 }
 // Create mobile menu
 
+// Toggle menu elements
+var $toggleCategory = $('.main-nav__all-btn');
+$('.main-nav__all').click(function(e) {
+	var btnToggledText = $toggleCategory.data('toggled');
+	var btnNotToggledText = $toggleCategory.data('nottoggled');
+  $('.main-nav__list > li:nth-child(n+11)').animate({ opacity: 'toggle', height: 'toggle' }, 200, "linear", () => {
+		$(this).hasClass('toggled') ? $toggleCategory.text(btnNotToggledText) : $toggleCategory.text(btnToggledText);
+		$(this).toggleClass('toggled');
+    });
+});
+// end Toggle menu elements
+
 // Cut and paste product description under its images
 function cutAndPaste() {
 		$($(".product__actions > section:nth-child(n+3)").detach()).appendTo(".product__main_bottom");
@@ -728,9 +740,7 @@ $( window ).resize(function() {
 $windowWidth = $(window).width();
 	console.log($windowWidth)
 	if($windowWidth < 481) {
-		
 		if(!$("body").hasClass('mobile-viewport')) {
-			console.log('init1')
 			cutAndPaste();
 			accordionInit();
 			tabsInit();
@@ -750,9 +760,6 @@ if($windowWidth < 481) {
 	cutAndPaste();
 	accordionInit();
 	tabsInit();
-
-	console.log('init default')
-
 }
 
 
