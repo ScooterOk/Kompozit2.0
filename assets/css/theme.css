@@ -2640,14 +2640,14 @@ main.index {
   font-weight: normal;
   transition: all 150ms ease;
 }
-/* .main-nav__list > li:nth-child(n+11) {
+.main-nav__list > li:nth-child(n+11) {
   display: none;
   transition: none;
 }
 .main-nav__all-btn {
   border: none;
   outline: none;
-} */
+}
 .main-nav__list > li.sub {
   background: url('/img/theme/right-line.svg') no-repeat center right 32px;
 }
@@ -2673,7 +2673,7 @@ main.index {
   color: #579fff;
 }
 /*.main-nav__list > li.paint a {
-  background: url('/img/theme/categories/paint.svg') no-repeat 64px center;  
+  background: url('/img/theme/categories/paint.svg') no-repeat 64px center;
 }
 .main-nav__list > li:not(.active).paint:hover a {
   background: url('/img/theme/categories/paint-hover.svg') no-repeat 64px center;
@@ -6985,7 +6985,7 @@ main.product {
 }
 
 /* ==========================================================================
-    Cart-thanks page 
+    Cart-thanks page
 ========================================================================== */
 .cart-thanks__column {
   display: flex;
@@ -7029,7 +7029,7 @@ main.product {
   color: #13152b;
 }
 /* ==========================================================================
-    Article page 
+    Article page
 ========================================================================== */
 .font-weight-semibold {
   font-weight: 600;
@@ -7338,7 +7338,7 @@ address {
   margin: 10px 0;
 }
 /* ==========================================================================
-    Color page 
+    Color page
 ========================================================================== */
 .color-block {
   display: flex;
@@ -8972,4 +8972,3 @@ main.sales h1 {
     text-align: center;
   }
 }
-
