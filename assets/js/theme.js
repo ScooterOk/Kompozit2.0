@@ -738,7 +738,6 @@ function tabsInit() {
 var $windowWidth = $(window).width();
 $( window ).resize(function() {
 $windowWidth = $(window).width();
-	console.log($windowWidth)
 	if($windowWidth < 481) {
 		if(!$("body").hasClass('mobile-viewport')) {
 			cutAndPaste();
@@ -947,6 +946,7 @@ var markers = $('#mapStoresCanvas').data('markers');
 			}
 			var infowindow = new google.maps.InfoWindow();
 			//Set Marker on Map.
+		var infoWindowContent = [];
 		for (i = 0; i < position.length; i++) {
 
 			var data = position[i];
@@ -957,13 +957,13 @@ var markers = $('#mapStoresCanvas').data('markers');
 					title: data.title
 			});
 			if(data.infowindow) {
-				var infoWindowContent = '<a href="' + data.link + '" class="stores__map-infowidow">' + data.infowindow + '</a>';
+				infoWindowContent[i] = data.infowindow;
 				google.maps.event.addListener(
 					marker,
 					'click',
 					(function(marker, i) {
 						return function() {
-							infowindow.setContent(infoWindowContent);
+							infowindow.setContent(infoWindowContent[i]);
 							infowindow.open(map, marker);
 						};
 					})(marker, i),
