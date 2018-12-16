@@ -957,7 +957,7 @@ var markers = $('#mapStoresCanvas').data('markers');
 					title: data.title
 			});
 			if(data.infowindow) {
-				infoWindowContent[i] = data.infowindow;
+				infoWindowContent[i] = '<a href="' + data.link + '">' + data.infowindow + '</a>';
 				google.maps.event.addListener(
 					marker,
 					'click',
