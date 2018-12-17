@@ -7240,8 +7240,10 @@ flex-wrap: wrap;
   flex-direction: column;
 }
 .store__details {
+  width: 100%;
   margin: 36px 0;
 }
+
 address {
   font-style: normal;
 }
@@ -7261,6 +7263,9 @@ address {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+.google-map {
+  height: 263px;
 }
 .stores,
 .shipment {
@@ -7754,6 +7759,23 @@ main.sales h1 {
   align-items: center;
   border-top: 1px solid #e8eaf2;
 }
+.contacts-page h1 {
+  margin: 49px 0 30px;
+text-align: center;
+font-size: 48px;
+}
+.contacts-page h3 {
+margin: 0 0 5px;
+}
+.contacts-page .google-map {
+margin-top: 23px;
+}
+.contacts-page .store__details {
+margin: 29px 0;
+}
+.contacts__store-title {
+  font-size: 20px;
+}
 .modal--highlight {
   max-width: 700px;
 }
@@ -7907,6 +7929,10 @@ main.sales h1 {
 }
 
 @media only screen and (min-width: 992px) {
+  .column-md-6 {
+    width: 50%;
+    padding: 0 12px;
+  }
   .header--mobile,
   .only-tablet {
     display: none !important;

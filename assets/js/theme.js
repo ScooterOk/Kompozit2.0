@@ -879,14 +879,14 @@ if(document.querySelector('#pagination-container')) {
 // end Fetch reviews and create pagination 
 
 });
-if(document.querySelector('.map-canvas')) {
 // Google Map
 var googleMapsLoaded = false;
+var key = 'AIzaSyCUZUaQA2VgfQ7tsSMdwTDbNRwLt-GT8ok';
+var urlRequest = "https://maps.google.com/maps/api/js?sensor=true&key=" + key;
+if(document.querySelector('.map-canvas')) {
 window.onload = function () {
 	// Load Google map
 	if (!googleMapsLoaded) {
-		var key = 'AIzaSyCUZUaQA2VgfQ7tsSMdwTDbNRwLt-GT8ok';
-		var urlRequest = "https://maps.google.com/maps/api/js?sensor=true&key=" + key;
 		$
 			.getScript(urlRequest)
 			.done(() => {
@@ -999,4 +999,49 @@ function updateMarkersBySearch(id, filterKey) {
 		SetMarker(markersFiltered);
 	}
 }
+// Multiple Maps
+var $maps = $('.google-map');
+window.initMaps = function() {
+  if ($maps.length) {
+    if (!googleMapsLoaded) {
+      $.getScript(urlRequest)
+        .done((script, textStatus) => {
+          googleMapsLoaded = true;
+          createMaps($maps);
+        })
+        .fail((jqxhr, settings, ex) => {});
+    } else {
+      createMaps($maps);
+    }
+  }
+};
+
+window.createMaps = function($maps) {
+  $maps.each(function() {
+	var mapMarker = $(this).data('markers');
+    var mapOptions = {
+      zoom: 15,
+      center: new google.maps.LatLng(mapMarker[0].lat, mapMarker[0].lng),
+      marker: true,
+      scrollwheel: false,
+      mapTypeControl: false,
+      streetViewControl: false,
+    };
+    var googleMap = $(this).get(0);
+    var map = new google.maps.Map(googleMap, mapOptions);
+    var myLatLong = new google.maps.LatLng(mapMarker[0].lat, mapMarker[0].lng);
+    // mapOptions.center = myLatLong;
+
+    if (mapOptions.marker) {
+      const marker = new google.maps.Marker({
+        position: myLatLong,
+        map,
+      });
+    }
+  });
+};
+if($maps) {
+	initMaps()
+}
+
 // end Google Map
