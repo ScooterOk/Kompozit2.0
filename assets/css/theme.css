@@ -7047,6 +7047,13 @@ main.product {
 .article__single img {
   max-width: 100%;
 }
+.article__single p {
+  text-align: justify;
+}
+.article__single .link {
+  text-decoration: none;
+  color: #003379;
+}
 .article__single .slick-arrow {
   position: absolute;
   margin: auto;
@@ -7112,6 +7119,19 @@ main.product {
 .article__media .map-canvas {
   height: 483px;
 }
+.article__gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 44px;
+}
+@media only screen and (max-width: 992px) {
+  .article__gallery {
+flex-wrap: wrap;
+  }
+}
+.article__gallery-item {
+  margin-bottom: 10px;
+}
 .article__single .article__list {
   margin: 25px auto;
 }
@@ -7135,6 +7155,12 @@ main.product {
 }
 .article__single h1 {
   font-size: 48px;
+  text-align: center;
+
+}
+.article__single h3 {
+  font-size: 20px;
+  text-align: center;
 }
 .article__tiles {
   display: flex;
