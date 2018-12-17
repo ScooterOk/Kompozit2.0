@@ -685,6 +685,7 @@ function accordionInit() {
 	});
 }
 // end Accordion
+
 function tabsInit() {
 	$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
 
@@ -746,7 +747,6 @@ $windowWidth = $(window).width();
 			$("body").addClass('mobile-viewport');
 		}
 	} else {
-
 		$("body").removeClass('mobile-viewport');
 	}
 });
@@ -761,8 +761,11 @@ if($windowWidth < 481) {
 	tabsInit();
 }
 
-
-
+if($windowWidth > 481) {
+	if($('.accordion-separate')[0]) {
+		accordionInit()
+	}
+}
 
 $('.btnToggleCalc').click(function() {
 	$(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
@@ -1030,7 +1033,6 @@ window.createMaps = function($maps) {
     var googleMap = $(this).get(0);
     var map = new google.maps.Map(googleMap, mapOptions);
     var myLatLong = new google.maps.LatLng(mapMarker[0].lat, mapMarker[0].lng);
-    // mapOptions.center = myLatLong;
 
     if (mapOptions.marker) {
       const marker = new google.maps.Marker({

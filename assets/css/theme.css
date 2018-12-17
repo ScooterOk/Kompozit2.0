@@ -2098,6 +2098,10 @@ textarea {
 .global__product-block .item-buy > li .item-buy-amount-list li:hover {
   background-color: #f7f8fb;
 }
+.heading-middle {
+  font-size: 22px;
+  font-weight: 600;
+}
 .card__list {
   display: flex;
   flex-wrap: wrap;
@@ -6487,7 +6491,36 @@ main.product {
   letter-spacing: normal;
   color: #768592;
 }
-
+.accordion-separate {
+  width: 100%;
+}
+.accordion-separate .accordion__header {
+  position: relative;
+  border-bottom: 1px solid #e8eaf2;
+  margin-bottom: 24px;
+}
+.accordion-separate .accordion__header:after {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid #0f77ff;
+  border-bottom: 1px solid #0f77ff;
+  position: absolute;
+  right: 3px;
+  content: ' ';
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
+}
+.accordion-separate .accordion__header.active:after {
+  transform: rotate(-135deg);
+}
+.accordion-separate .accordion__header h3 {
+font-weight: 400;
+margin: 7px 0;
+}
 .accordion__body p {
   margin: 0;
 }
@@ -7039,7 +7072,7 @@ main.product {
 }
 .contr--inner {
   max-width: 816px;
-  /* padding: 0; */
+  padding: 0;
 }
 .article__single {
   padding: 30px 0 0 0;
@@ -7512,6 +7545,53 @@ main.categorys {
   z-index: 4;
 }
 
+/* ==========================================================================
+    Documents
+========================================================================== */
+.doc__card-list {
+  display: flex;
+  margin: 0 -12px;
+  flex-wrap: wrap;
+}
+.doc__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 163px;
+  margin: 20px 12px;
+  padding: 34px 22px 13px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px 0 rgba(216, 216, 216, 0.5);
+  background-color: #ffffff;
+  text-align: center;
+}
+  @media only screen and (max-width: 480px) {
+.doc__card-list {
+  margin: 0;
+justify-content: space-between;
+}
+.doc__card {
+width: 48%;
+margin: 14px 0;
+}
+  }
+.doc__card-title {
+  margin: 22px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #13152b;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.form-wrap {
+  margin-top: 20px;
+}
+.form-wrap .add__form_submit {
+margin-top: 40px;
+}
 /* ==========================================================================
     Publications page classes
 ========================================================================== */
