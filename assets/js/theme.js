@@ -661,6 +661,9 @@ $('.main-nav__all').click(function(e) {
 function cutAndPaste() {
 		$($(".product__actions > section:nth-child(n+3)").detach()).appendTo(".product__main_bottom");
 }
+function cutAndPasteDestroy() {
+		$($(".product__main_bottom > section").detach()).appendTo(".product__actions");
+}
 // end  Cut and paste product description under its images
 
 // Accordion
@@ -683,6 +686,10 @@ function accordionInit() {
 	
 			j.preventDefault();
 	});
+}
+function accordionDestroy() {
+	$('.accordion__body').slideDown();
+	$('.accordion__header').removeClass('active');
 }
 // end Accordion
 
@@ -744,10 +751,14 @@ $windowWidth = $(window).width();
 			cutAndPaste();
 			accordionInit();
 			tabsInit();
-			$("body").addClass('mobile-viewport');
+			$("body").addClass('mobile-viewport').removeClass('desktop-viewport');
 		}
 	} else {
-		$("body").removeClass('mobile-viewport');
+		if(!$("body").hasClass('desktop-viewport')) {
+			accordionDestroy()
+			cutAndPasteDestroy()
+			$("body").addClass('desktop-viewport').removeClass('mobile-viewport');
+		}
 	}
 });
 
