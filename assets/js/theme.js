@@ -548,14 +548,14 @@ $(document).ready(function() {
 		});
 		$('.main__hits_list').slick({
 			arrows : true,          
-			slidesToShow: 4,
+			slidesToShow: 1,
 			slidesToScroll: 1,
+			variableWidth: true,
+			centerMode: true,
 			responsive: [
 				{
 					breakpoint: 992,
 					settings: {
-						variableWidth: true,
-						centerMode: true,
 						arrows:false
 					}
 				}
