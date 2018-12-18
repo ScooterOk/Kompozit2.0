@@ -688,8 +688,10 @@ function accordionInit() {
 	});
 }
 function accordionDestroy() {
-	$('.accordion__body').slideDown();
-	$('.accordion__header').removeClass('active');
+	console.log('destroy')
+	$('.product__description .accordion__header').unbind('click')
+	$('.product__description .accordion__body').slideDown();
+	$('.product__description .accordion__header').removeClass('active');
 }
 // end Accordion
 
