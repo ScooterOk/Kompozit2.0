@@ -7282,7 +7282,10 @@ align-items: center;
   width: 100%;
   margin: 36px 0;
 }
-
+.contacts__list  {
+  list-style-type: none;
+  padding-left: 0;
+}
 address {
   font-style: normal;
 }
