@@ -4965,7 +4965,7 @@ main.checkout {
 .checkout__item {
   background-color: #f7f8fb;
   display: flex;
-  padding: 24px 72px 24px 17px;
+  padding: 24px 0 24px 17px;
   position: relative;
   margin-bottom: 16px;
 }
@@ -8922,10 +8922,11 @@ margin: 29px 0;
     font-weight: 600 !important;
     text-decoration: none;
   }
-  .modal {
+  .fancybox-wrap {
     padding: 15px 16px;
+    color: #222;
   }
-  .modal h3 {
+  .fancybox-wrap h3 {
     font-size: 22px;
     font-weight: 600;
   }
@@ -8933,6 +8934,9 @@ margin: 29px 0;
     width: 165px;
     align-self: flex-start;
     box-shadow: 0 2px 8px 0 rgba(0, 51, 121, 0.11);
+  }
+  .fancybox-wrap .color {
+margin-right: 25px;
   }
   .checkout__item_info {
     padding-left: 16px;
