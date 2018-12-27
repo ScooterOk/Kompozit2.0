@@ -7285,13 +7285,7 @@ main.product {
 .fancybox-wrap h3 {
   font-size: 24px;
 }
-.fancybox-wrap .checkout__item {
-  background-color: transparent;
-  display: flex;
-  padding: 0;
-  position: relative;
-  margin-bottom: 16px;
-}
+
 .fancybox-wrap .checkout__item .vol {
   margin-right: 25px;
 }
