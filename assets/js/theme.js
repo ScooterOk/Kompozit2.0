@@ -657,14 +657,15 @@ $('.main-nav__all').click(function(e) {
 });
 // end Toggle menu elements
 
-// Cut and paste product description under its images
+// Cut and paste product header description 
 function cutAndPaste() {
-		$($(".product__actions > section:nth-child(n+3)").detach()).appendTo(".product__main_bottom");
+		$($(".product__main_right > h1, .product__main_right > .product__price, .product__main_right > .product__info").detach()).appendTo(".product__main_top");
+		
 }
 function cutAndPasteDestroy() {
-		$($(".product__main_bottom > section").detach()).appendTo(".product__actions");
+		$($(".product__main_top > *").detach()).prependTo(".product__main_right");
 }
-// end  Cut and paste product description under its images
+// end  Cut and paste product header description 
 
 // Accordion
 function accordionInit() {
