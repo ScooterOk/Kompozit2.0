@@ -6147,6 +6147,18 @@ main.product {
   flex-grow: 1;
   height: 32px;
 }
+.simple-dropdown .product__dropdown-list {
+  z-index: 0;
+}
+.simple-dropdown .product__dropdown-list.active {
+  z-index: 2;
+}
+.simple-dropdown .product__dropdown-list li > label {
+ height: 100%;
+}
+.documents-dropdowns {
+  display: block; 
+}
 .product__actions_amount {
   margin-bottom: 32px;
   display: flex;
