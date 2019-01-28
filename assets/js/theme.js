@@ -426,7 +426,7 @@ $(document).ready(function() {
 	}
 
 
-	/* ==========================================================================
+	/*==========================================================================
 			Product page
 		 ========================================================================== */
 		 var $reqUrlBase = $('.documents-dropdowns').data("url");
@@ -442,23 +442,44 @@ $(document).ready(function() {
 				var $currentProductId = $currentItem.find('input').val();
 				var urlPart = "";
 				var defaultDropdownTitle = "";
+				var dataType = '';
 				if($currentDropdownType === "products") {
 					urlPart = "&id_product=";
 					$reqUrlTemporary = $reqUrlBase + urlPart + $currentProductId;
 					defaultDropdownTitle = "Год партии"
+					dataType = 'year';
 				} else if($currentDropdownType === "years") {
 					urlPart = "&id_year=";
 					$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
-					defaultDropdownTitle = "Номер партии"
+					defaultDropdownTitle = "Номер партии";
+					dataType = 'number';
 				}
-				if($currentProductId) {
+				else if($currentDropdownType === "numbers") {
+					urlPart = "&id_number=";
+					$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
+					defaultDropdownTitle = "Номер партии";
+					dataType = 'pdf';
+				}
+
+				if($currentProductId.length > 0) {
 					var $itemsArray = '<li><label><input type="radio" /><span>'+defaultDropdownTitle+'</span></label></li>';
 					$.ajax({
-						url: $reqUrlTemporary
+						url: $reqUrlTemporary,
+						dataType: 'json',
 					})
 						.done(function(data) {
+							if (dataType == 'pdf') {
+								var footer = $('.certificate-form-footer');
+								footer.find('.add__form_submit > a').attr('href', data.download_url);
+								footer.fadeIn();
+								return false;
+							}
+
 								$.each(data, function (index, value) {
-									$itemsArray +='<li><label><input type="radio" value="'+value[value]+'"><span>'+value[value]+'</span></label></li>';
+
+									var val = (dataType == 'year') ? value.id_document_certificate_year : value.id_document_certificate_number;
+
+									$itemsArray +='<li><label><input type="radio" value="'+val+'"><span>'+value.value+'</span></label></li>';
 								});
 								if($currentDropdownType !== 'numbers') {
 									$currentDropdown.next().find(".product__dropdown-list").html($itemsArray);
