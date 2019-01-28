@@ -429,8 +429,9 @@ $(document).ready(function() {
 	/* ==========================================================================
 			Product page
 		 ========================================================================== */
+		 var $reqUrlBase = $('.documents-dropdowns').data("url");
+		 var $reqUrlTemporary = $reqUrlBase;
 		 $('body').on('click', '.product__dropdown-list li input', function(e){
-			 var $reqUrl = $('.documents-dropdowns').data("url");
 			if(!$(this).closest('ul').hasClass('active')){
 				$('.documents-dropdowns').find(".product__dropdown-list").removeClass("active");
 				$(this).closest('ul').addClass('active');
@@ -440,30 +441,24 @@ $(document).ready(function() {
 				var $currentDropdownType =  $currentDropdown.data("type");
 				var $currentProductId = $currentItem.find('input').val();
 				var urlPart = "";
-				var dataType = "";
 				var defaultDropdownTitle = "";
 				if($currentDropdownType === "products") {
-					urlPart = "id_product";
-					dataType = "id";
+					urlPart = "&id_product=";
+					$reqUrlTemporary = $reqUrlBase + urlPart + $currentProductId;
 					defaultDropdownTitle = "Год партии"
 				} else if($currentDropdownType === "years") {
-					urlPart = "id_year";
-					dataType = "userId";
+					urlPart = "&id_year=";
+					$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
 					defaultDropdownTitle = "Номер партии"
-				}
-				if($reqUrl) {
-					$reqUrl += dataType; 
-				} else {
-					$reqUrl = "https://jsonplaceholder.typicode.com/posts/"
 				}
 				if($currentProductId) {
 					var $itemsArray = '<li><label><input type="radio" /><span>'+defaultDropdownTitle+'</span></label></li>';
 					$.ajax({
-						url: $reqUrl
+						url: $reqUrlTemporary
 					})
-						.done(function( data ) {
+						.done(function(data) {
 								$.each(data, function (index, value) {
-									$itemsArray +='<li><label><input type="radio" value="'+value[dataType]+'"><span>'+value[dataType]+'</span></label></li>';
+									$itemsArray +='<li><label><input type="radio" value="'+value[value]+'"><span>'+value[value]+'</span></label></li>';
 								});
 								if($currentDropdownType !== 'numbers') {
 									$currentDropdown.next().find(".product__dropdown-list").html($itemsArray);
