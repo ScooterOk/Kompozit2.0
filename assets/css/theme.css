@@ -6159,6 +6159,18 @@ main.product {
 .documents-dropdowns {
   display: block; 
 }
+.documents-dropdowns .product__dropdown  {
+  display: none; 
+}
+.documents-dropdowns .product__dropdown[data-type="products"] {
+  display: block; 
+}
+.documents-dropdowns .product__dropdown [data-type="products"] {
+  display: block; 
+}
+.certificate-form-footer {
+  display: none; 
+}
 .product__actions_amount {
   margin-bottom: 32px;
   display: flex;

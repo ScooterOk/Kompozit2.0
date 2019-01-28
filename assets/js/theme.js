@@ -428,7 +428,56 @@ $(document).ready(function() {
 
 	/* ==========================================================================
 			Product page
-	   ========================================================================== */
+		 ========================================================================== */
+		 $('body').on('click', '.product__dropdown-list li input', function(e){
+			 var $reqUrl = $('.documents-dropdowns').data("url");
+			if(!$(this).closest('ul').hasClass('active')){
+				$('.documents-dropdowns').find(".product__dropdown-list").removeClass("active");
+				$(this).closest('ul').addClass('active');
+			} else {
+				var $currentItem = $(this).closest('li');
+				var $currentDropdown = $(this).closest('.product__dropdown');
+				var $currentDropdownType =  $currentDropdown.data("type");
+				var $currentProductId = $currentItem.find('input').val();
+				var urlPart = "";
+				var dataType = "";
+				var defaultDropdownTitle = "";
+				if($currentDropdownType === "products") {
+					urlPart = "id_product";
+					dataType = "id";
+					defaultDropdownTitle = "Год партии"
+				} else if($currentDropdownType === "years") {
+					urlPart = "id_year";
+					dataType = "userId";
+					defaultDropdownTitle = "Номер партии"
+				}
+				if($reqUrl) {
+					$reqUrl += dataType; 
+				} else {
+					$reqUrl = "https://jsonplaceholder.typicode.com/posts/"
+				}
+				if($currentProductId) {
+					var $itemsArray = '<li><label><input type="radio" /><span>'+defaultDropdownTitle+'</span></label></li>';
+					$.ajax({
+						url: $reqUrl
+					})
+						.done(function( data ) {
+								$.each(data, function (index, value) {
+									$itemsArray +='<li><label><input type="radio" value="'+value[dataType]+'"><span>'+value[dataType]+'</span></label></li>';
+								});
+								if($currentDropdownType !== 'numbers') {
+									$currentDropdown.next().find(".product__dropdown-list").html($itemsArray);
+									$currentDropdown.next().fadeIn();
+								}	else if($currentDropdownType === 'numbers') {
+									$('.certificate-form-footer').fadeIn()
+								}
+						});	
+				}
+				$(this).closest('ul').prepend($currentItem);
+				$(this).closest('ul').removeClass('active');			
+			}
+		});
+		
 	if($('main').hasClass('product')){
 		$(document).click(function(e) {
 			if($(e.target).closest('.product__dropdown').length) return;			
