@@ -5590,7 +5590,9 @@ main.my-account h2 {
 .my-information .my-account__edit-info {
   margin-bottom: 16px;
 }
-.my-information .my-account__edit-info a {
+.my-information .my-account__edit-info a,
+.my-information .my-account__edit-info button,
+.my-information .my-account__edit-adress button,.my-information .my-account__edit-adress a { 
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -5599,27 +5601,30 @@ main.my-account h2 {
   letter-spacing: normal;
   color: #003379;
   transition: all 150ms ease;
+  background-color: none;
+  border: none;
+  outline: none;
+  padding: 0;
 }
-.my-information .my-account__edit-info a:hover {
+.my-information .my-account__edit-info a:hover,
+.my-information .my-account__edit-info button:hover,
+.my-information .my-account__edit-adress button:hover,
+.my-information .my-account__edit-adress a:hover {
   color: #579fff;
 }
 .my-information .my-account__edit-adress {
   margin-bottom: 0;
 }
-.my-information .my-account__edit-adress a {
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.43;
-  letter-spacing: normal;
-  color: #003379;
-  transition: all 150ms ease;
-}
-.my-information .my-account__edit-adress a:hover {
-  color: #579fff;
-}
 
+.my-information {
+
+}
+.my-information__data {
+
+}
+.my-information__edit {
+  display: none;
+}
 .my-account__wrapper_right {
   width: 505px;
 }

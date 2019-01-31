@@ -340,6 +340,30 @@ $(document).ready(function() {
 			if($(e.target).closest('.item-buy-amount').length) return;			
 			$('#my-account-hits-list .item-buy-amount-list').fadeOut(150);
 		});
+		// Edit My Info
+		$('.my-account__edit-info button').click(function() {
+			var defaultButtonWord = $(this).data('defaultword');
+			var newButtonWord = $(this).data('newword');
+			$(this).text(function(index, text) {
+				if (text.indexOf(defaultButtonWord) !=-1) {
+					return text.replace(defaultButtonWord, newButtonWord);
+				} else {
+					return text.replace(newButtonWord, defaultButtonWord);
+				}
+			});
+			$(".my-information__data, .my-information__edit").slideToggle();
+			$(".my-information__data").toggleClass("is-hidden");
+			if($(".my-information__data").hasClass('is-hidden')) {
+				$("#name-checkout2").val($(".my-account__name").text());
+				$("#phone-checkout2").val($(".my-account__phone").text());
+				$("#email-field").val($(".my-account__email").text());
+			} else {
+				$(".my-account__name").text($("#name-checkout2").val());
+				$(".my-account__phone").text($("#phone-checkout2").val());
+				$(".my-account__email").text($("#email-field").val());
+			}
+		})
+		// end Edit My Info
 		$('.my-account__invite_link a').click(function(e) {
 			e.preventDefault();
 			var elem = $('#invite-link')[0];

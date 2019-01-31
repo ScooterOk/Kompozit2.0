@@ -254,14 +254,37 @@
 
         <article class="my-information">
           <h2>Моя информация</h2>
-          <p class="my-account__name">Юрий Викторович Глушко</p>
-          <p class="my-account__phone">+38 93 447 32 83</p>
-          <p class="my-account__email">hlushko@gmail.com</p>
+          <div class="my-information__data">
+            <p class="my-account__name">Юрий Викторович Глушко</p>
+            <p class="my-account__phone">+38 93 447 32 83</p>
+            <p class="my-account__email">hlushko@gmail.com</p>
+          </div>
+          <div class="my-information__edit">
+            <div class="form__item">
+              <label>
+                <input type="text" name="name" id="name-checkout2" placeholder="Ваше имя" autocomplete="off">
+                <span>Ваше имя</span>
+              </label>
+            </div>
+            <div class="form__item">
+              <label>
+                <input type="tel" name="phone" id="phone-checkout2" placeholder="Номер телефона" autocomplete="off"
+                  maxlength="19">
+                <span>Номер телефона</span>
+              </label>
+            </div>
+              <div class="form__item">
+                <label>
+                  <input type="email" name="email" id="email-field" placeholder="Ваш email" autocomplete="off">
+                  <span>Ваш email</span>
+                </label>
+              </div>
+          </div>
           <p class="my-account__edit-info">
-            <a href="">Редактировать личные данные и пароль</a>
+            <button data-defaultword="Редактировать"  data-newword="Сохранить">Редактировать личные данные и пароль</button>
           </p>
           <p class="my-account__edit-adress">
-            <a href="">Изменить адреса доставки </a>
+            <button>Изменить адреса доставки </button>
           </p>
         </article>
       </div>
