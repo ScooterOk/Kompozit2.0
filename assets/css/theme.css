@@ -5615,13 +5615,6 @@ main.my-account h2 {
 .my-information .my-account__edit-adress {
   margin-bottom: 0;
 }
-
-.my-information {
-
-}
-.my-information__data {
-
-}
 .my-information__edit {
   display: none;
 }
