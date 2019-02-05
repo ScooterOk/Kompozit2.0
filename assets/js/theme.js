@@ -676,19 +676,28 @@ $(document).ready(function() {
 
 	}
 // Progress bar
-	$( ".my-account__status-visual" ).each(function( index ) {
-		var progressWidth = $(this).data("progress");
-		progressWidth = (100 - progressWidth) * 0.33 +  progressWidth;
-		var progressWidthPercent = progressWidth + "%";
-		$(this).find(".my-account__progress").css("width", progressWidthPercent);
-		if(progressWidth >= 100) {
-			$(this).addClass("max mid min");
-		} else if(progressWidth >= 66.5) {
-			$(this).addClass("mid min");
-		} else if(progressWidth >= 33) {
-			$(this).addClass("min");
-		}
-	});
+$( ".my-account__status-visual" ).each(function( index ) {
+	var progressWidth = $(this).data("progress");
+
+	if (progressWidth >= 100 ) {
+		progressWidth = 100;
+	}
+
+	if (progressWidth < 33) {
+		progressWidth = 33.33;
+	}
+	// progressWidth = (100 - progressWidth) * 0.33 +  progressWidth;
+	var progressWidthPercent = progressWidth + "%";
+
+	$(this).find(".my-account__progress").css("width", progressWidthPercent);
+	if(progressWidth >= 100) {
+		$(this).addClass("max mid min");
+	} else if(progressWidth >= 66.5) {
+		$(this).addClass("mid min");
+	} else if(progressWidth >= 33) {
+		$(this).addClass("min");
+	}
+});
 // end Progress bar
 if($('article__slider')) {
 	$('.article__slider').slick({
