@@ -355,10 +355,21 @@ $(document).ready(function() {
 			$(".my-information__data").toggleClass("is-hidden");
 			if($(".my-information__data").hasClass('is-hidden')) {
 				$("#name-checkout2").val($(".my-account__name").text());
+				$("#surname-checkout2").val($(".my-account__surname").text());
 				$("#phone-checkout2").val($(".my-account__phone").text());
 				$("#email-field").val($(".my-account__email").text());
 			} else {
+				// $.ajax({
+				// 	url: 'https://dev2.kompozit.ua/my-account',
+				// 	type: 'post',
+				// 	dataType: 'json',
+				// 	data: $('form#formPersonalData').serialize(),
+				// 	success: function(data) {
+				// 		console.log("form submitted")
+				// 	}
+				// });
 				$(".my-account__name").text($("#name-checkout2").val());
+				$(".my-account__surname").text($("#surname-checkout2").val());
 				$(".my-account__phone").text($("#phone-checkout2").val());
 				$(".my-account__email").text($("#email-field").val());
 			}
@@ -517,6 +528,18 @@ $(document).ready(function() {
 				$(this).closest('ul').removeClass('active');			
 			}
 		});
+		$("#printToggler").click(function() {
+			var btnDownloadDoc = $('.add__form_submit > a');
+			var printStr = "?print=1";
+			var baseBtnHref = btnDownloadDoc.attr("href");
+			var newBtnHref = "";
+			if (baseBtnHref.indexOf(printStr) ==-1) {
+				newBtnHref = baseBtnHref + printStr;
+			} else {
+				newBtnHref = baseBtnHref.replace(printStr, '');
+			}
+			btnDownloadDoc.attr('href', newBtnHref);
+		})
 		
 	if($('main').hasClass('product')){
 		$(document).click(function(e) {

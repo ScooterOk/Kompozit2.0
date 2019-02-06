@@ -255,15 +255,23 @@
         <article class="my-information">
           <h2>Моя информация</h2>
           <div class="my-information__data">
-            <p class="my-account__name">Юрий Викторович Глушко</p>
+            <p class="my-account__name">Юрий</p>
+            <p class="my-account__surname">Глушко</p>
             <p class="my-account__phone">+38 93 447 32 83</p>
             <p class="my-account__email">hlushko@gmail.com</p>
           </div>
           <div class="my-information__edit">
+            <form class="form" id="formPersonalData">
             <div class="form__item">
               <label>
                 <input type="text" name="name" id="name-checkout2" placeholder="Ваше имя" autocomplete="off">
                 <span>Ваше имя</span>
+              </label>
+            </div>
+            <div class="form__item">
+              <label>
+                <input type="text" name="surname" id="surname-checkout2" placeholder="Ваше имя" autocomplete="off">
+                <span>Ваше фамилия</span>
               </label>
             </div>
             <div class="form__item">
@@ -279,6 +287,7 @@
                   <span>Ваш email</span>
                 </label>
               </div>
+            </form>
           </div>
           <p class="my-account__edit-info">
             <button data-defaultword="Редактировать"  data-newword="Сохранить">Редактировать личные данные и пароль</button>
