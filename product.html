@@ -393,12 +393,18 @@
               <div class="product__calc-quatity">
                 <h6 class="white product__calc-btn">Рассчитать необходимое количество</h6>
                 <form action="#">
-                  <div class="form__row">
+                  <div class="form__row form__row--default">
                     <label for="calcProductQuantity">Введите площадь поверхности (м)<sup>2</sup></label>
                     <input type="text" id="calcProductQuantity">
                   </div>
+                  <div class="form__row form__row--result">
+                    <label>Вам необходимо <span class="font-weight-bold">
+                      <span id="product__calcLitres"></span> литров
+                    </span> 
+                  </label>
+                  </div>
                   <div class="form__submit">
-                    <button type="submit">Рассчитать</button>
+                    <button type="button" id="product__calcBtnCount" data-coef1="0.15" data-coef2="0.05" data-text1="Рассчитать" data-text2="Рассчитать заново">Рассчитать</button>
                   </div>
                 </form>
                 <button class="product__calc-btn-close btnToggleCalc"></button>

@@ -331,7 +331,11 @@ $(document).ready(function() {
 		});
 	}
 	
-
+	function isNumeric(n)
+	{
+	 return !isNaN(parseFloat(n)) && isFinite(n)
+ ;
+ }
 	/* ==========================================================================
 			Settings page
 	   ========================================================================== */
@@ -903,10 +907,26 @@ if($windowWidth > 481) {
 		accordionInit()
 	}
 }
-
 $('.btnToggleCalc').click(function() {
 	$(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
 });
+$('#product__calcBtnCount').click(function() {
+	var productQuantityValue = $('#calcProductQuantity').val();
+	var productQuantityResult = 0;
+	var btnText1 = $(this).data("text1");
+	var btnText2 = $(this).data("text2");
+	if(isNumeric(productQuantityValue)) {
+		productQuantityResult = productQuantityValue * $(this).data("coef1") + productQuantityValue * $(this).data("coef2");
+		$(this).closest(".product__calc-quatity").find(".form__row").slideToggle();	
+		$("#product__calcLitres").text(productQuantityResult);
+		if($(this).text() === btnText1) {
+			$(this).text(btnText2)	
+		} else {
+			$(this).text(btnText1)	
+		}
+	}
+});
+
 // hide/show checkout radio inputs after select
 $('.custom-radio-btn').click(function(e) {
 	$(this).closest('.custom-radio-btn').addClass('checked');

@@ -23,7 +23,9 @@ html {
 body {
   margin: 0;
 }
-
+.font-weight-bold {
+  font-weight: bold;
+}
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -6310,6 +6312,11 @@ main.product {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+
+.product__calc-quatity .form__row--result {
+  display: none;
 }
 .product__calc-quatity label {
   margin-right: 40px;
