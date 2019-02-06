@@ -910,6 +910,14 @@ if($windowWidth > 481) {
 $('.btnToggleCalc').click(function() {
 	$(this).closest('.product__actions_calc').find('.product__calc-quatity').stop(false, true).slideToggle();
 });
+
+// Type only numbers
+$( "#calcProductQuantity" ).on("input", function(e) {
+	$(this).val($(this).val().replace(/[^\d]/,''));
+});
+// end Type only numbers
+
+// Count profuct quantity
 $('#product__calcBtnCount').click(function() {
 	var productQuantityValue = $('#calcProductQuantity').val();
 	var productQuantityResult = 0;
@@ -926,6 +934,7 @@ $('#product__calcBtnCount').click(function() {
 		}
 	}
 });
+// end Count profuct quantity
 
 // hide/show checkout radio inputs after select
 $('.custom-radio-btn').click(function(e) {
