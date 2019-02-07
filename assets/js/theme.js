@@ -468,82 +468,84 @@ $(document).ready(function() {
 	/*==========================================================================
 			Product page
 		 ========================================================================== */
-		 var $reqUrlBase = $('.documents-dropdowns').data("url");
-		 var $reqUrlTemporary = $reqUrlBase;
-		 $('body').on('click', '.product__dropdown-list li input', function(e){
-			if(!$(this).closest('ul').hasClass('active')){
-				$('.documents-dropdowns').find(".product__dropdown-list").removeClass("active");
-				$(this).closest('ul').addClass('active');
-			} else {
-				var $currentItem = $(this).closest('li');
-				var $currentDropdown = $(this).closest('.product__dropdown');
-				var $currentDropdownType =  $currentDropdown.data("type");
-				var $currentProductId = $currentItem.find('input').val();
-				var urlPart = "";
-				var defaultDropdownTitle = "";
-				var dataType = '';
-				if($currentDropdownType === "products") {
-					urlPart = "&id_product=";
-					$reqUrlTemporary = $reqUrlBase + urlPart + $currentProductId;
-					defaultDropdownTitle = "Год партии"
-					dataType = 'year';
-				} else if($currentDropdownType === "years") {
-					urlPart = "&id_year=";
-					$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
-					defaultDropdownTitle = "Номер партии";
-					dataType = 'number';
-				}
-				else if($currentDropdownType === "numbers") {
-					urlPart = "&id_number=";
-					$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
-					defaultDropdownTitle = "Номер партии";
-					dataType = 'pdf';
-				}
-
-				if($currentProductId.length > 0) {
-					var $itemsArray = '<li><label><input type="radio" /><span>'+defaultDropdownTitle+'</span></label></li>';
-					$.ajax({
-						url: $reqUrlTemporary,
-						dataType: 'json',
-					})
-						.done(function(data) {
-							if (dataType == 'pdf') {
-								var footer = $('.certificate-form-footer');
-								footer.find('.add__form_submit > a').attr('href', data.download_url);
-								footer.fadeIn();
-								return false;
-							}
-
-								$.each(data, function (index, value) {
-
-									var val = (dataType == 'year') ? value.id_document_certificate_year : value.id_document_certificate_number;
-
-									$itemsArray +='<li><label><input type="radio" value="'+val+'"><span>'+value.value+'</span></label></li>';
-								});
-								if($currentDropdownType !== 'numbers') {
-									$currentDropdown.next().find(".product__dropdown-list").html($itemsArray);
-									$currentDropdown.next().fadeIn();
-								}	else if($currentDropdownType === 'numbers') {
-									$('.certificate-form-footer').fadeIn()
+		 if($('.documents-dropdowns').length) {
+			 var $reqUrlBase = $('.documents-dropdowns').data("url");
+			 var $reqUrlTemporary = $reqUrlBase;
+			 $('body').on('click', '.product__dropdown-list li input', function(e){
+				if(!$(this).closest('ul').hasClass('active')){
+					$('.documents-dropdowns').find(".product__dropdown-list").removeClass("active");
+					$(this).closest('ul').addClass('active');
+				} else {
+					var $currentItem = $(this).closest('li');
+					var $currentDropdown = $(this).closest('.product__dropdown');
+					var $currentDropdownType =  $currentDropdown.data("type");
+					var $currentProductId = $currentItem.find('input').val();
+					var urlPart = "";
+					var defaultDropdownTitle = "";
+					var dataType = '';
+					if($currentDropdownType === "products") {
+						urlPart = "&id_product=";
+						$reqUrlTemporary = $reqUrlBase + urlPart + $currentProductId;
+						defaultDropdownTitle = "Год партии"
+						dataType = 'year';
+					} else if($currentDropdownType === "years") {
+						urlPart = "&id_year=";
+						$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
+						defaultDropdownTitle = "Номер партии";
+						dataType = 'number';
+					}
+					else if($currentDropdownType === "numbers") {
+						urlPart = "&id_number=";
+						$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
+						defaultDropdownTitle = "Номер партии";
+						dataType = 'pdf';
+					}
+	
+					if($currentProductId.length > 0) {
+						var $itemsArray = '<li><label><input type="radio" /><span>'+defaultDropdownTitle+'</span></label></li>';
+						$.ajax({
+							url: $reqUrlTemporary,
+							dataType: 'json',
+						})
+							.done(function(data) {
+								if (dataType == 'pdf') {
+									var footer = $('.certificate-form-footer');
+									footer.find('.add__form_submit > a').attr('href', data.download_url);
+									footer.fadeIn();
+									return false;
 								}
-						});	
+	
+									$.each(data, function (index, value) {
+	
+										var val = (dataType == 'year') ? value.id_document_certificate_year : value.id_document_certificate_number;
+	
+										$itemsArray +='<li><label><input type="radio" value="'+val+'"><span>'+value.value+'</span></label></li>';
+									});
+									if($currentDropdownType !== 'numbers') {
+										$currentDropdown.next().find(".product__dropdown-list").html($itemsArray);
+										$currentDropdown.next().fadeIn();
+									}	else if($currentDropdownType === 'numbers') {
+										$('.certificate-form-footer').fadeIn()
+									}
+							});	
+					}
+					$(this).closest('ul').prepend($currentItem);
+					$(this).closest('ul').removeClass('active');			
 				}
-				$(this).closest('ul').prepend($currentItem);
-				$(this).closest('ul').removeClass('active');			
-			}
-		});
-		$("#printToggler").click(function() {
-			var btnDownloadDoc = $('.add__form_submit > a');
-			var printStr = "?print=1";
-			var baseBtnHref = btnDownloadDoc.attr("href");
-			var newBtnHref = "";
-			if (baseBtnHref.indexOf(printStr) ==-1) {
-				newBtnHref = baseBtnHref + printStr;
-			} else {
-				newBtnHref = baseBtnHref.replace(printStr, '');
-			}
-			btnDownloadDoc.attr('href', newBtnHref);
-		})
+			});
+			$("#printToggler").click(function() {
+				var btnDownloadDoc = $('.add__form_submit > a');
+				var printStr = "?print=1";
+				var baseBtnHref = btnDownloadDoc.attr("href");
+				var newBtnHref = "";
+				if (baseBtnHref.indexOf(printStr) ==-1) {
+					newBtnHref = baseBtnHref + printStr;
+				} else {
+					newBtnHref = baseBtnHref.replace(printStr, '');
+				}
+				btnDownloadDoc.attr('href', newBtnHref);
+			})
+		 }
 		
 	if($('main').hasClass('product')){
 		$(document).click(function(e) {
@@ -558,7 +560,7 @@ $(document).ready(function() {
 				$(this).closest('ul').addClass('active');
 			}else{								
 				$(this).closest('ul').prepend($(this).closest('li'));
-				$(this).closest('ul').removeClass('active');				
+				$(this).closest('ul').removeClass('active');		
 			}
 		});		
 
