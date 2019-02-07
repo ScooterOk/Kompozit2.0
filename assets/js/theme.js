@@ -353,33 +353,33 @@ $(document).ready(function() {
 			var defaultButtonWord = $(this).data('defaultword');
 			var newButtonWord = $(this).data('newword');
 			$(this).text(function(index, text) {
-				if (text.indexOf(defaultButtonWord) !=-1) {
-					return text.replace(defaultButtonWord, newButtonWord);
-				} else {
-					return text.replace(newButtonWord, defaultButtonWord);
-				}
+					if (text.indexOf(defaultButtonWord) != -1) {
+							return text.replace(defaultButtonWord, newButtonWord);
+					} else {
+							return text.replace(newButtonWord, defaultButtonWord);
+					}
 			});
 			$(".my-information__data, .my-information__edit").slideToggle();
 			$(".my-information__data").toggleClass("is-hidden");
-			if($(".my-information__data").hasClass('is-hidden')) {
-				$("#name-checkout2").val($(".my-account__name").text());
-				$("#surname-checkout2").val($(".my-account__surname").text());
-				$("#phone-checkout2").val($(".my-account__phone").text());
-				$("#email-field").val($(".my-account__email").text());
+			if ($(".my-information__data").hasClass('is-hidden')) {
+					$("#name-checkout2").val($(".my-account__name").text());
+					$("#surname-checkout2").val($(".my-account__surname").text());
+					$("#phone-checkout2").val($(".my-account__phone").text());
+					$("#email-field").val($(".my-account__email").text());
 			} else {
-				// $.ajax({
-				// 	url: 'https://dev2.kompozit.ua/my-account',
-				// 	type: 'post',
-				// 	dataType: 'json',
-				// 	data: $('form#formPersonalData').serialize(),
-				// 	success: function(data) {
-				// 		console.log("form submitted")
-				// 	}
-				// });
-				$(".my-account__name").text($("#name-checkout2").val());
-				$(".my-account__surname").text($("#surname-checkout2").val());
-				$(".my-account__phone").text($("#phone-checkout2").val());
-				$(".my-account__email").text($("#email-field").val());
+					$.ajax({
+							url: '/my-account',
+							type: 'post',
+							dataType: 'json',
+							data: $('form#formPersonalData').serialize(),
+							success: function(data) {
+									console.log("form submitted")
+							}
+					});
+					$(".my-account__name").text($("#name-checkout2").val());
+					$(".my-account__surname").text($("#surname-checkout2").val());
+					$(".my-account__phone").text($("#phone-checkout2").val());
+					$(".my-account__email").text($("#email-field").val());
 			}
 		})
 		// end Edit My Info

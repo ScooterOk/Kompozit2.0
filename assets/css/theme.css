@@ -6644,8 +6644,9 @@ main.product {
   align-items: center;
   justify-content: space-between;
 }
-
-
+.form__row--default {
+  margin-top:24px;
+}
 .product__calc-quatity .form__row--result {
   display: none;
 }
