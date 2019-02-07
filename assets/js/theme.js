@@ -711,11 +711,7 @@ $( ".my-account__status-visual" ).each(function( index ) {
 	if (progressWidth >= 100 ) {
 		progressWidth = 100;
 	}
-
-	if (progressWidth < 33) {
-		progressWidth = 33.33;
-	}
-	// progressWidth = (100 - progressWidth) * 0.33 +  progressWidth;
+	progressWidth = (100 - progressWidth) * 0.33 +  progressWidth;
 	var progressWidthPercent = progressWidth + "%";
 
 	$(this).find(".my-account__progress").css("width", progressWidthPercent);
