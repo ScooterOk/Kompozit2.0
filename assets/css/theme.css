@@ -2984,6 +2984,7 @@ main.index {
 .main-nav__all-btn {
   border: none;
   outline: none;
+  background: transparent;
 }
 .main-nav__list > li.sub {
   background: url('/../../img/theme/right-line.svg') no-repeat center right 32px;
