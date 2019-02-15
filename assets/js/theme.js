@@ -952,6 +952,7 @@ $('#product__calcBtnCount').click(function() {
 	var btnText2 = $(this).data("text2");
 	if(isNumeric(productQuantityValue)) {
 		productQuantityResult = productQuantityValue * $(this).data("coef1") + productQuantityValue * $(this).data("coef2");
+		productQuantityResult = Math.round(productQuantityResult * 100) / 100;
 		$(this).closest(".product__calc-quatity").find(".form__row").slideToggle();	
 		$("#product__calcLitres").text(productQuantityResult);
 		if($(this).text() === btnText1) {

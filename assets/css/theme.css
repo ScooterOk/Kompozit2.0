@@ -6651,6 +6651,7 @@ main.product {
 }
 .product__calc-quatity .form__row--result {
   display: none;
+  margin-top: 24px;
 }
 .product__calc-quatity label {
   margin-right: 40px;
