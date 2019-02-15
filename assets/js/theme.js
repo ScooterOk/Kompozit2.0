@@ -581,11 +581,11 @@ $(document).ready(function() {
 			if($(e.target).closest('.product__dropdown').length) return;			
 			$('.product__dropdown-list').removeClass('active');
 		});
-
+		
 		
 		$('body').on('click', '.product__dropdown-list li input', function(e){
 			if(!$(this).closest('ul').hasClass('active')){
-				$('.documents-dropdowns').find(".product__dropdown-list").removeClass("active");
+				$(".product__dropdown-list.active").removeClass("active");
 				$(this).closest('ul').addClass('active');
 			}else{								
 				$(this).closest('ul').prepend($(this).closest('li'));
