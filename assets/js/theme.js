@@ -505,7 +505,7 @@ $(document).ready(function() {
 						dataType = 'pdf';
 					}
 	
-					if($currentProductId.length > 0) {
+					if(isNumeric($currentProductId)) {
 						var $itemsArray = '<li><label><input type="radio" /><span>'+defaultDropdownTitle+'</span></label></li>';
 						$.ajax({
 							url: $reqUrlTemporary,
