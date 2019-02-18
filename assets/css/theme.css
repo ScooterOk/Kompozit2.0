@@ -2908,24 +2908,24 @@ footer {
 .footer__list_social-list a {
   transition: all 0.3s ease;
 }
-.footer__list_social-list .fb {
+.footer__list_social-list .fb, .footer__list_social-list .facebook {
   background: url('/../../img/theme/facebook.svg') no-repeat center;
   display: inline-block;
   margin-right: 12px;
   width: 40px;
   height: 40px;
 }
-.footer__list_social-list .fb:hover {
+.footer__list_social-list .fb:hover, .footer__list_social-list .facebook:hover {
   background: url('/../../img/theme/facebook--hover.svg') no-repeat center;
 }
-.footer__list_social-list .ig {
+.footer__list_social-list .ig, .footer__list_social-list .instagram {
   background: url('/../../img/theme/instagram.svg') no-repeat center;
   display: inline-block;
   margin-right: 12px;
   width: 40px;
   height: 40px;
 }
-.footer__list_social-list .yt {
+.footer__list_social-list .yt, .footer__list_social-list .youtube {
   background: url('/../../img/theme/youtube.svg') no-repeat center;
   display: inline-block;
   margin-right: 12px;
