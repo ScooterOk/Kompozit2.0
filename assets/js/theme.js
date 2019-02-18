@@ -492,6 +492,7 @@ $(document).ready(function() {
 						$reqUrlTemporary = $reqUrlBase + urlPart + $currentProductId;
 						defaultDropdownTitle = "Год партии"
 						dataType = 'year';
+						$('.dropdown--years, .dropdown--numbers, .certificate-form-footer').fadeOut();
 					} else if($currentDropdownType === "years") {
 						urlPart = "&id_year=";
 						$reqUrlTemporary = $reqUrlTemporary+ urlPart + $currentProductId;
