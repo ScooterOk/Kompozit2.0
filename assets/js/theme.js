@@ -1125,13 +1125,16 @@ window.onload = function () {
 };
 // end Preparation for clearing all markers
 var markers = $('#mapStoresCanvas').data('markers');
-
+var mapZoom = $('#mapStoresCanvas').data('zoom');
+if(!mapZoom) {
+	mapZoom = 10
+}
 	var map;
 	var marker;
 	function LoadMap() {
 			var mapOptions = {
 					center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-					zoom: 10,
+					zoom: mapZoom,
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			map = new google.maps.Map(document.getElementById("mapStoresCanvas"), mapOptions);
