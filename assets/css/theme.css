@@ -6489,7 +6489,7 @@ main.product {
   max-height: 400px;
 }
 .overflow-y-scroll {
-  overflow-y: auto;
+  overflow-y: auto!important;
 }
 .overflow-y-scroll::-webkit-scrollbar {
   background-color: rgba(15, 119, 255, 0.16);
