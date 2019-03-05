@@ -9457,3 +9457,7 @@ main.sales h1 {
     text-align: center;
   }
 }
+#add-to-cart-or-refresh {
+max-width: 410px;
+width: 100%;
+}
