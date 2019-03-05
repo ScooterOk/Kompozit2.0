@@ -6488,6 +6488,18 @@ main.product {
   z-index: 2;
   max-height: 400px;
 }
+.overflow-y-scroll {
+  overflow-y: auto;
+}
+.overflow-y-scroll::-webkit-scrollbar {
+  background-color: rgba(15, 119, 255, 0.16);
+  width: 8px;
+}
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+  background-color: #0f77ff;
+  width: 8px;
+  border-radius: 0;
+}
 .simple-dropdown .product__dropdown-list li > label {
  height: 100%;
 }
