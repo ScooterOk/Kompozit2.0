@@ -3079,7 +3079,7 @@ main.index {
   font-weight: 600;
   padding-left: 64px;
 }
-.main-nav__all a {
+.main-nav__all a, .main-nav__all button {
   color: #0f77ff;
   text-decoration: none;
   display: inline-block;
@@ -3087,7 +3087,7 @@ main.index {
   background: url('/../../img/theme/categories/all.svg') no-repeat right center;
   transition: all 150ms ease;
 }
-.main-nav__all a:hover {
+.main-nav__all a:hover, .main-nav__all button:hover  {
   color: #579fff;
   text-decoration: none;
   display: inline-block;
