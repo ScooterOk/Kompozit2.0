@@ -3087,7 +3087,7 @@ main.index {
   background: url('/../../img/theme/categories/all.svg') no-repeat right center;
   transition: all 150ms ease;
 }
-.main-nav__all a:hover, .main-nav__all button:hover  {
+.main-nav__all a:hover, .main-nav__all:hover  {
   color: #579fff;
   text-decoration: none;
   display: inline-block;
@@ -6486,6 +6486,7 @@ main.product {
 }
 .simple-dropdown .product__dropdown-list.active {
   z-index: 2;
+  max-height: 400px;
 }
 .simple-dropdown .product__dropdown-list li > label {
  height: 100%;
@@ -6633,7 +6634,8 @@ main.product {
 .product__calc-quatity {
   position: relative;
   display: none;
-  max-width: 480px;
+  width: 100%;
+  max-width: 410px;
   margin-top: 16px;
   padding: 16px;
   color: #fff;
@@ -8612,7 +8614,7 @@ main.sales h1 {
     margin: 40px 16px 0 16px;
   }
   .product__actions {
-    width: auto;
+    width: 100%;
   }
   .product__description-short {
     display: none;
