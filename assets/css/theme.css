@@ -3087,7 +3087,7 @@ main.index {
   background: url('/../../img/theme/categories/all.svg') no-repeat right center;
   transition: all 150ms ease;
 }
-.main-nav__all a:hover, .main-nav__all:hover  {
+.main-nav__all a:hover, .main-nav__all button:hover  {
   color: #579fff;
   text-decoration: none;
   display: inline-block;
@@ -8257,6 +8257,12 @@ main.sales h1 {
 }
 .hamburger-icon span:nth-child(3) {
   top: 16px;
+}
+.nav-mobile-showing .main-nav__all-btn {
+display: none!important;
+}
+.nav-mobile-showing .main-nav__mobile .main-nav__listli {
+  display: block!important;
 }
 .nav-mobile-showing .hamburger-icon span:nth-child(1) {
   top: 9px;
