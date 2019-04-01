@@ -573,7 +573,9 @@ $(document).ready(function() {
     
 				buildControls: function() {
 					// re-appends controls inside the main container
-					this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+					if(this.arrowLeft) {
+						this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+					}
 				}
 			}
 		});
@@ -826,6 +828,7 @@ function cutAndPasteDestroy() {
 function accordionInit() {
 	$('.accordion__body').slideToggle();
 	$('.accordion .accordion__item:eq(0) .accordion__header').addClass('active');
+	$('.accordion .accordion__item:eq(0) .accordion__body').slideDown();
 	$('.accordion .accordion__header').click(function(j) {
 			var dropDown = $(this).closest('.accordion__item').find('.accordion__body');
 	
@@ -844,7 +847,6 @@ function accordionInit() {
 	});
 }
 function accordionDestroy() {
-	console.log('destroy')
 	$('.product__description .accordion__header').unbind('click')
 	$('.product__description .accordion__body').slideDown();
 	$('.product__description .accordion__header').removeClass('active');
