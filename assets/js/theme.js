@@ -946,6 +946,30 @@ $( "#calcProductQuantity" ).on("input", function(e) {
 	$(this).val($(this).val().replace(/[^\d]/,''));
 });
 // end Type only numbers
+var measuresTypeArray = ["л", "мл", "кг"];
+function checkMeasureType(value, array) {
+	var targetValue = '';
+		var splittedVal = value.split(" ");
+		$.each(splittedVal, function (indx, val) {
+			for (var i = 0; i < array.length; i++) {
+				if(array[i] === val) {
+					targetValue = val
+				}
+			}
+		});
+		switch (targetValue) {
+			case 'л':
+				targetValue = 'литров';
+				break;
+			case 'мл':
+				targetValue = 'миллилитров';
+				break;
+			case 'кг':
+				targetValue = 'киллограмм';
+				break;
+		}
+		return targetValue;
+} 
 
 // Count profuct quantity
 $('#product__calcBtnCount').click(function() {
@@ -953,7 +977,9 @@ $('#product__calcBtnCount').click(function() {
 	var productQuantityResult = 0;
 	var btnText1 = $(this).data("text1");
 	var btnText2 = $(this).data("text2");
+	var productMeasure = $(this).data("measure");
 	if(isNumeric(productQuantityValue)) {
+		$('#product__calcMeasure').text(checkMeasureType(productMeasure, measuresTypeArray))
 		productQuantityResult = productQuantityValue * $(this).data("coef1") + productQuantityValue * $(this).data("coef2");
 		productQuantityResult = Math.round(productQuantityResult * 100) / 100;
 		$(this).closest(".product__calc-quatity").find(".form__row").slideToggle();	

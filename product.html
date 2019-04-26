@@ -413,23 +413,24 @@
             <button class="cart add-to-cart" type="submit" data-button-action="add-to-cart">
               В корзину
             </button>
-                        </section>
-                       <section class="product__actions_calc">
+              </section>
+              <section class="product__actions_calc">
              <button type="button" class="product__calc-btn btnToggleCalc">Рассчитать необходимое количество</button>
              <div class="product__calc-quatity" style="display: block;">
                <h6 class="white product__calc-btn">Рассчитать необходимое количество</h6>
-               <div class="form__row form__row--default" style="">
+               <div class="form__row form__row--default">
                  <label for="calcProductQuantity">Введите площадь поверхности (м)<sup>2</sup></label>
                  <input type="text" id="calcProductQuantity">
                </div>
                <div class="form__row form__row--result" style="display: none;">
                  <label>Вам необходимо <span class="font-weight-bold">
-                <span id="product__calcLitres">22.5</span> литров
+                  <span id="product__calcLitres">22.5</span>
+                  <span id="product__calcMeasure">литров</span> 
               </span>
                  </label>
                </div>
                <div class="form__submit">
-                 <button type="button" id="product__calcBtnCount" data-coef1="0.125" data-coef2="0.1" data-text1="Рассчитать" data-text2="Рассчитать заново">Рассчитать</button>
+                 <button type="button" id="product__calcBtnCount" data-coef1="0.125" data-coef2="0.1" data-text1="Рассчитать" data-text2="Рассчитать заново" data-measure="25 л">Рассчитать</button>
                </div>
                <button type="button" class="product__calc-btn-close btnToggleCalc"></button>
              </div>
