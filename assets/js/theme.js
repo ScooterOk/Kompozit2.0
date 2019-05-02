@@ -967,6 +967,9 @@ function checkMeasureType(value, array) {
 			case 'кг':
 				targetValue = 'киллограмм';
 				break;
+			default:
+				targetValue = '(выберите объем)';
+				break;
 		}
 		return targetValue;
 } 
@@ -977,7 +980,9 @@ $('#product__calcBtnCount').click(function() {
 	var productQuantityResult = 0;
 	var btnText1 = $(this).data("text1");
 	var btnText2 = $(this).data("text2");
-	var productMeasure = $(this).data("measure");
+	var productMeasure = $('.product__information .product__dropdown-list input:checked + span').text();
+	productMeasure = $.trim(productMeasure);
+	console.log(productMeasure)
 	if(isNumeric(productQuantityValue)) {
 		$('#product__calcMeasure').text(checkMeasureType(productMeasure, measuresTypeArray))
 		productQuantityResult = productQuantityValue * $(this).data("coef1") + productQuantityValue * $(this).data("coef2");
