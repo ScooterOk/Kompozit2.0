@@ -6356,15 +6356,13 @@ main.product {
   list-style: none;
   margin: 0 auto;
   padding: 0 0 0 0;
-  /*box-shadow: 0 2px 8px 0 rgba(0, 51, 121, 0.1);*/
   background-color: #ffffff;
-  /*border: 1px solid #579fff;*/
-  border: 1px solid transparent;
-  /*width: calc(100% + 14px + 14px);*/
+  border-radius: 2px;
+  border: solid 1px #c8ced3;
   width: auto;
   position: absolute;
   top: 0;
-  left: -14px;
+  left: 0;
   overflow: hidden;
   transition: all 200ms ease;
 }
@@ -6376,7 +6374,7 @@ main.product {
   background: url(/../../img/theme/arrow-down.svg) no-repeat center;
   position: absolute;
   right: 14px;
-  top: 20px;
+  top: 13px;
   transition: all 150ms ease;
 }
 .product__actions_color
@@ -6411,7 +6409,7 @@ main.product {
 .product__dropdown .product__dropdown-list li {
   font-size: 14px;
   font-weight: normal;
-  height: 48px;
+  height: 32px;
   font-style: normal;
   font-stretch: normal;
   line-height: 32px;
@@ -6449,8 +6447,8 @@ main.product {
 }
 .product__dropdown-list i {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   border-radius: 2px;
   border: solid 1px #768592;
   vertical-align: middle;
@@ -6460,12 +6458,12 @@ main.product {
 .product__actions_color .product__dropdown {
   margin-left: 16px;
   flex-grow: 1;
-  height: 48px;
+  height: 32px;
 }
 .product__actions_color .product__dropdown > i {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   border-radius: 2px;
   border: solid 1px #768592;
   vertical-align: middle;
@@ -6475,10 +6473,8 @@ main.product {
 .product__actions_color .product__dropdown-list li {
   font-size: 14px;
   font-weight: normal;
-  height: 48px;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1;
   letter-spacing: normal;
   text-align: center;
   color: #13152b;
@@ -6487,7 +6483,7 @@ main.product {
 }
 .product__actions_color .product__dropdown-list li > label {
   display: flex;
-  padding: 8px 36px 8px 13px;
+  padding: 0px 36px 0px 6px;
   justify-content: flex-start;
   align-items: center;
   position: relative;
@@ -6520,6 +6516,10 @@ main.product {
 .product__actions_vol .product__dropdown {
   flex-grow: 1;
   height: 32px;
+  margin-left: 16px;
+}
+.product__actions_vol > span,  .product__actions_color > span, .product__actions_amount > span {
+min-width: 85px;
 }
 .simple-dropdown .product__dropdown-list {
   z-index: 0;
@@ -6570,6 +6570,7 @@ main.product {
   display: inline-flex;
   border: solid 1px #c8ced3;
   margin-left: 16px;
+  border-radius: 2px;
 }
 .product__actions_amount-selector i {
   display: inline-block;
